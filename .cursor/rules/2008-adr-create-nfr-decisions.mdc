@@ -1,5 +1,5 @@
 ---
-description: 
+description: Cursor rule to create ADR files for Non-Functional Requirements
 globs: 
 alwaysApply: false
 ---

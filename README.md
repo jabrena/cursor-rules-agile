@@ -12,9 +12,11 @@ Set of Cursor rules to facilitate Agile in your Squad.
 - [Agile Features](.cursor/rules/2002-agile-create-features-from-epics.mdc)
 - [Agile User stories](.cursor/rules/2003-agile-create-user-stories.mdc)
 - [UML Sequence Diagram](.cursor/rules/2004-uml-sequence-diagram-from-agile-artifacts.mdc)
-- [C4 Model Diagrams](./cursor/rules/2005-c4-diagrams-from-agile-artifacts)
-- [ADRs for Non-Functional Requirements](.cursor/rules/2006-adr-create-nfr-decisions.mdc)
-- [Agile Acceptance Criterias](.cursor/rules/2007-agile-create-acceptance-criterias-in-gherkin.mdc)
+- [C4 Model Diagrams](.cursor/rules/2005-c4-diagrams-from-agile-artifacts.mdc)
+- [ADRs for REST API](.cursor/rules/2006-adr-create-for-rest-api.mdc)
+- [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc)
+- [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-nfr-decisions.mdc)
+- [Agile Acceptance Criterias](.cursor/rules/2009-agile-create-acceptance-criterias-in-gherkin.mdc)
 
 ## Prompts
 

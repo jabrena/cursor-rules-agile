@@ -14,7 +14,7 @@ System_Ext(externalMythologyApis, "External Mythology APIs", "my-json-server.typ
 System_Boundary(godGatewaySystem, "God Information Gateway API") {
     Container(gatewayApi, "Gateway REST API", "Spring Boot / Java", "Provides REST endpoints for god information retrieval with unified response format")
     Container(gatewayService, "Gateway Service", "Spring Boot / Java", "Orchestrates requests to external APIs, handles timeouts, aggregates responses")
-    Container(externalApiClients, "External API Clients", "Spring WebClient / Java", "HTTP clients for communicating with external mythology services")
+    Container(externalApiClients, "External API Clients", "Spring RestClient / Java", "HTTP clients for communicating with external mythology services")
     Container(timeoutManager, "Timeout Manager", "Spring Boot / Java", "Manages 10-second timeout for external API calls")
 }
 

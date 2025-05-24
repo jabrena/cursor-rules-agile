@@ -37,7 +37,7 @@ This documentation describes the C4 model diagrams for the God Information Gatew
 **Key Containers:**
 - **Gateway REST API** (Spring Boot / Java): Provides REST endpoints with unified response format
 - **Gateway Service** (Spring Boot / Java): Orchestrates external API requests, handles timeouts, aggregates responses
-- **External API Clients** (Spring WebClient / Java): HTTP clients for communicating with external mythology services
+- **External API Clients** (Spring RestClient / Java): HTTP clients for communicating with external mythology services
 - **Timeout Manager** (Spring Boot / Java): Manages 10-second timeout policy for all external API calls
 
 **Key Data Flows:**
@@ -55,7 +55,7 @@ This documentation describes the C4 model diagrams for the God Information Gatew
 - **Mythology Service** (Spring @Service): Core business logic for mythology data aggregation
 - **Mythology Validator** (Spring Component): Validates mythology type parameters (GREEK, ROMAN, NORDIC, INDIAN, CELTIBERIAN)
 - **Response Aggregator** (Spring Component): Aggregates and formats responses with metadata (count, source, timestamp)
-- **API Clients** (Spring WebClient): Five dedicated HTTP clients for each mythology service
+- **API Clients** (Spring RestClient): Five dedicated HTTP clients for each mythology service
 - **Timeout Configuration** (Spring Configuration): Configures 10-second timeout for all external API calls
 - **Error Handler** (Spring @ControllerAdvice): Handles exceptions and converts to appropriate HTTP responses
 
@@ -69,7 +69,7 @@ This documentation describes the C4 model diagrams for the God Information Gatew
 
 ### Technology Choices
 - **Spring Boot Framework:** Chosen for rapid microservice development and comprehensive ecosystem
-- **Spring WebClient:** Selected for non-blocking HTTP client capabilities and timeout management
+- **Spring RestClient:** Selected for HTTP client capabilities and timeout management
 - **REST API Pattern:** RESTful design for simple, stateless client-server communication
 - **Gateway Pattern:** Centralized access point to hide complexity of multiple external services
 

@@ -17,11 +17,11 @@ Container_Boundary(gatewayService, "Gateway Service") {
     Component(mythologyValidator, "Mythology Validator", "Spring Component", "Validates mythology type parameters (GREEK, ROMAN, etc.)")
     Component(responseAggregator, "Response Aggregator", "Spring Component", "Aggregates and formats responses with metadata")
     
-    Component(greekApiClient, "Greek API Client", "Spring WebClient", "HTTP client for Greek gods API")
-    Component(romanApiClient, "Roman API Client", "Spring WebClient", "HTTP client for Roman gods API")
-    Component(nordicApiClient, "Nordic API Client", "Spring WebClient", "HTTP client for Nordic gods API")
-    Component(indianApiClient, "Indian API Client", "Spring WebClient", "HTTP client for Indian gods API")
-    Component(celtibrianApiClient, "Celtiberian API Client", "Spring WebClient", "HTTP client for Celtiberian gods API")
+    Component(greekApiClient, "Greek API Client", "Spring RestClient", "HTTP client for Greek gods API")
+    Component(romanApiClient, "Roman API Client", "Spring RestClient", "HTTP client for Roman gods API")
+    Component(nordicApiClient, "Nordic API Client", "Spring RestClient", "HTTP client for Nordic gods API")
+    Component(indianApiClient, "Indian API Client", "Spring RestClient", "HTTP client for Indian gods API")
+    Component(celtibrianApiClient, "Celtiberian API Client", "Spring RestClient", "HTTP client for Celtiberian gods API")
     
     Component(timeoutConfiguration, "Timeout Configuration", "Spring Configuration", "Configures 10-second timeout for all external API calls")
     Component(errorHandler, "Error Handler", "Spring @ControllerAdvice", "Handles exceptions and converts to appropriate HTTP responses")
