@@ -28,6 +28,7 @@ Implement a Spring Boot-based REST API gateway using servlet programming pattern
 ### Technical Details
 - **Programming Language:** Java - 24 (Non LTS)
 - **Framework:** Spring Boot - 3.5.0
+- **Build System:** Maven - 3.9.x
 - **Key Dependencies:**
   - Spring Boot Web: - REST API development
   - Spring Boot Actuator: - Health checks and monitoring
