@@ -1,0 +1,169 @@
+---
+description: Cursor rule to create ADR files for Non-Functional Requirements
+globs: 
+alwaysApply: false
+---
+# Cursor rule to create ADR files for Non-Functional Requirements in a conversational way
+
+This rule guides the AI to create Architecture Decision Records (ADRs) specifically focused on non-functional requirements with emphasis on security, performance, and scalability. The AI will ask targeted questions to gather all necessary information and then generate a well-structured ADR in Markdown format following the standard ADR template.
+
+Instructions for the AI (Content of the Rule):
+
+"When activated, you should guide the user through creating an Architecture Decision Record (ADR) for non-functional requirements by following these steps:
+
+Phase 1: Information Gathering
+Acknowledge the request and inform the user that you need to ask some questions to create a comprehensive ADR. Then, ask the following questions, waiting for their input after each block or as appropriate:
+
+**ADR Basic Information:**
+1. ADR Number/ID: "What is the unique identifier for this ADR? (e.g., ADR-001, ADR-Security-001)"
+2. Title: "What is a concise, descriptive title for this architectural decision? (e.g., 'API Rate Limiting Strategy', 'Database Encryption Implementation')"
+3. Date: "What is the decision date? (If not specified, I'll use today's date)"
+4. Status: "What is the current status of this decision? (Proposed, Accepted, Superseded, Deprecated, or Rejected)"
+
+**Decision Context:**
+5. Problem Statement: "What specific non-functional requirement or architectural challenge are you addressing? Please describe the current situation and what needs to be improved or implemented."
+6. Forces and Constraints: "What are the key factors influencing this decision? Consider technical constraints, business requirements, compliance needs, budget limitations, timeline constraints, etc."
+
+**Non-Functional Requirements Focus:**
+7. Primary NFR Category: "Which is the primary non-functional requirement category for this decision? (Security, Performance, Scalability, Reliability, Availability, Maintainability, Usability, or Other)"
+
+**If Security is primary or mentioned:**
+- "What specific security concerns are being addressed? (e.g., data protection, authentication, authorization, encryption, compliance requirements like GDPR/HIPAA)"
+- "Are there any security standards or frameworks that must be followed? (e.g., OWASP, ISO 27001, SOC 2)"
+
+**If Performance is primary or mentioned:**
+- "What are the specific performance requirements or targets? (e.g., response time < 200ms, throughput > 1000 TPS, latency requirements)"
+- "What are the current performance bottlenecks or concerns?"
+
+**If Scalability is primary or mentioned:**
+- "What are the expected growth patterns? (user growth, data volume, geographic expansion)"
+- "What are the scalability targets? (concurrent users, requests per second, data storage requirements)"
+
+8. Quality Attributes: "Are there additional quality attributes that this decision impacts? Please specify any requirements for reliability, availability, maintainability, testability, etc."
+
+**Decision Options:**
+9. Alternative Solutions: "What are the different approaches or solutions you considered? Please list at least 2-3 alternatives including their main characteristics."
+
+For each alternative, ask:
+- "What are the pros and cons of [Alternative Name]?"
+- "How does [Alternative Name] address the security/performance/scalability requirements?"
+- "What are the implementation costs and complexity for [Alternative Name]?"
+
+**Decision Details:**
+10. Chosen Solution: "Which alternative did you choose and why? What were the deciding factors?"
+11. Rationale: "What is the detailed reasoning behind this choice? How does it best address the non-functional requirements?"
+
+**Implementation and Impact:**
+12. Implementation Approach: "How will this decision be implemented? What are the key implementation steps or phases?"
+13. Impact Assessment: "What systems, components, or teams will be affected by this decision?"
+14. Risks and Mitigation: "What are the potential risks of this decision and how will they be mitigated?"
+15. Success Metrics: "How will you measure the success of this decision? What metrics will you track? (e.g., performance benchmarks, security audit results, scalability test outcomes)"
+
+**Compliance and Governance:**
+16. Compliance Requirements: "Are there any regulatory or compliance requirements this decision must satisfy?"
+17. Review and Approval: "Who needs to review and approve this decision? Any stakeholders that must sign off?"
+
+**Documentation:**
+18. Related Documents: "Are there any related documents, previous ADRs, technical specifications, or external references that should be linked?"
+19. ADR Filename: "What should be the filename for this ADR? (e.g., `ADR-001-API-Rate-Limiting.md`, `ADR-Security-001-Database-Encryption.md`)"
+
+Phase 2: ADR Generation
+Once all information is gathered, inform the user you will now generate the ADR content. Then, provide the content clearly formatted:
+
+**Content for ADR File: `[ADR Filename From Input]`**
+```markdown
+# [ADR Number/ID]: [Title]
+
+**Date:** [Date]  
+**Status:** [Status]  
+**Primary NFR Category:** [Primary NFR Category]  
+
+## Context
+
+[Problem Statement from input - describe the non-functional requirement challenge]
+
+### Forces and Constraints
+
+[List the key factors from input as bullet points]
+
+### Quality Attributes and Requirements
+
+**Primary Focus: [Primary NFR Category]**
+[Detailed requirements based on Security/Performance/Scalability inputs]
+
+**Additional Quality Attributes:**
+[List other quality attributes mentioned]
+
+[IF Compliance Requirements provided THEN
+### Compliance and Regulatory Requirements
+[List compliance requirements]
+ENDIF]
+
+## Decision
+
+We have decided to implement **[Chosen Solution]**.
+
+### Alternatives Considered
+
+[FOR EACH Alternative DO
+#### [Alternative Name]
+- **Pros:** [List pros]
+- **Cons:** [List cons]  
+- **NFR Impact:** [How it addresses security/performance/scalability]
+- **Implementation Cost:** [Cost and complexity assessment]
+ENDLOOP]
+
+### Rationale
+
+[Detailed reasoning for the chosen solution, emphasizing how it addresses the non-functional requirements]
+
+## Consequences
+
+### Positive Impacts
+- [List benefits, especially related to security, performance, scalability]
+
+### Negative Impacts  
+- [List any drawbacks or trade-offs]
+
+### Risks and Mitigation Strategies
+[List risks and mitigation approaches from input]
+
+## Implementation
+
+### Approach
+[Implementation steps or phases from input]
+
+### Affected Systems and Teams
+[Impact assessment from input]
+
+### Success Metrics
+[Metrics to track from input - performance benchmarks, security measures, scalability indicators]
+
+## Compliance and Governance
+
+[IF Review and Approval info provided THEN
+### Review and Approval
+- **Reviewers:** [List reviewers]
+- **Approval Required From:** [List approvers]
+ENDIF]
+
+[IF Compliance Requirements provided THEN
+### Regulatory Compliance
+[Detail how this decision satisfies compliance requirements]
+ENDIF]
+
+## References
+
+[IF Related Documents provided THEN
+### Related Documents
+[List related documents, ADRs, specifications]
+ENDIF]
+
+### External References
+[List any external standards, frameworks, or documentation referenced]
+
+---
+*This ADR focuses on non-functional requirements with emphasis on [Primary NFR Category]. Last updated: [Date]*
+```
+
+Ensure the generated ADR emphasizes the non-functional aspects and clearly articulates how the decision addresses security, performance, and scalability concerns as applicable."

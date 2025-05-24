@@ -1,0 +1,309 @@
+---
+description: Cursor rule to create ADR files for Acceptance Testing Strategy
+globs: 
+alwaysApply: false
+---
+# Cursor rule to create ADR files for Acceptance Testing Strategy
+
+This rule guides the AI to create Architecture Decision Records (ADRs) specifically focused on acceptance testing strategies. The AI will engage in a conversational approach to understand the functional requirements, software nature, and testing context to generate a comprehensive ADR that documents testing approach decisions.
+
+Instructions for the AI (Content of the Rule):
+
+"When activated, you should guide the user through creating an Architecture Decision Record (ADR) for acceptance testing strategy by following these steps:
+
+Phase 1: Information Gathering
+Acknowledge the request and inform the user that you need to gather information about their software and testing requirements to create a comprehensive ADR. Ask the following questions in a conversational manner, allowing natural flow:
+
+**ADR Basic Information:**
+1. ADR Number/ID: "What is the unique identifier for this ADR? (e.g., ADR-TEST-001, ADR-AT-001)"
+2. Title: "What's a descriptive title for this testing strategy decision? (e.g., 'E2E Testing Strategy for Mobile App', 'Acceptance Testing Approach for Microservices Platform')"
+3. Date: "What's the decision date? (I'll use today's date if not specified)"
+4. Status: "What's the current status? (Proposed, Accepted, Superseded, Deprecated, or Rejected)"
+
+**Software Context and Nature:**
+5. Software Type: "What type of software are we creating an acceptance testing strategy for?"
+   - Web application (SPA, MPA, PWA)
+   - Mobile application (iOS, Android, Cross-platform)
+   - Desktop application
+   - Web API/Microservices
+   - Enterprise software
+   - E-commerce platform
+   - Real-time system
+   - IoT application
+   - Other (specify)
+
+6. Architecture Style: "How would you describe the software architecture?"
+   - Monolithic
+   - Microservices
+   - Serverless
+   - Event-driven
+   - Distributed system
+   - Other (specify)
+
+7. Technology Stack: "What's the primary technology stack?"
+   - Frontend technologies (React, Vue, Angular, Flutter, etc.)
+   - Backend technologies (Java, Python, Node.js, .NET, etc.)
+   - Database systems
+   - Cloud platforms
+   - Third-party integrations
+
+**Functional Requirements Analysis:**
+8. Core Business Functions: "What are the main business functions or user journeys that need acceptance testing? Please describe the critical user flows."
+
+9. User Types: "Who are the different types of users or personas? (e.g., end customers, administrators, API consumers, mobile users)"
+
+10. Integration Points: "What external systems, APIs, or services does the software integrate with? How critical are these integrations?"
+
+11. Data Sensitivity: "Does the software handle sensitive data? (PII, financial, healthcare, etc.) What compliance requirements exist?"
+
+**Current Testing Landscape:**
+12. Existing Testing: "What testing is already in place? (unit tests, integration tests, manual testing, etc.)"
+
+13. Testing Team Structure: "Who will be responsible for acceptance testing? (QA team, developers, business analysts, automated tools)"
+
+14. Testing Environment: "What testing environments are available? (staging, UAT, production-like, etc.)"
+
+**Testing Requirements and Constraints:**
+15. Testing Scope: "What level of acceptance testing coverage are you aiming for?"
+   - End-to-end user journeys
+   - API contract testing
+   - Cross-browser/cross-platform testing
+   - Performance acceptance criteria
+   - Security acceptance testing
+   - Accessibility testing
+
+16. Automation Level: "What's your preference for test automation vs. manual testing? What are the constraints?"
+
+17. Testing Timeline: "What are the testing timeline constraints? How does testing fit into your release cycle?"
+
+18. Budget and Resources: "What budget and resource constraints exist for testing tools and infrastructure?"
+
+**Risk and Quality Considerations:**
+19. Risk Assessment: "What are the highest risks if acceptance testing fails? What are the consequences of bugs reaching production?"
+
+20. Quality Gates: "What quality criteria must be met before release? Any specific acceptance criteria formats or standards?"
+
+21. Regulatory Requirements: "Are there any regulatory or compliance testing requirements? (FDA, SOX, GDPR testing, etc.)"
+
+**Tool and Technology Preferences:**
+22. Testing Tools: "Do you have preferences for testing tools? Any existing tool investments or constraints?"
+   - Selenium, Cypress, Playwright, Appium
+   - Postman, RestAssured, Karate
+   - JMeter, LoadRunner, k6
+   - TestRail, Jira, Azure DevOps
+   - BrowserStack, Sauce Labs
+
+23. CI/CD Integration: "How should acceptance testing integrate with your CI/CD pipeline? What's your deployment strategy?"
+
+24. Reporting Requirements: "What reporting and documentation requirements exist for test results?"
+
+**Decision Context:**
+25. Problem Statement: "What specific acceptance testing challenge or gap are you trying to address? Why is this decision needed now?"
+
+26. Success Metrics: "How will you measure the success of your acceptance testing strategy? What KPIs matter?"
+
+Phase 2: Decision Options Exploration
+Based on the gathered information, present and discuss testing strategy options:
+
+**Testing Approach Options:**
+"Based on your software context, I see several potential acceptance testing approaches. Let me walk through options that fit your situation:"
+
+For each relevant option, ask:
+- "What are your thoughts on [Testing Approach]?"
+- "How well does this align with your team's capabilities and timeline?"
+- "What concerns do you have about implementing [Testing Approach]?"
+
+Common options to discuss:
+- Fully automated E2E testing
+- Hybrid automated/manual approach
+- Behavior-Driven Development (BDD) with Gherkin
+- API-first testing strategy
+- Risk-based testing approach
+- Continuous testing in CI/CD
+
+**Tool Selection:**
+27. Preferred Tools: "Based on our discussion, which testing tools and frameworks would you prefer and why?"
+
+28. Implementation Approach: "How do you envision implementing this testing strategy? What would be the rollout plan?"
+
+Phase 3: ADR Generation
+Once all information is gathered, inform the user you will generate the ADR content:
+
+**Content for ADR File: `[ADR Filename]`**
+```markdown
+# [ADR Number/ID]: [Title]
+
+**Date:** [Date]  
+**Status:** [Status]  
+**Technical Area:** Acceptance Testing Strategy  
+**Software Type:** [Software Type]  
+
+## Context
+
+### Software Overview
+**Type:** [Software Type]  
+**Architecture:** [Architecture Style]  
+**Technology Stack:** [Key technologies]  
+
+### Business Context
+[Core business functions and user journeys requiring acceptance testing]
+
+### Current State
+[Description of existing testing landscape and team structure]
+
+### Problem Statement
+[Specific acceptance testing challenge being addressed]
+
+## Functional Requirements Impact
+
+### Critical User Journeys
+[List of main user flows that require acceptance testing coverage]
+
+### User Types and Personas
+[Different user types and their testing needs]
+
+### Integration Points
+[External systems and critical integrations requiring testing]
+
+### Data and Compliance Requirements
+[Data sensitivity and compliance testing needs]
+
+## Decision
+
+We have decided to implement **[Chosen Testing Strategy]**.
+
+### Testing Strategy Overview
+[High-level description of the chosen approach]
+
+### Testing Scope and Coverage
+- **End-to-End Testing:** [Coverage details]
+- **API Testing:** [API testing approach]
+- **Cross-Platform Testing:** [Browser/device coverage]
+- **Performance Testing:** [Performance acceptance criteria]
+- **Security Testing:** [Security testing requirements]
+- **Accessibility Testing:** [Accessibility standards]
+
+### Automation vs Manual Balance
+- **Automated Testing:** [What will be automated and why]
+- **Manual Testing:** [What requires manual testing and why]
+- **Exploratory Testing:** [Role of exploratory testing]
+
+### Tool Selection
+**Primary Testing Tools:**
+- **E2E Testing:** [Tool] - [Rationale]
+- **API Testing:** [Tool] - [Rationale]  
+- **Performance Testing:** [Tool] - [Rationale]
+- **Test Management:** [Tool] - [Rationale]
+- **CI/CD Integration:** [Tools and approach]
+
+## Alternatives Considered
+
+### Option 1: [Alternative Approach]
+**Description:** [Brief description]
+**Pros:** [Benefits]
+**Cons:** [Drawbacks]
+**Why Not Chosen:** [Rejection rationale]
+
+### Option 2: [Alternative Approach]
+**Description:** [Brief description]
+**Pros:** [Benefits]
+**Cons:** [Drawbacks]
+**Why Not Chosen:** [Rejection rationale]
+
+## Implementation Strategy
+
+### Phase 1: Foundation Setup
+[Initial setup steps, tool installation, framework creation]
+
+### Phase 2: Core Test Development
+[Development of critical user journey tests]
+
+### Phase 3: Full Coverage
+[Expansion to complete testing coverage]
+
+### Team Structure and Responsibilities
+- **Development Team:** [Role in acceptance testing]
+- **QA Team:** [Testing responsibilities]
+- **Business Analysts:** [Requirement validation role]
+
+### CI/CD Integration
+[How acceptance tests integrate with deployment pipeline]
+
+## Success Metrics and Quality Gates
+
+### Testing KPIs
+- **Test Coverage:** [Target coverage percentage]
+- **Test Execution Time:** [Maximum acceptable time]
+- **Test Reliability:** [Acceptable flakiness rate]
+- **Defect Detection Rate:** [Quality metrics]
+
+### Quality Gates
+- [Specific criteria that must pass before release]
+- [Acceptance criteria format and standards]
+
+### Reporting and Documentation
+- [Test result reporting approach]
+- [Documentation requirements]
+
+## Consequences
+
+### Positive Outcomes
+- [Benefits of the chosen strategy]
+- [Risk mitigation achieved]
+- [Quality improvements expected]
+
+### Negative Outcomes and Mitigation
+- [Challenges or drawbacks]
+- [Resource requirements]
+- [Mitigation strategies]
+
+### Risks and Contingencies
+- [Testing risks identified]
+- [Fallback approaches]
+- [Risk monitoring strategy]
+
+## Compliance and Standards
+
+[IF compliance requirements exist THEN]
+### Regulatory Compliance
+- [How testing strategy meets compliance requirements]
+- [Audit trail and documentation needs]
+[ENDIF]
+
+### Testing Standards
+- [Industry standards followed]
+- [Internal testing standards adopted]
+
+## Maintenance and Evolution
+
+### Test Maintenance Strategy
+- [How tests will be maintained as software evolves]
+- [Test data management approach]
+- [Environment management]
+
+### Review and Update Schedule
+- **Regular Reviews:** [Frequency and triggers]
+- **Strategy Evolution:** [How strategy will adapt]
+- **Tool Evaluation:** [When to reassess tools]
+
+## References
+
+### Related Documents
+[Links to functional requirements, user stories, other ADRs]
+
+### External Standards and Frameworks
+[Testing standards, frameworks, best practices referenced]
+
+### Tool Documentation
+[Links to chosen tool documentation and resources]
+
+---
+*This ADR defines acceptance testing strategy based on functional requirements and software nature. Last updated: [Date]*
+```
+
+After generating the ADR, offer to:
+1. Create sample test scenarios based on the functional requirements
+2. Suggest specific test case formats (Gherkin, etc.)
+3. Provide tool setup guidance
+4. Create testing checklist templates"
+
