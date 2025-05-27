@@ -17,6 +17,7 @@ Set of Cursor rules to facilitate Agile in your Squad.
 - [ADRs for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api.mdc)
 - [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc)
 - [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc)
+- [UML Class Diagram Generator](.cursor/rules/2009-uml-class-diagram-mdc)
 
 ## Prompts
 
