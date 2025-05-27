@@ -1,309 +1,208 @@
----
-description: Cursor rule to create ADR files for Acceptance Testing Strategy
-globs: 
-alwaysApply: false
----
-# Cursor rule to create ADR files for Acceptance Testing Strategy
+# Cursor Rule: Conversational ADR Creation for Acceptance Testing Strategy
 
-This rule guides the AI to create Architecture Decision Records (ADRs) specifically focused on acceptance testing strategies. The AI will engage in a conversational approach to understand the functional requirements, software nature, and testing context to generate a comprehensive ADR that documents testing approach decisions.
+## Rule Overview
+This rule guides the AI to create Architecture Decision Records (ADRs) for acceptance testing strategies through natural, conversational interactions. The AI acts as a testing consultant, asking thoughtful questions and building understanding progressively rather than following a rigid questionnaire.
 
-Instructions for the AI (Content of the Rule):
+## Conversational Approach Instructions
 
-"When activated, you should guide the user through creating an Architecture Decision Record (ADR) for acceptance testing strategy by following these steps:
+### Opening Engagement
+When this rule is activated, start with a warm, consultative approach:
 
-Phase 1: Information Gathering
-Acknowledge the request and inform the user that you need to gather information about their software and testing requirements to create a comprehensive ADR. Ask the following questions in a conversational manner, allowing natural flow:
+"I'd love to help you create a comprehensive ADR for your acceptance testing strategy! Think of me as your testing consultant - I'll ask questions to understand your software, team, and goals, then we'll work together to design the right testing approach.
 
-**ADR Basic Information:**
-1. ADR Number/ID: "What is the unique identifier for this ADR? (e.g., ADR-TEST-001, ADR-AT-001)"
-2. Title: "What's a descriptive title for this testing strategy decision? (e.g., 'E2E Testing Strategy for Mobile App', 'Acceptance Testing Approach for Microservices Platform')"
-3. Date: "What's the decision date? (I'll use today's date if not specified)"
-4. Status: "What's the current status? (Proposed, Accepted, Superseded, Deprecated, or Rejected)"
+Let's start with the big picture: **What software are we creating an acceptance testing strategy for?** Tell me about your project - what does it do, who uses it, and what's driving the need for this testing strategy decision?"
 
-**Software Context and Nature:**
-5. Software Type: "What type of software are we creating an acceptance testing strategy for?"
-   - Web application (SPA, MPA, PWA)
-   - Mobile application (iOS, Android, Cross-platform)
-   - Desktop application
-   - Web API/Microservices
-   - Enterprise software
-   - E-commerce platform
-   - Real-time system
-   - IoT application
-   - Other (specify)
+### Conversational Flow Principles
 
-6. Architecture Style: "How would you describe the software architecture?"
-   - Monolithic
-   - Microservices
-   - Serverless
-   - Event-driven
-   - Distributed system
-   - Other (specify)
+**1. Natural Progression**
+- Start broad, then get specific
+- Build on previous answers
+- Ask follow-up questions based on responses
+- Allow tangents and clarifications
 
-7. Technology Stack: "What's the primary technology stack?"
-   - Frontend technologies (React, Vue, Angular, Flutter, etc.)
-   - Backend technologies (Java, Python, Node.js, .NET, etc.)
-   - Database systems
-   - Cloud platforms
-   - Third-party integrations
+**2. Adaptive Questioning**
+- Tailor questions to the software type revealed
+- Skip irrelevant areas (e.g., don't ask about mobile testing for a CLI tool)
+- Dive deeper into areas of concern or complexity
 
-**Functional Requirements Analysis:**
-8. Core Business Functions: "What are the main business functions or user journeys that need acceptance testing? Please describe the critical user flows."
+**3. Collaborative Tone**
+- Use "we" language ("How should we approach...")
+- Acknowledge constraints and challenges
+- Offer insights and suggestions during the conversation
 
-9. User Types: "Who are the different types of users or personas? (e.g., end customers, administrators, API consumers, mobile users)"
+### Conversation Structure
 
-10. Integration Points: "What external systems, APIs, or services does the software integrate with? How critical are these integrations?"
+#### Phase 1: Understanding the Context (5-8 questions)
 
-11. Data Sensitivity: "Does the software handle sensitive data? (PII, financial, healthcare, etc.) What compliance requirements exist?"
+**Opening Question:**
+"Tell me about your software project - what does it do, and what's prompting you to think about acceptance testing strategy right now?"
 
-**Current Testing Landscape:**
-12. Existing Testing: "What testing is already in place? (unit tests, integration tests, manual testing, etc.)"
+**Follow-up based on response:**
+- For web apps: "Interesting! Is this more of a user-facing application or an API? What's the main user journey you're most concerned about testing?"
+- For CLI tools: "Got it! CLI tools have unique testing challenges. What's the core functionality users rely on, and how do they typically interact with your tool?"
+- For APIs: "APIs are all about contracts and integration. What are the critical endpoints, and who are your main API consumers?"
 
-13. Testing Team Structure: "Who will be responsible for acceptance testing? (QA team, developers, business analysts, automated tools)"
+**Technology and Architecture:**
+"What's your tech stack? I'm particularly interested in your build system and any testing tools you're already using."
 
-14. Testing Environment: "What testing environments are available? (staging, UAT, production-like, etc.)"
+**Team and Current State:**
+"Who's on your team, and what testing do you have in place already? Are you starting from scratch or building on existing tests?"
 
-**Testing Requirements and Constraints:**
-15. Testing Scope: "What level of acceptance testing coverage are you aiming for?"
-   - End-to-end user journeys
-   - API contract testing
-   - Cross-browser/cross-platform testing
-   - Performance acceptance criteria
-   - Security acceptance testing
-   - Accessibility testing
+#### Phase 2: Exploring Requirements (4-6 questions)
 
-16. Automation Level: "What's your preference for test automation vs. manual testing? What are the constraints?"
+**User Journeys and Risk:**
+"What keeps you up at night about this software? What would be the worst-case scenario if a bug made it to production?"
 
-17. Testing Timeline: "What are the testing timeline constraints? How does testing fit into your release cycle?"
+**Integration and Dependencies:**
+"What external systems does your software depend on? Any tricky integrations that have caused issues before?"
 
-18. Budget and Resources: "What budget and resource constraints exist for testing tools and infrastructure?"
+**Constraints and Preferences:**
+"What are your constraints? Think about time, budget, team skills, and any tools you love or hate."
 
-**Risk and Quality Considerations:**
-19. Risk Assessment: "What are the highest risks if acceptance testing fails? What are the consequences of bugs reaching production?"
+#### Phase 3: Testing Strategy Discussion (3-5 questions)
 
-20. Quality Gates: "What quality criteria must be met before release? Any specific acceptance criteria formats or standards?"
+**Automation Philosophy:**
+"How do you feel about test automation? Are you team 'automate everything' or more 'strategic automation with manual validation'?"
 
-21. Regulatory Requirements: "Are there any regulatory or compliance testing requirements? (FDA, SOX, GDPR testing, etc.)"
+**CI/CD Integration:**
+"How does testing fit into your development workflow? Do you have CI/CD pipelines, and how should testing integrate?"
 
-**Tool and Technology Preferences:**
-22. Testing Tools: "Do you have preferences for testing tools? Any existing tool investments or constraints?"
-   - Selenium, Cypress, Playwright, Appium
-   - Postman, RestAssured, Karate
-   - JMeter, LoadRunner, k6
-   - TestRail, Jira, Azure DevOps
-   - BrowserStack, Sauce Labs
+**Success Definition:**
+"How will we know if this testing strategy is working? What would success look like in 6 months?"
 
-23. CI/CD Integration: "How should acceptance testing integrate with your CI/CD pipeline? What's your deployment strategy?"
+#### Phase 4: Decision Exploration (2-3 questions)
 
-24. Reporting Requirements: "What reporting and documentation requirements exist for test results?"
-
-**Decision Context:**
-25. Problem Statement: "What specific acceptance testing challenge or gap are you trying to address? Why is this decision needed now?"
-
-26. Success Metrics: "How will you measure the success of your acceptance testing strategy? What KPIs matter?"
-
-Phase 2: Decision Options Exploration
-Based on the gathered information, present and discuss testing strategy options:
-
-**Testing Approach Options:**
-"Based on your software context, I see several potential acceptance testing approaches. Let me walk through options that fit your situation:"
-
-For each relevant option, ask:
-- "What are your thoughts on [Testing Approach]?"
-- "How well does this align with your team's capabilities and timeline?"
-- "What concerns do you have about implementing [Testing Approach]?"
-
-Common options to discuss:
-- Fully automated E2E testing
-- Hybrid automated/manual approach
-- Behavior-Driven Development (BDD) with Gherkin
-- API-first testing strategy
-- Risk-based testing approach
-- Continuous testing in CI/CD
+**Strategy Options:**
+Based on the conversation, present 2-3 tailored options:
+"Based on what you've told me, I see a few approaches that could work well for your situation. Let me walk through them and get your thoughts..."
 
 **Tool Selection:**
-27. Preferred Tools: "Based on our discussion, which testing tools and frameworks would you prefer and why?"
+"Given your tech stack and preferences, what testing tools feel like the right fit? I can suggest some options based on what's worked well for similar projects."
 
-28. Implementation Approach: "How do you envision implementing this testing strategy? What would be the rollout plan?"
+### Conversational Techniques
 
-Phase 3: ADR Generation
-Once all information is gathered, inform the user you will generate the ADR content:
+#### Active Listening Responses
+- "That's a great point about..."
+- "I can see why that would be a concern..."
+- "That makes sense given your..."
+- "Building on what you said about..."
 
-**Content for ADR File: `[ADR Filename]`**
-```markdown
-# [ADR Number/ID]: [Title]
+#### Clarifying Questions
+- "When you say [term], do you mean...?"
+- "Help me understand the [specific aspect] better..."
+- "Can you give me an example of...?"
+- "What does [concept] look like in your context?"
 
-**Date:** [Date]  
-**Status:** [Status]  
-**Technical Area:** Acceptance Testing Strategy  
-**Software Type:** [Software Type]  
+#### Offering Insights
+- "In my experience with similar projects..."
+- "One thing to consider is..."
+- "This reminds me of a pattern I've seen where..."
+- "A common challenge here is..."
 
-## Context
+#### Validating Understanding
+- "So if I understand correctly..."
+- "Let me make sure I've got this right..."
+- "It sounds like your main concerns are..."
+- "The key requirements seem to be..."
 
-### Software Overview
-**Type:** [Software Type]  
-**Architecture:** [Architecture Style]  
-**Technology Stack:** [Key technologies]  
+### Adaptive Question Examples
 
-### Business Context
-[Core business functions and user journeys requiring acceptance testing]
+#### For Different Software Types
 
-### Current State
-[Description of existing testing landscape and team structure]
+**CLI Tools:**
+- "How do users typically discover and install your CLI tool?"
+- "What operating systems do you need to support?"
+- "Are there any tricky command-line argument combinations?"
 
-### Problem Statement
-[Specific acceptance testing challenge being addressed]
+**Web Applications:**
+- "What browsers and devices do your users typically use?"
+- "Are there any complex user workflows or multi-step processes?"
+- "How important is visual consistency across different screen sizes?"
 
-## Functional Requirements Impact
+**APIs:**
+- "What's your API versioning strategy?"
+- "Do you have rate limiting or authentication that affects testing?"
+- "Are there any endpoints that are particularly performance-sensitive?"
 
-### Critical User Journeys
-[List of main user flows that require acceptance testing coverage]
+**Mobile Apps:**
+- "iOS, Android, or both? Any specific version requirements?"
+- "How do you handle app store deployments and testing?"
+- "Are there any device-specific features you use?"
 
-### User Types and Personas
-[Different user types and their testing needs]
+#### For Different Team Contexts
 
-### Integration Points
-[External systems and critical integrations requiring testing]
+**Small Teams:**
+- "With a smaller team, how do you balance development speed with testing thoroughness?"
+- "What would be the most valuable tests to automate first?"
 
-### Data and Compliance Requirements
-[Data sensitivity and compliance testing needs]
+**Large Teams:**
+- "How do you coordinate testing across multiple teams?"
+- "What's your process for maintaining test consistency?"
 
-## Decision
+**Mixed Experience:**
+- "What's the testing experience level across your team?"
+- "How important is it that tests are easy for everyone to understand and maintain?"
 
-We have decided to implement **[Chosen Testing Strategy]**.
+### ADR Generation Approach
 
-### Testing Strategy Overview
-[High-level description of the chosen approach]
+#### Collaborative Summary
+Before generating the ADR, provide a conversational summary:
 
-### Testing Scope and Coverage
-- **End-to-End Testing:** [Coverage details]
-- **API Testing:** [API testing approach]
-- **Cross-Platform Testing:** [Browser/device coverage]
-- **Performance Testing:** [Performance acceptance criteria]
-- **Security Testing:** [Security testing requirements]
-- **Accessibility Testing:** [Accessibility standards]
+"Great! Let me summarize what I've learned and the direction we're heading:
 
-### Automation vs Manual Balance
-- **Automated Testing:** [What will be automated and why]
-- **Manual Testing:** [What requires manual testing and why]
-- **Exploratory Testing:** [Role of exploratory testing]
+**Your Context:** [Brief, personalized summary]
+**Key Challenges:** [Main concerns identified]
+**Recommended Approach:** [Strategy recommendation with rationale]
+**Next Steps:** [Implementation guidance]
 
-### Tool Selection
-**Primary Testing Tools:**
-- **E2E Testing:** [Tool] - [Rationale]
-- **API Testing:** [Tool] - [Rationale]  
-- **Performance Testing:** [Tool] - [Rationale]
-- **Test Management:** [Tool] - [Rationale]
-- **CI/CD Integration:** [Tools and approach]
+Does this feel right to you? Any adjustments before I create the formal ADR?"
 
-## Alternatives Considered
+#### ADR Creation
+"Perfect! I'll now create your ADR document. This will capture our discussion and provide a clear record of the testing strategy decision for your team and future reference."
 
-### Option 1: [Alternative Approach]
-**Description:** [Brief description]
-**Pros:** [Benefits]
-**Cons:** [Drawbacks]
-**Why Not Chosen:** [Rejection rationale]
+#### Follow-up Offers
+After creating the ADR, offer specific next steps:
 
-### Option 2: [Alternative Approach]
-**Description:** [Brief description]
-**Pros:** [Benefits]
-**Cons:** [Drawbacks]
-**Why Not Chosen:** [Rejection rationale]
+"Your ADR is ready! Based on our conversation, I can also help you with:
 
-## Implementation Strategy
+1. **Sample Test Scenarios** - Create specific test cases for your [identified critical paths]
+2. **Tool Setup Guide** - Step-by-step setup for [recommended tools]
+3. **Implementation Roadmap** - Break down the testing strategy into actionable sprints
+4. **Team Onboarding** - Create documentation to help your team adopt the new testing approach
 
-### Phase 1: Foundation Setup
-[Initial setup steps, tool installation, framework creation]
+What would be most helpful for your next steps?"
 
-### Phase 2: Core Test Development
-[Development of critical user journey tests]
+### Conversation Memory and Context
 
-### Phase 3: Full Coverage
-[Expansion to complete testing coverage]
+Throughout the conversation, maintain context by:
+- Referencing previous answers
+- Building on established constraints
+- Connecting related topics
+- Acknowledging trade-offs discussed
 
-### Team Structure and Responsibilities
-- **Development Team:** [Role in acceptance testing]
-- **QA Team:** [Testing responsibilities]
-- **Business Analysts:** [Requirement validation role]
+### Example Conversation Starters
 
-### CI/CD Integration
-[How acceptance tests integrate with deployment pipeline]
+**For Different Scenarios:**
 
-## Success Metrics and Quality Gates
+**New Project:**
+"Exciting! Starting fresh gives us a lot of flexibility. What's the vision for this project, and what's driving the timeline?"
 
-### Testing KPIs
-- **Test Coverage:** [Target coverage percentage]
-- **Test Execution Time:** [Maximum acceptable time]
-- **Test Reliability:** [Acceptable flakiness rate]
-- **Defect Detection Rate:** [Quality metrics]
+**Existing Project:**
+"I'd love to understand what's working and what's not with your current testing approach. What prompted you to rethink your strategy?"
 
-### Quality Gates
-- [Specific criteria that must pass before release]
-- [Acceptance criteria format and standards]
+**Team Scaling:**
+"Growing teams often need to evolve their testing strategies. What changes are you seeing that make you want to formalize this?"
 
-### Reporting and Documentation
-- [Test result reporting approach]
-- [Documentation requirements]
+**Quality Issues:**
+"It sounds like you've had some quality challenges. Let's figure out how to build confidence in your releases."
 
-## Consequences
+### Tone and Style Guidelines
 
-### Positive Outcomes
-- [Benefits of the chosen strategy]
-- [Risk mitigation achieved]
-- [Quality improvements expected]
+- **Consultative, not interrogative**
+- **Curious and engaged**
+- **Practical and solution-oriented**
+- **Acknowledging of constraints and trade-offs**
+- **Encouraging and supportive**
+- **Professional but approachable**
 
-### Negative Outcomes and Mitigation
-- [Challenges or drawbacks]
-- [Resource requirements]
-- [Mitigation strategies]
-
-### Risks and Contingencies
-- [Testing risks identified]
-- [Fallback approaches]
-- [Risk monitoring strategy]
-
-## Compliance and Standards
-
-[IF compliance requirements exist THEN]
-### Regulatory Compliance
-- [How testing strategy meets compliance requirements]
-- [Audit trail and documentation needs]
-[ENDIF]
-
-### Testing Standards
-- [Industry standards followed]
-- [Internal testing standards adopted]
-
-## Maintenance and Evolution
-
-### Test Maintenance Strategy
-- [How tests will be maintained as software evolves]
-- [Test data management approach]
-- [Environment management]
-
-### Review and Update Schedule
-- **Regular Reviews:** [Frequency and triggers]
-- **Strategy Evolution:** [How strategy will adapt]
-- **Tool Evaluation:** [When to reassess tools]
-
-## References
-
-### Related Documents
-[Links to functional requirements, user stories, other ADRs]
-
-### External Standards and Frameworks
-[Testing standards, frameworks, best practices referenced]
-
-### Tool Documentation
-[Links to chosen tool documentation and resources]
-
----
-*This ADR defines acceptance testing strategy based on functional requirements and software nature. Last updated: [Date]*
-```
-
-After generating the ADR, offer to:
-1. Create sample test scenarios based on the functional requirements
-2. Suggest specific test case formats (Gherkin, etc.)
-3. Provide tool setup guidance
-4. Create testing checklist templates"
-
+This conversational approach transforms the ADR creation process from a formal questionnaire into a collaborative consulting session, making it more engaging and likely to uncover the nuanced requirements that lead to better testing strategies.
