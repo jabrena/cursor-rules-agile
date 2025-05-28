@@ -27,18 +27,14 @@ Acknowledge the request and inform the user that you need to ask some questions 
 8. Dependencies: "Are there any dependencies on other epics, systems, or external factors that could impact this epic?"
 
 **Epic Breakdown:**
-9. Estimated Scope: "What is the estimated size/effort for this epic? (e.g., 'Large - 3-6 months', 'Medium - 1-3 months', 'Small - 2-8 weeks')"
-10. Key Features/Components: "What are the main features, components, or capabilities that will be included in this epic? List 3-7 high-level items."
-11. User Stories (Optional): "Do you already have specific user stories identified for this epic? If so, please list their titles or IDs."
+9. Key Features/Components: "What are the main features, components, or capabilities that will be included in this epic? List 3-7 high-level items."
 
 **Timeline and Planning:**
-12. Target Release: "What is the target release or timeframe for completing this epic?"
-13. Priority Level: "What is the priority level of this epic? (e.g., 'High', 'Medium', 'Low' or 'Must Have', 'Should Have', 'Could Have')"
-14. Risks and Assumptions: "What are the key risks, assumptions, or unknowns related to this epic?"
+10. Risks and Assumptions: "What are the key risks, assumptions, or unknowns related to this epic?"
 
 **Documentation and Linking:**
-15. Epic Filename: "What should be the filename for this epic document? (e.g., 'EPIC-001_Customer_Self_Service_Portal.md')"
-16. Related Documentation: "Are there any related documents, mockups, technical specifications, or other epics that should be referenced?"
+11. Epic Filename: "What should be the filename for this epic document? (e.g., 'EPIC-001_Customer_Self_Service_Portal.md')"
+12. Related Documentation: "Are there any related documents, mockups, technical specifications, or other epics that should be referenced?"
 
 Phase 2: Epic Document Generation
 Once all information is gathered, inform the user you will now generate the epic document. Then, provide the content:
@@ -47,10 +43,7 @@ Once all information is gathered, inform the user you will now generate the epic
 ```markdown
 # Epic: [Epic Title/ID From Input]
 
-**Epic Owner:** [Epic Owner From Input]  
-**Priority:** [Priority Level From Input]  
-**Target Release:** [Target Release From Input]  
-**Estimated Scope:** [Estimated Scope From Input]
+**Epic Owner:** [Epic Owner From Input]
 
 ---
 
@@ -88,14 +81,7 @@ ENDLOOP]
 
 ## User Stories
 
-[IF User Stories were provided THEN
-The following user stories have been identified for this epic:
-
-[List User Stories From Input]
-
-ELSE
 _User stories for this epic will be defined and linked here as they are created._
-ENDIF]
 
 ---
 

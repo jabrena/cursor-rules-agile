@@ -32,14 +32,13 @@ Start by acknowledging the request and asking for the epic file. Then proceed wi
 
 **Feature Enhancement Questions:**
 For each identified feature, ask:
-9. Feature Prioritization: "What priority level should be assigned to '[Feature Name]'? (High/Medium/Low or MoSCoW: Must/Should/Could/Won't)"
-10. User Stories Connection: "Are there existing user stories that should be linked to '[Feature Name]', or should I suggest how this feature could be broken down into user stories?"
-11. Dependencies: "Does '[Feature Name]' have any specific dependencies on other features, systems, or external factors not mentioned in the epic?"
-12. Success Metrics: "What specific success metrics or acceptance criteria should be defined for '[Feature Name]' beyond what's in the epic?"
+9. User Stories Connection: "Are there existing user stories that should be linked to '[Feature Name]', or should I suggest how this feature could be broken down into user stories?"
+10. Dependencies: "Does '[Feature Name]' have any specific dependencies on other features, systems, or external factors not mentioned in the epic?"
+11. Success Metrics: "What specific success metrics or acceptance criteria should be defined for '[Feature Name]' beyond what's in the epic?"
 
 **Additional Context (Optional):**
-13. Timeline Constraints: "Are there any specific timeline constraints or release dependencies for any of these features?"
-14. Risk Considerations: "Are there any feature-specific risks or technical challenges that should be highlighted?"
+12. Timeline Constraints: "Are there any specific timeline constraints or release dependencies for any of these features?"
+13. Risk Considerations: "Are there any feature-specific risks or technical challenges that should be highlighted?"
 
 Phase 2: Feature File Generation
 Once all information is gathered, inform the user you will generate the feature files. For each feature, provide content in this format:
@@ -49,7 +48,6 @@ Once all information is gathered, inform the user you will generate the feature 
 # Feature: [Feature Name]
 
 **Epic:** [Link to Epic File]  
-**Priority:** [Priority From Input]  
 **Owner:** [Feature Owner - can inherit from Epic Owner]  
 **Status:** Planning
 
