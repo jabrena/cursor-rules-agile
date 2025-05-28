@@ -21,7 +21,11 @@ Using conversational and a non conversational approach, you could decompose your
 
 ## Prompts
 
-Learn to use the Cursor rules [here](./prompts/README.md).
+Learn to use the Cursor rules [here](./PROMPTS/.md).
+
+## Examples 
+
+Learn about how to use with some examples [here](https://github.com/jabrena/cursor-rules-examples)
 
 ## References
 
