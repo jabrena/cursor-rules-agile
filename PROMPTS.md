@@ -78,7 +78,7 @@ Create the ADR about the acceptance testing strategy using the information provi
 
 ```bash
 Create the ADR about the functional requirements using the information provided with the cursor rule @2008-adr-create-non-functional-requirements-decisions
-```  
+```
 
 ---
 

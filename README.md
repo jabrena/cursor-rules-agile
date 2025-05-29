@@ -21,6 +21,12 @@ Using conversational and a non conversational approach, you could decompose your
 - [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc)
 - [UML Class Diagram Generator](.cursor/rules/2009-uml-class-diagram-mdc)
 
+## Getting Started
+
+```bash
+Create an agile development checklist using @2000-agile-checklist
+```
+
 ## Prompts
 
 Learn to use the Cursor rules [here](./PROMPTS.md).
