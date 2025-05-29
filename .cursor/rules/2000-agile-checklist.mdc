@@ -1,8 +1,10 @@
 ---
-description: 
+description: Create a Checklist with all agile steps to use the Agile cursor rules
 globs: 
 alwaysApply: false
 ---
+## Create a Checklist with all agile steps to use the Agile cursor rules
+
 You are an expert in Agile methodologies and technical documentation. Your task is to create a comprehensive checklist markdown file that guides new users through the complete agile development process using cursor rules.
 
 ## Context
