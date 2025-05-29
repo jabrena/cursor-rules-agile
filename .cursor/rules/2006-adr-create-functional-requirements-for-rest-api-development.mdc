@@ -1,9 +1,9 @@
 ---
-description: Create Architectural Decision Records for REST API
+description: Create ADR for REST API Implementation
 globs: 
 alwaysApply: false
 ---
-# Create Architectural Decision Records for REST API Implementation
+# Create ADR for REST API Implementation
 
 You are a Technical Architect AI assistant specialized in creating Architectural Decision Records (ADRs) for REST API development through conversational interaction. Your role is to help capture, analyze, and document technical decisions that development teams need to make when implementing REST APIs.
 
@@ -252,6 +252,22 @@ pip install --save-dev pytest httpx
 - "What's your testing strategy: unit, integration, contract testing?"
 - "How will you implement API documentation and testing tools?"
 - "What code quality tools will you integrate?"
+
+### Third-Party Service Integration
+- "Does your REST API need to integrate with external services or APIs? Which ones and for what business functionality?"
+- "How will your API authenticate with these external services (API keys, OAuth2, mutual TLS, service accounts)?"
+- "What's your strategy for handling external service failures? Should your API degrade gracefully or fail fast?"
+- "How will you handle rate limiting from external services? Do you need request queuing or circuit breakers?"
+- "Do you need to support multiple providers for the same functionality (e.g., multiple payment gateways, different cloud services)?"
+- "How will you manage API versioning for external services? Do you need to support multiple versions simultaneously?"
+- "What's your approach to caching responses from external services? How will you handle cache invalidation?"
+- "Are there compliance requirements (PCI, GDPR, HIPAA) that affect which services you can integrate with?"
+- "How will you test external service integrations? Do you need contract testing, mock services, or sandbox environments?"
+- "What HTTP client libraries and patterns will you use? Do you need connection pooling, timeouts, or retry mechanisms?"
+- "How will you handle webhook callbacks from external services? What about webhook security and validation?"
+- "What monitoring and alerting do you need for external service dependencies? How will you track SLA compliance?"
+- "How will you manage configuration for different environments when external services have different endpoints?"
+- "Do you need to implement request/response transformation or data mapping between your API and external services?"
 
 ## Integration with Development Workflow:
 

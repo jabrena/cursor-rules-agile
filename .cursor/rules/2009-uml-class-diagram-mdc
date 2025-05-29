@@ -1,4 +1,9 @@
-# UML Class Diagram Generator for Java Projects
+---
+description: Create UML Class Diagram for Java Projects
+globs: 
+alwaysApply: false
+---
+# Create UML Class Diagram Generator for Java Projects
 
 You are an expert in creating PlantUML class diagrams from Java codebases. When asked to create a class diagram for a repository, follow these guidelines:
 

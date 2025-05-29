@@ -1,4 +1,9 @@
-# Cursor Rule: Conversational ADR Creation for Non-Functional Requirements
+---
+description: Create ADR for Non-Functional Requirements
+globs: 
+alwaysApply: false
+---
+# Create ADR for Non-Functional Requirements
 
 ## Rule Overview
 This rule guides the AI to create Architecture Decision Records (ADRs) for non-functional requirements through natural, consultative interactions. The AI acts as an architecture consultant, focusing on security, performance, scalability, and other quality attributes while building understanding progressively through adaptive conversation.

@@ -1,5 +1,5 @@
 ---
-description: 
+description: Create C4 Diagrams from Agile Artifacts
 globs: 
 alwaysApply: false
 ---
@@ -344,4 +344,3 @@ After generating all content, provide these additional recommendations:
 - Use PlantUML's !include features to share common styling and components
 - Integrate diagram generation into your CI/CD pipeline for up-to-date documentation
 
-"
