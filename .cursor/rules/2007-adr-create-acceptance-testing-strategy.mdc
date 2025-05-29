@@ -1,4 +1,9 @@
-# Cursor Rule: Conversational ADR Creation for Acceptance Testing Strategy
+---
+description: Create ADR for Acceptance Testing Strategy
+globs: 
+alwaysApply: false
+---
+# Create ADR for Acceptance Testing Strategy
 
 ## Rule Overview
 This rule guides the AI to create Architecture Decision Records (ADRs) for acceptance testing strategies through natural, conversational interactions. The AI acts as a testing consultant, asking thoughtful questions and building understanding progressively rather than following a rigid questionnaire.

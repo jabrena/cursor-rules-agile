@@ -1,9 +1,9 @@
 ---
-description: Cursor rule to create Agile User stories in a conversational way
+description: Create Agile User stories
 globs: 
 alwaysApply: false
 ---
-# Cursor rule to create Agile User stories in a conversational way
+# Create Agile User stories
 
 This rule guides the AI to first ask a series of targeted questions to gather all necessary details for a user story and its associated Gherkin acceptance criteria. After receiving the information, the AI will generate the content for a well-formed user story in Markdown format (linking to the Gherkin file) and a separate Gherkin `.feature` file containing the detailed acceptance criteria.
 
@@ -92,4 +92,3 @@ ENDLOOP]
 
 Ensure the Gherkin output for data examples is illustrative of how to use docstrings for JSON/XML or tables for structured data if the user provides complex examples.
 
-"
