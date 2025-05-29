@@ -21,7 +21,7 @@ Using conversational and a non conversational approach, you could decompose your
 
 ## Prompts
 
-Learn to use the Cursor rules [here](./PROMPTS/.md).
+Learn to use the Cursor rules [here](./PROMPTS.md).
 
 ## Examples 
 
@@ -32,7 +32,6 @@ Learn about how to use with some examples [here](https://github.com/jabrena/curs
 - https://www.cursor.com/
 - https://docs.cursor.com/context/rules
 - https://docs.cursor.com/context/@-symbols/@-cursor-rules
-- https://forum.cursor.com/t/optimal-structure-for-mdc-rules-files/52260/12
 - https://agilemanifesto.org/principles.html
 - https://gojko.net/books/specification-by-example/
 - https://gojko.net/lists/specification-by-example.html
