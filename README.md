@@ -38,6 +38,7 @@ Learn about how to use with some examples [here](https://github.com/jabrena/curs
 - https://gojko.net/books/specification-by-example/
 - https://gojko.net/lists/specification-by-example.html
 - https://gasparnagy.com/media/resources/20140611-AgiliaBudapest-GasparNagy-slides.pdf
+- https://rachaelwilterdink.com/user-story-size-9/2021/blogs-about-agile/
 - https://cucumber.io/docs/gherkin/reference
 - https://plantuml.com/
 - https://www.plantuml.com/plantuml/uml/
