@@ -4,7 +4,9 @@
 
 Using modern IDEs with AI capabilities, the software engineer can accelerate the context but in order to help the LLMs, it is a good idea to provide the right context and this set of cursor rules could help in this sense.
 
-Using conversational and a non conversational approach, you could decompose your problems using Agile principles in EPICs, Features & User Stories from a functional point of view. With that functional view, you could describe the technical specifications using ADR files for functional an non functional requirements and you could finalize the Design phase with some Diagrams in UML & C4 model related with your documentation. 
+Using conversational and a non conversational approach, you could decompose your problems using `Agile` principles in `EPICs`, `Features` & `User Storaes`. With that analysis, you could describe the technical specifications about how to implement using ADR files as the format to describe the functional an non functional requirements and you could finalize the Design phase with some Diagrams in `UML` & `C4 model` related with your documentation. 
+
+![](./docs/epic-feature-us.png)
 
 ## Cursor Rules
 
