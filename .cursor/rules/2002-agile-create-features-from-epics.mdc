@@ -5,8 +5,6 @@ alwaysApply: false
 ---
 # Create agile features from an epic
 
-**Last Updated:** June 2, 2025
-
 This rule helps me have a natural conversation with you to create detailed feature files based on an existing epic. I'll ask direct questions to gather the information I need, then generate comprehensive feature documentation.
 
 ## How I'll Help You
