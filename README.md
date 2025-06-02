@@ -49,6 +49,8 @@ Learn about how to use with some examples [here](https://github.com/jabrena/curs
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
+- https://github.com/adr/madr
+- https://github.com/adr/madr/blob/develop/template/adr-template.md
 - ...
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile

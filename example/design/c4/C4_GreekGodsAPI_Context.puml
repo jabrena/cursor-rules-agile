@@ -1,0 +1,29 @@
+@startuml Greek Gods API Platform - System Context
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+title System Context diagram for Greek Gods Data Synchronization API Platform
+
+' External Actors/Users
+Person(apiConsumer, "API Consumer/Developer", "Developers integrating Greek mythology data into their applications")
+Person(eduDeveloper, "Educational Platform Developer", "Developers building learning management systems and educational applications")
+Person(appIntegrator, "Application Integrator", "Third-party developers creating mythology-focused applications")
+
+' The Main System
+System(greekGodsAPI, "Greek Gods API Platform", "REST API platform providing reliable access to Greek mythology data through synchronized data retrieval from external sources")
+
+' External Systems
+System_Ext(jsonServer, "Third-party JSON Server", "External data source providing Greek mythology data (my-json-server.typicode.com)")
+System_Ext(postgresql, "PostgreSQL Database", "Primary data storage for synchronized Greek god information")
+System_Ext(monitoringSystem, "Monitoring System", "Performance tracking, alerting, and operational monitoring")
+
+' Relationships
+Rel(apiConsumer, greekGodsAPI, "Retrieves Greek god data", "HTTPS/REST API")
+Rel(eduDeveloper, greekGodsAPI, "Integrates mythology content", "HTTPS/REST API")
+Rel(appIntegrator, greekGodsAPI, "Accesses deity information", "HTTPS/REST API")
+
+Rel(greekGodsAPI, jsonServer, "Synchronizes mythology data", "HTTPS/JSON API")
+Rel(greekGodsAPI, postgresql, "Stores and retrieves cached data", "SQL/TCP")
+Rel(greekGodsAPI, monitoringSystem, "Sends metrics and logs", "HTTPS/TCP")
+
+SHOW_LEGEND()
+@enduml 

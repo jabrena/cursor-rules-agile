@@ -1,0 +1,67 @@
+@startuml Greek Gods API Platform - REST API Application Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component diagram for REST API Application in Greek Gods API Platform
+
+' External Actors
+Person(apiConsumer, "API Consumer/Developer", "Developers using the API")
+Person(eduDeveloper, "Educational Platform Developer", "Building educational applications")
+
+' Other Containers
+Container(syncService, "Background Sync Service", "Java/Spring Scheduler", "Handles data synchronization")
+Container(cacheLayer, "In-Memory Cache", "Redis/Caffeine", "Caching layer for performance")
+ContainerDb(database, "PostgreSQL Database", "PostgreSQL 14+", "Data persistence layer")
+
+' External Systems
+System_Ext(monitoringSystem, "Monitoring System", "Performance tracking and alerting")
+
+' REST API Application Container Boundary
+Container_Boundary(webAPI, "REST API Application") {
+    ' Controller Layer
+    Component(greekController, "Greek Gods Controller", "Spring REST Controller", "Handles HTTP requests for /api/v1/gods/greek endpoint")
+    Component(errorController, "Error Handling Controller", "Spring @ControllerAdvice", "Global exception handling and error response formatting")
+    
+    ' Service Layer
+    Component(greekService, "Greek Gods Service", "Spring Service", "Business logic for Greek god data retrieval and validation")
+    Component(cacheService, "Cache Management Service", "Spring Service", "Manages cache operations and invalidation strategies")
+    Component(validationService, "Data Validation Service", "Spring Service", "Validates data integrity and format compliance")
+    
+    ' Repository Layer
+    Component(greekRepository, "Greek Gods Repository", "Spring Data JPA", "Data access layer for Greek mythology data queries")
+    Component(auditRepository, "Audit Log Repository", "Spring Data JPA", "Tracks API usage and data access patterns")
+    
+    ' Infrastructure Components
+    Component(configManager, "Configuration Manager", "Spring Configuration", "Manages application properties and environment-specific settings")
+    Component(metricsCollector, "Metrics Collector", "Micrometer/Actuator", "Collects performance metrics and health information")
+    Component(securityFilter, "Security Filter Chain", "Spring Security", "Handles request validation and rate limiting")
+}
+
+' Relationships - External to Components
+Rel(apiConsumer, securityFilter, "HTTP requests", "HTTPS/REST")
+Rel(eduDeveloper, securityFilter, "API calls", "HTTPS/REST")
+
+' Internal Component Flow
+Rel(securityFilter, greekController, "Validated requests", "HTTP")
+Rel(greekController, greekService, "Business logic calls", "Method invocation")
+Rel(greekController, errorController, "Exception handling", "Spring AOP")
+
+Rel(greekService, cacheService, "Cache operations", "Method invocation")
+Rel(greekService, validationService, "Data validation", "Method invocation")
+Rel(greekService, greekRepository, "Data queries", "JPA/Method invocation")
+Rel(greekService, auditRepository, "Usage logging", "JPA/Method invocation")
+
+Rel(greekRepository, database, "SQL queries", "JDBC/SQL")
+Rel(auditRepository, database, "Audit logs", "JDBC/SQL")
+Rel(cacheService, cacheLayer, "Cache read/write", "Cache API")
+
+' Configuration and Infrastructure
+Rel(configManager, greekService, "Configuration injection", "Spring DI")
+Rel(configManager, cacheService, "Cache configuration", "Spring DI")
+Rel(metricsCollector, monitoringSystem, "Performance data", "HTTPS")
+
+' Cross-cutting Concerns
+Rel(greekService, metricsCollector, "Business metrics", "Method invocation")
+Rel(greekController, metricsCollector, "Request metrics", "AOP/Interceptor")
+
+SHOW_LEGEND()
+@enduml 
