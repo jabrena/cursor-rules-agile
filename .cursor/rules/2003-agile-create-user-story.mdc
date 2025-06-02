@@ -51,11 +51,11 @@ Once all information is gathered, inform the user you will now generate the cont
 
 **Content for User Story Markdown File: `[User Story Filename From Input]`**
 
-[user-story-template.mdc](mdc:.cursor/rules/templates/user-story-template.mdc)
+[user-story-template.md](mdc:.cursor/rules/templates/user-story-template.md)
 
 **Content for Gherkin Feature File: `[Gherkin Filename From Input]`**
 
-[gherkin-template.mdc](mdc:.cursor/rules/templates/gherkin-template.mdc)
+[gherkin-template.md](mdc:.cursor/rules/templates/gherkin-template.md)
 
 Ensure the Gherkin output for data examples is illustrative of how to use docstrings for JSON/XML or tables for structured data if the user provides complex examples.
 

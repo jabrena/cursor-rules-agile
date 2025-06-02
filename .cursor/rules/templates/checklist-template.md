@@ -1,8 +1,4 @@
----
-description: 
-globs: 
-alwaysApply: false
----
+
 # Agile Development Guide
 
 Use the following step-by-step process to implement a complete agile development workflow using Cursor Rules.

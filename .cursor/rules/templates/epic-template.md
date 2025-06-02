@@ -1,8 +1,3 @@
----
-description: 
-globs: 
-alwaysApply: false
----
 # Epic: [Epic Title/ID From Input]
 
 **Epic Owner:** [Epic Owner From Input]

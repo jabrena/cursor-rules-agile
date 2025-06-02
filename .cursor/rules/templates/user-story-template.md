@@ -1,8 +1,3 @@
----
-description: 
-globs: 
-alwaysApply: false
----
 # User Story: [Title/ID From Input]
 
 **As a** [User Role/Persona From Input]

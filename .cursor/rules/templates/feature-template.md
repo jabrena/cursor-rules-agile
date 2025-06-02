@@ -1,8 +1,3 @@
----
-description: 
-globs: 
-alwaysApply: false
----
 # Feature: [Feature Name]
 
 **Epic:** [Link to Epic File]  
