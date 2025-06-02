@@ -5,212 +5,58 @@ alwaysApply: false
 ---
 # Create agile features from an epic
 
-This rule guides the AI to analyze an existing epic file and generate corresponding feature files in Markdown format. The AI uses a conversational approach to clarify details and ensure comprehensive feature definition based on the epic's scope and requirements.
+This rule helps me have a natural conversation with you to create detailed feature files based on an existing epic. I'll ask direct questions to gather the information I need, then generate comprehensive feature documentation.
 
-Instructions for the AI (Content of the Rule):
+## How I'll Help You
 
-"When activated, you should help the user generate feature files based on an existing epic by following these steps:
+When you ask me to create features from an epic, here's how our conversation will flow:
 
-Phase 1: Epic Analysis and Information Gathering
-Start by acknowledging the request and asking for the epic file. Then proceed with targeted questions:
+**Phase 0: Get Current Date**
+I'll start by getting today's date from the system to ensure accurate timestamps in the feature documents.
+
+**Phase 1: Epic Analysis and Information Gathering**
+I'll acknowledge your request and ask these direct questions:
 
 **Epic File Analysis:**
-1. Epic File Location: "Please provide the path to the epic file you'd like to base the features on, or paste the epic content if you prefer."
-2. Epic Review Confirmation: "I've reviewed the epic '[Epic Title]'. This epic contains [summarize key components/features identified]. Is this the correct epic you want to work with?"
+1. "Please provide the path to the epic file you'd like to base the features on, or paste the epic content if you prefer."
+2. "I've reviewed the epic '[Epic Title]'. This epic contains [summarize key components/features identified]. Is this the correct epic you want to work with?"
 
 **Feature Scope Clarification:**
-3. Feature Selection: "Based on the epic, I've identified [X] potential features: [list identified features]. Do you want to create feature files for all of these, or would you like to focus on specific ones? If specific ones, which features should I prioritize?"
-4. Feature Granularity: "For each feature, would you prefer a detailed technical feature specification or a higher-level feature overview? This will help me determine the appropriate level of detail."
+3. "Based on the epic, I've identified [X] potential features: [list identified features]. Do you want to create feature files for all of these, or would you like to focus on specific ones? If specific ones, which features should I prioritize?"
+4. "For each feature, would you prefer a detailed technical feature specification or a higher-level feature overview? This will help me determine the appropriate level of detail."
 
 **Feature Structure Preferences:**
-5. Target Audience: "Who is the primary audience for these feature files? (e.g., 'development team', 'product stakeholders', 'QA team', 'business analysts'). This will help tailor the content appropriately."
-6. Technical Depth: "Should the feature files include technical implementation details, or focus more on functional requirements and user benefits?"
+5. "Who is the primary audience for these feature files? (e.g., 'development team', 'product stakeholders', 'QA team', 'business analysts'). This will help tailor the content appropriately."
+6. "Should the feature files include technical implementation details, or focus more on functional requirements and user benefits?"
 
 **File Organization:**
-7. File Naming Convention: "What naming convention would you prefer for the feature files? (e.g., 'FEAT-001_Feature_Name.md', 'feature_name.md', or something else)"
-8. File Location: "Where should these feature files be created relative to the epic file? (e.g., 'features/' subdirectory, same directory, or a specific path)"
+7. "What naming convention would you prefer for the feature files? (e.g., 'FEAT-001_Feature_Name.md', 'feature_name.md', or something else)"
+8. "Where should these feature files be created relative to the epic file? (e.g., 'features/' subdirectory, same directory, or a specific path)"
 
 **Feature Enhancement Questions:**
-For each identified feature, ask:
-9. User Stories Connection: "Are there existing user stories that should be linked to '[Feature Name]', or should I suggest how this feature could be broken down into user stories?"
-10. Dependencies: "Does '[Feature Name]' have any specific dependencies on other features, systems, or external factors not mentioned in the epic?"
-11. Success Metrics: "What specific success metrics or acceptance criteria should be defined for '[Feature Name]' beyond what's in the epic?"
+For each identified feature, I'll ask:
+9. "Are there existing user stories that should be linked to '[Feature Name]', or should I suggest how this feature could be broken down into user stories?"
+10. "Does '[Feature Name]' have any specific dependencies on other features, systems, or external factors not mentioned in the epic?"
+11. "What specific success metrics or acceptance criteria should be defined for '[Feature Name]' beyond what's in the epic?"
 
 **Additional Context (Optional):**
-12. Timeline Constraints: "Are there any specific timeline constraints or release dependencies for any of these features?"
-13. Risk Considerations: "Are there any feature-specific risks or technical challenges that should be highlighted?"
+12. "Are there any specific timeline constraints or release dependencies for any of these features?"
+13. "Are there any feature-specific risks or technical challenges that should be highlighted?"
 
-Phase 2: Feature File Generation
-Once all information is gathered, inform the user you will generate the feature files. For each feature, provide content in this format:
+**Phase 2: Feature File Generation**
+Once I have all the information, I'll inform you that I'm generating the feature files. I'll use today's date (obtained from the `date` command) to replace the `[Current Date]` placeholders in the template. For each feature, I'll provide content using this format:
 
 **Content for Feature Markdown File: `[Feature Filename From Naming Convention]`**
-```markdown
-# Feature: [Feature Name]
+[feature-template.mdc](mdc:.cursor/rules/templates/feature-template.mdc)
 
-**Epic:** [Link to Epic File]  
-**Owner:** [Feature Owner - can inherit from Epic Owner]  
-**Status:** Planning
+**Important Note on Date Handling:**
+- I always use the `date` terminal command to get the current system date
+- I format the date appropriately for documentation (e.g., "June 2, 2025" or "2025-06-02")  
+- I replace all `[Current Date]` placeholders in the template with the actual current date
+- This ensures accurate timestamps for feature creation and last update fields
 
----
-
-## Overview
-
-[Brief description of the feature based on epic content and clarifications]
-
-### Business Value
-[Specific business value this feature delivers, derived from epic's business value]
-
-### Target Users
-[Primary users for this feature, refined from epic's target users]
-
----
-
-## Feature Description
-
-[Detailed description of what this feature will accomplish]
-
-### Key Capabilities
-[List the main capabilities this feature will provide]
-
-### User Benefits
-[List specific benefits users will gain from this feature]
-
----
-
-## Functional Requirements
-
-### Core Requirements
-[List essential functional requirements]
-
-### Secondary Requirements  
-[List nice-to-have functional requirements]
-
----
-
-## User Stories
-
-[IF User Stories Connection was provided THEN
-### Linked User Stories
-[List connected user stories]
-
-### Suggested User Story Breakdown
-[Suggest how this feature could be broken into user stories]
-ELSE
-### Suggested User Story Breakdown
-[Suggest 3-5 user stories that would implement this feature]
-ENDIF]
-
----
-
-## Acceptance Criteria
-
-This feature will be considered complete when:
-- [ ] All core functional requirements are implemented
-- [ ] [Specific Success Metrics From Input]
-- [ ] User testing validates the feature meets user needs
-- [ ] Feature is documented and deployed
-
-### Definition of Done
-- [ ] Code is peer-reviewed and meets quality standards
-- [ ] Unit and integration tests are written and passing
-- [ ] Feature documentation is complete
-- [ ] Accessibility requirements are met
-- [ ] Performance criteria are satisfied
-
----
-
-## Dependencies
-
-### Internal Dependencies
-[List dependencies on other features or components]
-
-### External Dependencies
-[List dependencies on external systems or third parties]
-
-[IF Dependencies From Input provided THEN
-### Feature-Specific Dependencies
-[List Feature-Specific Dependencies From Input]
-ENDIF]
-
----
-
-## Technical Considerations
-
-[IF Technical Depth input indicated detailed technical content THEN
-### Architecture Impact
-[How this feature affects overall system architecture]
-
-### Integration Points
-[Key integration points with existing systems]
-
-### Data Requirements
-[Data storage, processing, or migration needs]
-ELSE
-### Technical Notes
-[High-level technical considerations for implementation]
-ENDIF]
-
----
-
-## Risks & Mitigation
-
-[IF Risk Considerations provided THEN
-### Identified Risks
-[List Feature-Specific Risks From Input]
-
-### Mitigation Strategies
-[Corresponding mitigation approaches]
-ENDIF]
-
-### General Risk Areas
-- **Technical Complexity:** [Assessment and mitigation approach]
-- **User Adoption:** [Strategies to ensure user acceptance]
-- **Timeline Risk:** [Factors that could impact delivery]
-
----
-
-## Success Metrics
-
-### Key Performance Indicators
-[Specific, measurable metrics for this feature]
-
-### User Satisfaction Metrics
-[How user satisfaction will be measured]
-
----
-
-## Timeline & Milestones
-
-**Estimated Effort:** [Based on epic scope and feature complexity]  
-[IF Timeline Constraints provided THEN
-**Target Completion:** [Timeline Constraints From Input]
-ENDIF]
-
-### Key Milestones
-- [ ] Feature requirements finalized
-- [ ] Technical design completed
-- [ ] Development phase started
-- [ ] First working version (MVP)
-- [ ] User testing completed
-- [ ] Feature ready for release
-
----
-
-## Related Documentation
-
-- **Epic:** [Link to source epic file]
-[IF Additional references exist THEN
-- **[Document Type]:** [Link to related documents]
-ENDIF]
-
----
-
-**Created:** [Current Date]  
-**Based on Epic:** [Epic Title and ID]  
-**Last Updated:** [Current Date]
-```
-
-After generating all feature files, provide these recommendations:
+**Next Steps and Recommendations**
+After generating all feature files, I'll provide these recommendations:
 
 **Next Steps for Feature Development:**
 1. Review each feature file with relevant stakeholders
@@ -232,4 +78,6 @@ After generating all feature files, provide these recommendations:
 - Verify feature priorities align with epic success criteria
 - Check that feature timeline supports epic target release
 - Confirm feature dependencies don't create critical path issues
+
+That's how we'll work together to turn your epic into a set of well-defined, actionable features!
 

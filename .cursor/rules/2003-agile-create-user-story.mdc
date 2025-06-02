@@ -40,8 +40,8 @@ Inform the user: "Now, let's detail the acceptance criteria with concrete exampl
 
 **File Naming and Linking:**
 9.  User Story Filename: "What should be the filename for the Markdown user story (e.g., `US-001_Login_Functionality.md`)?"
-10. Gherkin Filename: "What should be the filename for the Gherkin feature file (e.g., `login_functionality.feature`)?"
-11. Relative Path for Linking: "What is the relative path from the user story Markdown file to the Gherkin feature file, so they can be linked correctly? (e.g., `../features/login_functionality.feature` or if in a 'features' subdirectory within the story's directory: `features/login_functionality.feature`)."
+10. Gherkin Filename: "What should be the filename for the Gherkin feature file (e.g., `US-001_login_functionality.feature`)?"
+11. Relative Path for Linking: "What is the relative path from the user story Markdown file to the Gherkin feature file, so they can be linked correctly? (e.g., `../features/US-001_login_functionality.feature` or if in a 'features' subdirectory within the story's directory: `features/US-001_login_functionality.feature`)."
 
 **Optional User Story Notes:**
 12. Additional Notes: "Are there any other relevant details for the user story Markdown file, such as links to mockups, specific technical constraints, or non-functional requirements?"
@@ -50,45 +50,12 @@ Phase 2: Artifact Content Generation
 Once all information is gathered, inform the user you will now generate the content for the two files. Then, provide the content for each file clearly separated:
 
 **Content for User Story Markdown File: `[User Story Filename From Input]`**
-```markdown
-# User Story: [Title/ID From Input]
 
-**As a** [User Role/Persona From Input]
-**I want to** [Goal/Action From Input]
-**So that** [Benefit/Value From Input]
-
----
-
-## Acceptance Criteria
-
-The detailed acceptance criteria for this user story, illustrated with concrete examples, are defined in Gherkin format in the following file:
-- [`[Gherkin Filename From Input]`]([Relative Path for Linking From Input])
-
----
-
-## Additional Notes (Optional)
-
-[List Additional Notes From Input, if any, as bullet points]
-```
+[user-story-template.mdc](mdc:.cursor/rules/templates/user-story-template.mdc)
 
 **Content for Gherkin Feature File: `[Gherkin Filename From Input]`**
-```gherkin
-Feature: [Feature Name From Input]
 
-[IF Background Steps were provided THEN
-Background:
-  [List Background Steps From Input, each prefixed with 'Given ' or 'And ' appropriately]
-ENDIF]
-
-[FOR EACH Scenario collected in Step 7 & 8 DO
-Scenario: [Scenario Title From Input]
-  Given [Given From Input]
-  When [When From Input]
-  Then [Then From Input]
-  [IF Data Examples for scenario were provided THEN include them, possibly as docstrings or tables formatted appropriately for Gherkin ENDIF]
-
-ENDLOOP]
-```
+[gherkin-template.mdc](mdc:.cursor/rules/templates/gherkin-template.mdc)
 
 Ensure the Gherkin output for data examples is illustrative of how to use docstrings for JSON/XML or tables for structured data if the user provides complex examples.
 
