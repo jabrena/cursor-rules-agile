@@ -3,7 +3,6 @@ description:
 globs: 
 alwaysApply: false
 ---
-```markdown
 # Feature: [Feature Name]
 
 **Epic:** [Link to Epic File]  
@@ -126,9 +125,13 @@ ENDIF]
 - **[Document Type]:** [Link to related documents]
 ENDIF]
 
+## Links of interest
+
+- https://www.scrumexpert.com/knowledge/four-levels-of-agile-requirements/
+
 ---
 
 **Created:** [Current Date]  
 **Based on Epic:** [Epic Title and ID]  
 **Last Updated:** [Current Date]
-```
+
