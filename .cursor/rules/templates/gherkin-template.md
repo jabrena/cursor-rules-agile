@@ -1,8 +1,3 @@
----
-description: 
-globs: 
-alwaysApply: false
----
 Feature: [Feature Name From Input]
 
 [IF Background Steps were provided THEN

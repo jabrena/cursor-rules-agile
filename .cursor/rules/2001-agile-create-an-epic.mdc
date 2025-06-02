@@ -40,7 +40,7 @@ Acknowledge the request and inform the user that you need to ask some questions 
 12. Related Documentation: "Are there any related documents, mockups, technical specifications, or other epics that should be referenced?"
 
 **Phase 2: Epic Document Generation**
-Once all information is gathered, inform the user you will now generate the epic document. Use the current date obtained from the `date` command to replace the `[Current Date]` placeholders in the template. Then, provide the content using the template: [epic-template.mdc](mdc:.cursor/rules/templates/epic-template.mdc)
+Once all information is gathered, inform the user you will now generate the epic document. Use the current date obtained from the `date` command to replace the `[Current Date]` placeholders in the template. Then, provide the content using the template: [epic-template.md](mdc:.cursor/rules/templates/epic-template.md)
 
 **Important Note on Date Handling:**
 - Always use the `date` terminal command to get the current system date
