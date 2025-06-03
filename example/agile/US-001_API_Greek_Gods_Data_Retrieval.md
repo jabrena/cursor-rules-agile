@@ -70,7 +70,6 @@ This user story is linked to detailed acceptance criteria in the Gherkin feature
 ## Dependencies
 
 - **FEAT-003:** Database Persistence Layer (PostgreSQL implementation)
-- **FEAT-002:** Background Data Synchronization (data availability)
 
 ---
 
@@ -80,7 +79,6 @@ This user story is linked to detailed acceptance criteria in the Gherkin feature
 - **Authentication:** Public API (no authentication required for this endpoint)
 - **API Version:** v1 with path-based versioning
 - **Expected Response Size:** Array of 20 Greek god names
-- **Caching:** In-memory caching for performance optimization
 
 ---
 

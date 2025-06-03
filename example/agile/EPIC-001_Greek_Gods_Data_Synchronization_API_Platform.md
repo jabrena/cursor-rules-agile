@@ -27,11 +27,11 @@ Develop a REST API that reads Greek god data which is synchronized periodically 
 
 ## Solution Overview
 
-A **RESTful API service with background synchronization from external data sources, providing cached access to mythology data with persistence layer**, using a PostgreSQL database for the storage layer. The solution includes:
+A **RESTful API service with background synchronization from external data sources, providing reliable access to mythology data with persistence layer**, using a PostgreSQL database for the storage layer. The solution includes:
 
 - Local data persistence to ensure availability
 - Background synchronization to maintain data freshness
-- Fast response times through cached data access
+- Fast response times through direct database access
 - Robust error handling for external service dependencies
 
 ---
@@ -109,11 +109,11 @@ This epic encompasses the following major components:
 
 ### Identified Risks
 - **External API Availability:** Risk of 504 Gateway timeout and service unavailability
-  - *Mitigation:* Local caching and graceful degradation
+  - *Mitigation:* Local data persistence and graceful degradation
 - **Data Consistency:** Risk of inconsistency between external source and local storage
   - *Mitigation:* Data validation and reconciliation processes
 - **Performance Under Load:** Risk of degraded performance with increased usage
-  - *Mitigation:* Database optimization and caching strategies
+  - *Mitigation:* Database optimization and connection pooling strategies
 
 ---
 

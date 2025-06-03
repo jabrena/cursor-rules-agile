@@ -103,13 +103,4 @@ Feature: API Greek Gods Data Retrieval
     Given the API service has been running for 24 hours
     When I check the API availability metrics
     Then the uptime should be at least 99.9%
-    And the error rate should be less than 0.1%
-
-  @caching
-  Scenario: Verify caching improves performance for repeated requests
-    Given the database contains Greek god data
-    When I send a GET request to "/api/v1/gods/greek"
-    And I immediately send another GET request to "/api/v1/gods/greek"
-    Then both requests should receive a 200 OK response
-    And the second request should be faster than the first request
-    And both responses should contain identical data 
+    And the error rate should be less than 0.1% 

@@ -8,7 +8,7 @@ Use the following step-by-step process to implement a complete agile development
 
 - **1. [ ] Review requirements.**
 
-  - **1.1 [ ] Create an `Epic` about the development**
+  - **1.1 [x] Create an `Epic` about the development**
 
 **Note:** Attach the initial free format text/markdown document describing the problem to solve.
 
@@ -16,7 +16,7 @@ Use the following step-by-step process to implement a complete agile development
 Create a feature based on the epic and use the cursor rule  @2002-agile-create-features-from-epics
 ```
 
-  - **1.2 [ ] Create a `Feature` about the development**
+  - **1.2 [x] Create a `Feature` about the development**
 
 **Note:** Attach the EPIC created previously
 
@@ -26,7 +26,7 @@ Create a feature based on the epic and use @2002-agile-create-features-from-epic
 
 **Note:** Review if the rule generates several features and maybe it is possible to merge into a single one. If you prefer to have only one feature, ask it.
 
-  - **1.3 [ ] Create an `User story` and the `Acceptance criteria` in `Gherkin` format based on the requirements.**
+  - **1.3 [x] Create an `User story` and the `Acceptance criteria` in `Gherkin` format based on the requirements.**
 
 **Note:** Attach the EPIC and the Feature created previously
 
@@ -36,7 +36,7 @@ Create a user story based on the feature and the acceptance criteria using the i
 
 ### Phase 2: Technical Design & Architecture
 
-  - **1.4 [ ] Create an `UML` Sequence diagram about the functional requirements**
+  - **1.4 [x] Create an `UML` Sequence diagram about the functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story & Gherkin created previously
 
@@ -44,7 +44,7 @@ Create a user story based on the feature and the acceptance criteria using the i
 Create the UML sequence diagram based in plantuml format using the information provided with the cursor rule @2004-uml-sequence-diagram-from-agile-artifacts
 ```
 
-  - **1.5 [ ] Create the `C4 Model` diagrams based on the requirements**
+  - **1.5 [x] Create the `C4 Model` diagrams based on the requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin & UML Sequence diagram created previously
 
@@ -56,7 +56,7 @@ Create the C4 Model diagrams from the requirements in plantuml format using the 
 
 ### Phase 3: Architecture Decision Records (ADRs)
 
-  - **1.6 [ ] Create an `ADR` about the functional requirements**
+  - **1.6 [] Create an `ADR` about the functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously
 
@@ -72,7 +72,7 @@ Create the ADR about functional requirements using the cursor rule @2006-adr-cre
 Create the ADR about the functional requirements using the information provided with the cursor rule @2006-adr-create-functional-requirements-for-rest-api-development
 ```
 
-  - **1.7 [ ] Create an `ADR` about the acceptance testing Strategy**
+  - **1.7 [x] Create an `ADR` about the acceptance testing Strategy**
 
 **Note:** Attach User Story & Gherkin created previously
 
