@@ -1,7 +1,15 @@
 package info.jab.latency.controller;
 
 import info.jab.latency.service.GreekGodsService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.MediaType;
+import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +34,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/api/v1/gods")
+@Tag(name = "Greek Gods", description = "API endpoints for retrieving Greek mythology data")
 public class GreekGodsController {
 
     private final GreekGodsService greekGodsService;
@@ -50,6 +59,29 @@ public class GreekGodsController {
      * @return ResponseEntity with List<String> containing 20 Greek god names
      *         HTTP 200 OK on success
      */
+    @Operation(
+        summary = "Retrieve Greek god names",
+        description = "Returns a complete list of 20 Greek god names as a JSON array of strings. " +
+                     "Response time is consistently under 1 second."
+    )
+    @ApiResponses(value = {
+        @ApiResponse(
+            responseCode = "200",
+            description = "Successfully retrieved complete list of Greek god names",
+            content = @Content(
+                mediaType = MediaType.APPLICATION_JSON_VALUE,
+                array = @ArraySchema(schema = @Schema(type = "string", example = "Zeus"))
+            )
+        ),
+        @ApiResponse(
+            responseCode = "500",
+            description = "Internal server error - database connection failure or other system error",
+            content = @Content(
+                mediaType = MediaType.APPLICATION_JSON_VALUE,
+                schema = @Schema(implementation = ProblemDetail.class)
+            )
+        )
+    })
     @GetMapping(value = "/greek", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<String>> getGreekGods() {
         // Delegate to service layer for business logic

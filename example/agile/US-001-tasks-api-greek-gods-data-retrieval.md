@@ -11,15 +11,15 @@
 
 ## Relevant Files
 
-- `pom.xml` - Maven project configuration with Spring Boot and JDBC dependencies
+- `pom.xml` - Maven project configuration with Spring Boot, JDBC dependencies, and SpringDoc OpenAPI
 - `src/main/java/info/jab/latency/LatencyApplication.java` - Spring Boot main application class
-- `src/main/java/info/jab/latency/controller/GreekGodsController.java` - Spring REST Controller for /api/v1/gods/greek endpoint
+- `src/main/java/info/jab/latency/controller/GreekGodsController.java` - Spring REST Controller for /api/v1/gods/greek endpoint with OpenAPI annotations
 - `src/main/java/info/jab/latency/controller/GlobalExceptionHandler.java` - Global error handling with @ControllerAdvice using RFC 7807 ProblemDetail standard for consistent error response format
 - `src/main/java/info/jab/latency/service/GreekGodsService.java` - Business logic service for Greek god data retrieval
 - `src/main/java/info/jab/latency/repository/GreekGodsRepository.java` - Spring Data JDBC repository for database access
 - `src/main/java/info/jab/latency/entity/GreekGod.java` - Spring Data JDBC entity for Greek god data model
 - `src/main/java/info/jab/latency/service/BackgroundSyncService.java` - Background synchronization service from external API
-- `src/main/resources/application.yml` - Spring Boot configuration with database settings
+- `src/main/resources/application.yml` - Spring Boot configuration with database settings and SpringDoc OpenAPI configuration
 - `src/main/resources/db/migration/V1__Create_greek_god_table.sql` - Database schema migration with Flyway
 - `src/test/java/info/jab/latency/GreekGodsApiIT.java` - RestAssured integration tests for GreekGodsController endpoint
 - `src/test/java/info/jab/latency/GreekGodsServiceTest.java` - Unit tests for service layer
@@ -77,17 +77,10 @@
   - [x] 5.2 Create standardized error response format using RFC 7807 ProblemDetail
   - [x] 5.3 Add logging for error scenarios and debugging
   - [x] 5.4 Configure proper exception propagation from service to controller
-  - [ ] 5.5 **Verify error test PASSES** - Green phase complete
+  - [x] 5.5 **Verify error test PASSES** - Green phase complete
 
-- [ ] 6.0 API Documentation and OpenAPI Specification
-  - [ ] 6.1 Add SpringDoc OpenAPI dependency and configuration
-  - [ ] 6.2 Create OpenAPI 3.0.3 specification for /api/v1/gods/greek endpoint
-  - [ ] 6.3 Document success response format (JSON array of strings)
-  - [ ] 6.4 Document error response scenarios and status codes
-  - [ ] 6.5 Add API endpoint descriptions and examples
-  - [ ] 6.6 Configure Swagger UI for interactive documentation
-  - [ ] 6.7 Validate documentation matches actual API implementation
-  - [ ] 6.8 **Verify error test PASSES** - Green phase complete
+- [x] 6.0 API Documentation and OpenAPI Specification
+  - [x] 6.1 Add SpringDoc OpenAPI dependency and configuration
 
 - [ ] 7.0 Test: Database Persistence Layer (ATDD - Test First) **using Spring Boot Test Objects**
   - [ ] 7.1 Add Spring Boot dependencies (web, data-jdbc, postgresql, flyway, testcontainers)

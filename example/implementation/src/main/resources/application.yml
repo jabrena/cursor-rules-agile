@@ -5,6 +5,24 @@ spring:
   application:
     name: greek-gods-api
 
+# SpringDoc OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+  info:
+    title: Greek Gods API
+    description: REST API for retrieving Greek Gods data
+    version: 1.0.0
+    contact:
+      name: Greek Gods API Team
+      email: support@greekgodsapi.com
+    license:
+      name: MIT
+      url: https://opensource.org/licenses/MIT
+
 management:
   endpoints:
     web:
