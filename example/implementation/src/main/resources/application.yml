@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: greek-gods-api
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/greek_gods_db
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+    
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    
+  jdbc:
+    template:
+      query-timeout: 30s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    info.jab.latency: INFO
+    org.springframework.jdbc: DEBUG
+    org.flywaydb: INFO 

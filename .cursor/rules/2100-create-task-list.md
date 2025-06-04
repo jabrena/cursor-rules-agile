@@ -13,6 +13,7 @@ The AI will analyze the following agile artifacts to generate the task list:
 3. **UML Sequence Diagram** - Technical flow and interactions
 4. **C4 Model Diagrams** - System architecture and component relationships
 5. **ADR for Functional Requirements** - Architectural decisions for feature implementation
+6. **ADR for Aceptance testing Strategy** - Architectural decisions for acceptance testing strategy
 
 ## Output
 
@@ -62,6 +63,7 @@ The generated task list _must_ follow this structure:
 - **UML Sequence Diagram:** `[path/to/sequence-diagram.md]`
 - **C4 Model Diagrams:** `[path/to/c4-diagrams.md]`
 - **ADR Functional Requirements:** `[path/to/adr-functional.md]`
+- **ADR Acceptance testing Strategy:** `[path/to/adr-accentance-testing-strategy.md]`
 
 ## Relevant Files
 

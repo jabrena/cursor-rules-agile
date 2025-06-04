@@ -53,6 +53,7 @@ Learn about how to use with some examples [here](https://github.com/jabrena/curs
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
 - https://github.com/adr/madr
 - https://github.com/adr/madr/blob/develop/template/adr-template.md
+- https://github.com/snarktank/ai-dev-tasks
 - ...
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile
