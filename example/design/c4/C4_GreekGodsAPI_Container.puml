@@ -1,0 +1,36 @@
+@startuml Greek Gods API Platform - Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title Container diagram for Greek Gods Data Synchronization API Platform
+
+' External Actors
+Person(apiConsumer, "API Consumer/Developer", "Developers integrating Greek mythology data into their applications")
+
+' External Systems - positioned manually
+System_Ext(monitoringSystem, "Monitoring System", "Performance tracking and alerting")
+
+' System Boundary
+System_Boundary(greekGodsAPI, "Greek Gods API Platform") {
+    Container(webAPI, "REST API Application", "Java/Spring Boot", "Provides REST endpoints for Greek god data retrieval with sub-second response times")
+    Container(syncService, "Background Sync Service", "Java/Spring Scheduler", "Automated synchronization service that periodically fetches data from external APIs")
+    ContainerDb(database, "PostgreSQL Database", "PostgreSQL 14+", "Stores synchronized Greek mythology data with optimized schema")
+    Container(apiDocs, "API Documentation", "OpenAPI 3.0.3/Swagger UI", "Interactive API documentation and specifications")
+}
+
+System_Ext(jsonServer, "Third-party JSON Server", "External data source (my-json-server.typicode.com)")
+
+' Relationships - External Users to Containers
+Rel(apiConsumer, webAPI, "Makes API requests for god data", "HTTPS/REST")
+Rel(apiConsumer, apiDocs, "Views API documentation", "HTTPS")
+
+' Internal Container Relationships
+Rel(webAPI, database, "Queries god data", "SQL/JDBC")
+
+Rel(syncService, jsonServer, "Fetches latest mythology data", "HTTPS/JSON")
+Rel(syncService, database, "Updates synchronized data", "SQL/JDBC")
+
+' System-level Monitoring
+Rel(greekGodsAPI, monitoringSystem, "Sends platform metrics", "HTTPS")
+
+SHOW_LEGEND()
+@enduml 

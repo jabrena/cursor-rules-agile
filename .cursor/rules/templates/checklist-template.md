@@ -45,6 +45,20 @@ Create a user story based on the feature and the acceptance criteria using the i
 Create the UML sequence diagram based in plantuml format using the information provided with the cursor rule @2004-uml-sequence-diagram-from-agile-artifacts
 ```
 
+**Note:** You can use the following tool to generate a png file from the diagram.
+
+```bash
+jbang puml-to-png@jabrena --watch example
+```
+
+**Note:** If the model generate a diagram which fails, you can visit the website: https://www.plantuml.com/plantuml/uml/ in order to test the code and see the error. With that information, you could provide the model to fix it.
+
+**Note:** Sometimes, you need to ask for simplified version:
+
+```bash
+Can you create the diagram again with less detail
+```
+
   - **1.5 [ ] Create the `C4 Model` diagrams based on the requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin & UML Sequence diagram created previously
@@ -53,7 +67,7 @@ Create the UML sequence diagram based in plantuml format using the information p
 Create the C4 Model diagrams from the requirements in plantuml format using the information provided with the cursor rule @2005-c4-diagrams-about-solution
 ```
 
-**Note:** Review the diagrams, sometimes it is necessary to simplify the models.
+**Note:** Review the diagrams, sometimes it is necessary to simplify the models. Sometimes, the diagram some some incoherence or some criteria that you are not agree. Review the diagram and review the previous documents (Epic, Feature or User story) maybe exist the issue there.
 
 ### Phase 3: Architecture Decision Records (ADRs)
 

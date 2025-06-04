@@ -1,0 +1,172 @@
+---
+description: ADR Conversational Assistant
+globs: 
+alwaysApply: false
+---
+# ADR Conversational Assistant
+
+## Purpose
+This rule provides a conversational approach to create Architectural Decision Records (ADRs). The assistant will ask targeted questions to gather all necessary information and generate a complete ADR document using the standard template.
+
+## Conversation Flow
+
+### Phase 1: Initial Context
+Start the conversation by asking:
+1. **"What architectural decision or problem are we addressing today?"**
+   - This helps establish the main topic and scope
+   - Use the answer to create the ADR title
+
+2. **"Can you briefly describe the current situation or context that led to this decision?"**
+   - This fills the Context and Problem Statement section
+   - Ask follow-up questions if the context isn't clear
+
+### Phase 2: Stakeholder Information
+3. **"Who are the key decision-makers involved in this decision?"**
+   - List names/roles for the decision-makers metadata field
+
+4. **"Are there any subject-matter experts or stakeholders we should consult?"**
+   - Fill the "consulted" metadata field
+   - Distinguish between consulted (two-way communication) and informed (one-way)
+
+5. **"Who else needs to be kept informed about this decision?"**
+   - Fill the "informed" metadata field
+
+### Phase 3: Decision Analysis
+6. **"What are the main factors driving this decision?"**
+   - Examples: performance requirements, cost constraints, compliance needs, technical debt
+   - This creates the Decision Drivers section
+
+7. **"What options have you considered to solve this problem?"**
+   - List all alternatives, including the "do nothing" option if relevant
+   - For each option, ask: "Can you briefly describe this option?"
+
+8. **"For each option, what are the main advantages and disadvantages?"**
+   - This fills the Pros and Cons section
+   - Ask specific follow-up questions about trade-offs
+
+### Phase 4: Decision Outcome
+9. **"Which option have you chosen or do you recommend?"**
+   - This becomes the chosen option in Decision Outcome
+
+10. **"What's the main reasoning behind this choice?"**
+    - Include criteria that ruled out other options
+    - Mention any knockout factors
+
+### Phase 5: Implementation and Consequences
+11. **"What positive outcomes do you expect from this decision?"**
+    - Fill the "Good, because..." items in Consequences
+
+12. **"What potential negative impacts or risks should we be aware of?"**
+    - Fill the "Bad, because..." items in Consequences
+
+13. **"How will you measure or confirm that this decision is working as intended?"**
+    - This creates the Confirmation section
+    - Ask about metrics, reviews, tests, or other validation methods
+
+### Phase 6: Additional Information
+14. **"Is there any additional context, evidence, or related decisions we should document?"**
+    - Fill the More Information section
+    - Ask about related ADRs, external resources, or future considerations
+
+15. **"What's the current status of this decision? (proposed/accepted/implemented/etc.)"**
+    - Set the status metadata field
+
+## Output Generation
+
+After gathering all information through the conversation, generate a complete ADR document using this structure:
+
+```markdown
+---
+status: "{gathered status}"
+date: {current date YYYY-MM-DD}
+decision-makers: {gathered decision-makers}
+consulted: {gathered consulted parties}
+informed: {gathered informed parties}
+---
+
+# {generated title based on problem and solution}
+
+## Context and Problem Statement
+
+{compiled context and problem description}
+
+## Decision Drivers
+
+* {driver 1}
+* {driver 2}
+* {additional drivers...}
+
+## Considered Options
+
+* {option 1 title}
+* {option 2 title}
+* {additional options...}
+
+## Decision Outcome
+
+Chosen option: "{chosen option title}", because {compiled reasoning and justification}.
+
+### Consequences
+
+* Good, because {positive consequence 1}
+* Good, because {positive consequence 2}
+* Bad, because {negative consequence 1}
+* Bad, because {negative consequence 2}
+
+### Confirmation
+
+{compiled confirmation and measurement approach}
+
+## Pros and Cons of the Options
+
+### {Option 1 Title}
+
+{option description}
+
+* Good, because {advantage 1}
+* Good, because {advantage 2}
+* Bad, because {disadvantage 1}
+
+### {Option 2 Title}
+
+{option description}
+
+* Good, because {advantage 1}
+* Neutral, because {neutral point}
+* Bad, because {disadvantage 1}
+
+## More Information
+
+{additional context, links, and related information}
+```
+
+## Conversation Guidelines
+
+- **Ask one question at a time** to avoid overwhelming the user
+- **Follow up with clarifying questions** when answers are vague or incomplete
+- **Summarize key points** periodically to confirm understanding
+- **Be flexible with the order** - if information comes up naturally, capture it even if it's out of sequence
+- **Suggest examples** when users seem stuck on a question
+- **Validate completeness** before generating the final document
+
+## Example Follow-up Questions
+
+- "Can you elaborate on that point?"
+- "What specific concerns led to this requirement?"
+- "How does this compare to your current approach?"
+- "What would happen if we don't make this decision?"
+- "Are there any constraints or limitations we haven't discussed?"
+- "Who would be most affected by this change?"
+
+## Quality Checks
+
+Before finalizing the ADR, ensure:
+- [ ] The title clearly represents both the problem and solution
+- [ ] The context explains why this decision is needed
+- [ ] All considered options are documented with pros/cons
+- [ ] The chosen solution is clearly justified
+- [ ] Consequences (both positive and negative) are realistic
+- [ ] Confirmation methods are specific and measurable
+- [ ] All stakeholders are properly categorized
+
+This conversational approach ensures comprehensive ADRs that capture both the technical and business context of architectural decisions. 

@@ -47,7 +47,7 @@ Start by acknowledging the request and gathering information about the source ma
 Phase 2: C4 Diagram Generation
 Once all information is gathered, inform the user you will generate the three C4 diagrams. Provide the content for each level:
 
-**Content for Context Level Diagram: `[File Prefix]_Context.puml`**
+**Content for Context Level Diagram: `C4_[File Prefix]_Context.puml`**
 ```plantuml
 @startuml [System Name] - System Context
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
@@ -80,7 +80,7 @@ SHOW_LEGEND()
 @enduml
 ```
 
-**Content for Container Level Diagram: `[File Prefix]_Container.puml`**
+**Content for Container Level Diagram: `C4_[File Prefix]_Container.puml`**
 ```plantuml
 @startuml [System Name] - Container
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
@@ -133,7 +133,7 @@ SHOW_LEGEND()
 @enduml
 ```
 
-**Content for Component Level Diagram: `[File Prefix]_Component.puml`**
+**Content for Component Level Diagram: `C4_[File Prefix]_Component.puml`**
 ```plantuml
 @startuml [System Name] - [Focus Container] Components
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
@@ -189,140 +189,6 @@ ENDLOOP]
 
 SHOW_LEGEND()
 @enduml
-```
-
-**Accompanying Documentation: `[File Prefix]_C4_Documentation.md`**
-```markdown
-# C4 Model Documentation: [System Name]
-
-## Overview
-This documentation describes the C4 model diagrams for [System Name] as derived from the following agile artifacts:
-
-[FOR EACH Source Document DO
-- **[Document Type]:** [Document Name/Path]
-ENDLOOP]
-
-## C4 Model Levels
-
-### Level 1: System Context
-**File:** `[File Prefix]_Context.puml`
-
-**Purpose:** Shows the system in its environment, focusing on users and external systems.
-
-**Key Elements:**
-[FOR EACH Context Element DO
-- **[Element Name]:** [Element description and role]
-ENDLOOP]
-
-**Main Interactions:**
-[FOR EACH Key Context Interaction DO
-- **[Interaction Name]:** [Description of the interaction and its business purpose]
-ENDLOOP]
-
-### Level 2: Containers
-**File:** `[File Prefix]_Container.puml`
-
-**Purpose:** Shows the high-level technology choices and how responsibilities are distributed across containers.
-
-**Key Containers:**
-[FOR EACH Container DO
-- **[Container Name]** ([Technology]): [Container responsibility and key features]
-ENDLOOP]
-
-**Key Data Flows:**
-[FOR EACH Important Data Flow DO
-- **[Flow Name]:** [Description of data flow between containers]
-ENDLOOP]
-
-### Level 3: Components
-**File:** `[File Prefix]_Component.puml`
-
-**Purpose:** Shows the internal structure of the [Focus Container] container, detailing the main components and their interactions.
-
-**Key Components:**
-[FOR EACH Component DO
-- **[Component Name]** ([Pattern/Technology]): [Component responsibility and key functionality]
-ENDLOOP]
-
-**Component Interactions:**
-[FOR EACH Important Component Interaction DO
-- **[Interaction Name]:** [Description of how components collaborate]
-ENDLOOP]
-
-## Architecture Decision Records (ADRs) Derived from Artifacts
-
-[IF Technology Stack specified THEN
-### Technology Choices
-[List key technology decisions and their rationale based on the artifacts]
-ENDIF]
-
-[IF Integration Patterns identified THEN
-### Integration Patterns
-[Describe how the system integrates with external systems]
-ENDIF]
-
-[IF Data Architecture mentioned THEN
-### Data Architecture
-[Describe data storage and flow patterns]
-ENDIF]
-
-## Generating Visual Diagrams
-
-### Using PlantUML Online
-1. Copy the contents of each `.puml` file
-2. Go to http://www.plantuml.com/plantuml/uml/
-3. Paste the code and generate the diagram
-4. Repeat for all three levels
-
-### Using PlantUML CLI
-```bash
-# Install PlantUML (requires Java)
-# Generate all diagrams
-java -jar plantuml.jar [File Prefix]_Context.puml
-java -jar plantuml.jar [File Prefix]_Container.puml
-java -jar plantuml.jar [File Prefix]_Component.puml
-```
-
-### Using VS Code Extension
-1. Install the "PlantUML" extension
-2. Open each `.puml` file
-3. Use Ctrl+Shift+P and select "PlantUML: Preview Current Diagram"
-
-### Using C4-PlantUML with Docker
-```bash
-# Using the official PlantUML Docker image with C4 support
-docker run --rm -v $(pwd):/data plantuml/plantuml:latest -tpng /data/[File Prefix]_*.puml
-```
-
-## Related Agile Artifacts
-[FOR EACH Source Document DO
-- **[Document Name]:** [Brief description of how it relates to the architecture]
-ENDLOOP]
-
-## Architecture Evolution Notes
-- **Current State:** This C4 model represents the architecture as described in the current agile artifacts
-- **Future Considerations:** [Any architectural evolution hints from the epics/features]
-- **Validation:** Review these diagrams with technical stakeholders and validate against actual/planned implementation
-
-## Maintenance Guidelines
-1. **Update Triggers:** Update diagrams when new epics, features, or technical decisions are made
-2. **Review Cycle:** Review diagrams quarterly or when major features are delivered
-3. **Stakeholder Validation:** Share Context diagrams with business stakeholders, Container diagrams with architects, Component diagrams with developers
-4. **Tool Integration:** Consider integrating these diagrams into your documentation pipeline or architecture decision records
-
-## C4 Model Best Practices Applied
-- **Abstraction Levels:** Each level focuses on a different audience and level of detail
-- **Technology Focus:** Container and Component levels highlight key technology choices
-- **Business Context:** Context level emphasizes business value and user interactions
-- **Consistency:** Consistent naming and styling across all three levels
-- **Documentation:** Each diagram is accompanied by explanatory documentation
-
-## Next Steps
-1. **Validate Architecture:** Review diagrams with development teams and stakeholders
-2. **Detail Additional Containers:** Create component diagrams for other critical containers
-3. **Add Deployment View:** Consider creating deployment diagrams showing infrastructure
-4. **Link to Code:** Connect component diagrams to actual code structure and packages
-5. **Continuous Updates:** Establish a process for keeping diagrams synchronized with evolving requirements
 ```
 
 After generating all content, provide these additional recommendations:

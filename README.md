@@ -11,6 +11,7 @@ https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-e
 
 ## Cursor Rules
 
+- [Create Agile Development Checklist](.cursor/rules/2000-agile-checklist.mdc)
 - [Create an Agile Epic](.cursor/rules/2001-agile-create-an-epic.mdc)
 - [Create an Agile Feature](.cursor/rules/2002-agile-create-features-from-epics.mdc)
 - [Create an Agile User story](.cursor/rules/2003-agile-create-user-story.mdc)
@@ -20,7 +21,8 @@ https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-e
 - [ADRs for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api-development.mdc)
 - [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc)
 - [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc)
-- [UML Class Diagram Generator](.cursor/rules/2009-uml-class-diagram-mdc)
+- [UML Class Diagram Generator](.cursor/rules/2100-uml-class-diagram-mdc)
+- [ADR Conversational Assistant](.cursor/rules/2200-adr-conversational-assistant.mdc)
 
 ## Getting Started
 
@@ -49,6 +51,8 @@ Learn about how to use with some examples [here](https://github.com/jabrena/curs
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
+- https://github.com/adr/madr
+- https://github.com/adr/madr/blob/develop/template/adr-template.md
 - ...
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile

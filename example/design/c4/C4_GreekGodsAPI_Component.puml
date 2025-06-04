@@ -1,0 +1,58 @@
+@startuml Greek Gods API Platform - REST API Application Components
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component diagram for REST API Application in Greek Gods API Platform
+
+' External Actors
+Person(apiConsumer, "API Consumer/Developer", "Developers integrating Greek mythology data into their applications")
+
+' Other Containers
+ContainerDb(database, "PostgreSQL Database", "PostgreSQL 14+", "Data persistence layer")
+
+' External Systems
+System_Ext(jsonServer, "Third-party JSON Server", "External data source (my-json-server.typicode.com)")
+System_Ext(monitoringSystem, "Monitoring System", "Performance tracking and alerting")
+
+' REST API Application Container Boundary
+Container_Boundary(webAPI, "REST API Application") {
+    ' Controller Layer
+    Component(greekController, "Greek Gods Controller", "Spring REST Controller", "Handles HTTP requests for /api/v1/gods/greek endpoint")
+    
+    ' Service Layer
+    Component(greekService, "Greek Gods Service", "Spring Service", "Business logic for Greek god data retrieval")
+    Component(syncService, "Background Sync Service", "Spring Scheduler", "Automated synchronization service that periodically fetches data from external APIs")
+    
+    ' Repository Layer
+    Component(greekRepository, "Greek Gods Repository", "Spring Data JPA", "Data access layer for Greek mythology data queries")
+    
+    ' Documentation
+    Component(apiDocs, "API Documentation", "OpenAPI 3.0.3/Swagger UI", "Interactive API documentation and specifications")
+    
+    ' Global Error Handling (positioned freely)
+    Component(errorController, "Global Error Handler", "Spring @ControllerAdvice", "Global exception handling and error response formatting")
+}
+
+' Relationships - External to Components
+Rel(apiConsumer, greekController, "HTTP requests", "HTTPS/REST")
+Rel(apiConsumer, apiDocs, "Views API documentation", "HTTPS")
+
+' Internal Component Flow
+Rel(greekController, greekService, "Business logic calls", "Method invocation")
+Rel(greekService, greekRepository, "Data queries", "JPA/Method invocation")
+Rel(greekRepository, database, "SQL queries", "JDBC/SQL")
+
+' API Documentation Connection
+Rel(greekController, apiDocs, "Provides endpoint specifications", "OpenAPI annotations")
+
+' Background Sync Service Relationships
+Rel(syncService, jsonServer, "Fetches latest mythology data", "HTTPS/JSON")
+Rel(syncService, greekRepository, "Updates synchronized data", "JPA/Method invocation")
+
+' Container-level Monitoring
+Rel(webAPI, monitoringSystem, "Sends application metrics", "HTTPS")
+
+' Global Error Handling (cross-cutting concern)
+Rel(greekController, errorController, "Exceptions", "Spring AOP")
+
+SHOW_LEGEND()
+@enduml 
