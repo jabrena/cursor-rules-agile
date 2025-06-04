@@ -40,7 +40,7 @@
 
 - [x] 0.0 Maven Project Creation and Setup
   - [x] 0.1 Create Maven project structure using: `jbang setup@jabrena init --spring-boot`
-  - [x] 0.2 Add Spring Boot dependencies (web, data-jdbc, postgresql, flyway)
+  - [x] 0.2 Add testing dependencies (spring-boot-starter-test, rest-assured)
   - [x] 0.3 Configure Maven surefire and failsafe plugins for unit and integration tests
   - [x] 0.4 Create basic application structure (main class, application.yml)
   - [x] 0.5 Set up package structure following C4 component model (controller, service, repository, entity)
@@ -90,11 +90,11 @@
   - [ ] 6.6 Configure Swagger UI for interactive documentation
   - [ ] 6.7 Validate documentation matches actual API implementation
 
-- [ ] 7.0 Test: Database Persistence Layer (ATDD - Test First)
-  - [ ] 7.1 Add testing dependencies (spring-boot-starter-test, rest-assured, testcontainers)
-  - [ ] 7.2 Create database integration test for GreekGodsRepository
-  - [ ] 7.3 Test findAllGodNames() method with expected 20 god names
-  - [ ] 7.4 **Verify database test FAILS** - No database implementation exists yet
+- [ ] 7.0 Test: Database Persistence Layer (ATDD - Test First) **using Spring Boot Test Objects**
+  - [ ] 7.1 Add Spring Boot dependencies (web, data-jdbc, postgresql, flyway, testcontainers)
+  - [ ] 7.2 Create database integration test for GreekGodsRepository **using @DataJdbcTest and @Testcontainers annotations**
+  - [ ] 7.3 Test findAllGodNames() method with expected 20 god names **leveraging @Autowired TestEntityManager and Spring Boot test context**
+  - [ ] 7.4 **Verify database test FAILS** - No database implementation exists yet **using Spring Boot test assertions and TestContainers PostgreSQL**
 
 - [ ] 8.0 Implementation: Database Persistence Layer with Spring Data JDBC (ATDD - Make Test Pass)
   - [ ] 8.1 Create GreekGod entity class with Spring Data JDBC annotations
@@ -107,10 +107,10 @@
   - [ ] 8.8 **Replace fake data in service with real database calls**
   - [ ] 8.9 **Verify database test PASSES** - Green phase complete
 
-- [ ] 9.0 Test: Background Data Synchronization (ATDD - Test First)
-  - [ ] 9.1 Create integration test for BackgroundSyncService
-  - [ ] 9.2 Test data synchronization from external API to database
-  - [ ] 9.3 **Verify sync test FAILS** - No sync service implementation exists yet
+- [ ] 9.0 Test: Background Data Synchronization (ATDD - Test First) **using Spring Boot Test Objects**
+  - [ ] 9.1 Create integration test for BackgroundSyncService **using @SpringBootTest and @MockBean annotations**
+  - [ ] 9.2 Test data synchronization from external API to database **leveraging Spring Boot test context and @Autowired services**
+  - [ ] 9.3 **Verify sync test FAILS** - No sync service implementation exists yet **using Spring Boot test assertions**
 
 - [ ] 10.0 Implementation: Background Data Synchronization Service (ATDD - Make Test Pass)
   - [ ] 10.1 Create BackgroundSyncService with @Service and @Scheduled annotations
@@ -123,15 +123,15 @@
   - [ ] 10.8 Add logging and monitoring for sync process success/failure
   - [ ] 10.9 **Verify sync test PASSES** - Green phase complete
 
-- [ ] 11.0 Comprehensive Integration Testing with RestAssured
-  - [ ] 11.1 Create GreekGodsApiIT class with @SpringBootTest annotation
-  - [ ] 11.2 Configure RestAssured with Spring Boot test server port
-  - [ ] 11.3 Test complete response format validation (JSON array, 20 god names)
-  - [ ] 11.4 Implement performance test with timing assertions (<1 second)
-  - [ ] 11.5 Validate error response format matches specification
-  - [ ] 11.6 Test concurrent request handling and system stability
-  - [ ] 11.7 Run load testing scenarios with multiple simultaneous requests
-  - [ ] 11.8 **Verify ALL acceptance criteria PASS** - Complete system validation
+- [ ] 11.0 Comprehensive Integration Testing **using Spring Boot Test Objects**
+  - [ ] 11.1 Create GreekGodsApiIT class with @SpringBootTest annotation **and Spring Boot test context initialization**
+  - [ ] 11.2 Configure RestAssured with Spring Boot test server port **using @LocalServerPort and TestRestTemplate**
+  - [ ] 11.3 Test complete response format validation (JSON array, 20 god names) **with Spring Boot test assertions**
+  - [ ] 11.4 Implement performance test with timing assertions (<1 second) **using Spring Boot test context**
+  - [ ] 11.5 Validate error response format matches specification **leveraging Spring Boot test error handling**
+  - [ ] 11.6 Test concurrent request handling and system stability **with Spring Boot test configuration**
+  - [ ] 11.7 Run load testing scenarios with multiple simultaneous requests **using Spring Boot test infrastructure**
+  - [ ] 11.8 **Verify ALL acceptance criteria PASS** - Complete system validation **with Spring Boot integration test suite**
 
 ## Acceptance Criteria Mapping
 
