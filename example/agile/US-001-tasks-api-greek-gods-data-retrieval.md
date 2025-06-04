@@ -21,8 +21,9 @@
 - `src/main/java/info/jab/latency/exception/GlobalExceptionHandler.java` - Global error handling with @ControllerAdvice
 - `src/main/resources/application.yml` - Spring Boot configuration with database settings
 - `src/main/resources/db/migration/V1__Create_greek_god_table.sql` - Database schema migration with Flyway
-- `src/test/java/info/jab/latency/GreekGodsApiIT.java` - RestAssured integration tests
+- `src/test/java/info/jab/latency/GreekGodsApiIT.java` - RestAssured integration tests for GreekGodsController endpoint
 - `src/test/java/info/jab/latency/GreekGodsServiceTest.java` - Unit tests for service layer
+- `src/test/java/info/jab/latency/controller/GreekGodsControllerErrorHandlingIT.java` - Error handling integration tests for database connection failures
 - `src/test/resources/application-test.yml` - Test configuration with TestContainers
 - `src/test/resources/test-data/greek-gods-seed.sql` - Test database seed data
 
@@ -40,10 +41,9 @@
 - [x] 0.0 Maven Project Creation and Setup
   - [x] 0.1 Create Maven project structure using: `jbang setup@jabrena init --spring-boot`
   - [x] 0.2 Add Spring Boot dependencies (web, data-jdbc, postgresql, flyway)
-  - [x] 0.3 Add testing dependencies (spring-boot-starter-test, rest-assured, testcontainers)
-  - [x] 0.4 Configure Maven surefire and failsafe plugins for unit and integration tests
-  - [x] 0.5 Create basic application structure (main class, application.yml)
-  - [x] 0.6 Set up package structure following C4 component model (controller, service, repository, entity)
+  - [x] 0.3 Configure Maven surefire and failsafe plugins for unit and integration tests
+  - [x] 0.4 Create basic application structure (main class, application.yml)
+  - [x] 0.5 Set up package structure following C4 component model (controller, service, repository, entity)
 
 - [x] 1.0 Basic Test Infrastructure Setup
   - [x] 1.1 Set up RestAssured test configuration with Spring Boot Test
@@ -56,18 +56,21 @@
   - [x] 2.2 Implement smoke test scenario: "Successfully retrieve complete list of Greek god names" ⚠️ **NOTE: Test will FAIL initially - no API implementation exists yet**
   - [x] 2.3 **Verify test FAILS** - This confirms we're following ATDD Red-Green-Refactor cycle
 
-- [ ] 3.0 Implementation: REST API Endpoint (ATDD - Make Test Pass)
-  - [ ] 3.1 Create GreekGodsController with @RestController annotation
-  - [ ] 3.2 Implement GET /api/v1/gods/greek endpoint following OpenAPI specification
-  - [ ] 3.3 Create GreekGodsService for business logic layer
-  - [ ] 3.4 Implement service method to retrieve all Greek god names ⚠️ **NOTE: Return FAKE/HARDCODED data - database layer doesn't exist yet**
-  - [ ] 3.5 Configure JSON response format as simple string array
-  - [ ] 3.6 Add proper HTTP status codes (200 OK for success)
-  - [ ] 3.7 **Verify smoke test PASSES** - Green phase complete
+- [x] 3.0 Implementation: REST API Endpoint (ATDD - Make Test Pass)
+  - [x] 3.1 Create integration test for GreekGodsController endpoint ⚠️ **NOTE: Test will FAIL initially - no controller implementation exists yet**
+  - [x] 3.2 Test GET /api/v1/gods/greek endpoint with RestAssured expecting JSON array response ⚠️ **NOTE: Test will FAIL initially - no controller implementation exists yet**
+  - [x] 3.3 **Verify controller test FAILS** - This confirms we're following ATDD Red-Green-Refactor cycle
+  - [x] 3.4 Create GreekGodsController with @RestController annotation
+  - [x] 3.5 Implement GET /api/v1/gods/greek endpoint following OpenAPI specification
+  - [x] 3.6 Create GreekGodsService for business logic layer
+  - [x] 3.7 Implement service method to retrieve all Greek god names ⚠️ **NOTE: Return FAKE/HARDCODED data - database layer doesn't exist yet**
+  - [x] 3.8 Configure JSON response format as simple string array
+  - [x] 3.9 Add proper HTTP status codes (200 OK for success)
+  - [x] 3.10 **Verify controller test PASSES** - Green phase complete
 
-- [ ] 4.0 Test: Error Handling (ATDD - Test First)
-  - [ ] 4.1 Implement error handling test: "Handle database connection failure gracefully" ⚠️ **NOTE: Test will FAIL initially - no error handling implemented yet**
-  - [ ] 4.2 **Verify error test FAILS** - Confirms no error handling exists yet
+- [x] 4.0 Test: Error Handling (ATDD - Test First)
+  - [x] 4.1 Implement error handling test: "Handle database connection failure gracefully" ⚠️ **NOTE: Test will FAIL initially - no error handling implemented yet**
+  - [x] 4.2 **Verify error test FAILS** - Confirms no error handling exists yet
 
 - [ ] 5.0 Implementation: Error Handling and Response Management (ATDD - Make Test Pass)
   - [ ] 5.1 Create GlobalExceptionHandler with @ControllerAdvice annotation
@@ -88,9 +91,10 @@
   - [ ] 6.7 Validate documentation matches actual API implementation
 
 - [ ] 7.0 Test: Database Persistence Layer (ATDD - Test First)
-  - [ ] 7.1 Create database integration test for GreekGodsRepository
-  - [ ] 7.2 Test findAllGodNames() method with expected 20 god names
-  - [ ] 7.3 **Verify database test FAILS** - No database implementation exists yet
+  - [ ] 7.1 Add testing dependencies (spring-boot-starter-test, rest-assured, testcontainers)
+  - [ ] 7.2 Create database integration test for GreekGodsRepository
+  - [ ] 7.3 Test findAllGodNames() method with expected 20 god names
+  - [ ] 7.4 **Verify database test FAILS** - No database implementation exists yet
 
 - [ ] 8.0 Implementation: Database Persistence Layer with Spring Data JDBC (ATDD - Make Test Pass)
   - [ ] 8.1 Create GreekGod entity class with Spring Data JDBC annotations

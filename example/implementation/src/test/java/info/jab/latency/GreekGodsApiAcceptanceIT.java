@@ -1,11 +1,12 @@
 package info.jab.latency;
 
-import info.jab.latency.config.RestAssuredTestConfig;
-import info.jab.latency.util.TestDataLoader;
 import io.restassured.RestAssured;
+import io.restassured.config.ObjectMapperConfig;
+import io.restassured.mapper.ObjectMapperType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.time.Duration;
@@ -16,21 +17,35 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Acceptance tests for Greek Gods API using RestAssured.
+ * 
+ * These tests validate the complete user stories and business requirements 
+ * from an external perspective, testing the full application stack.
+ * 
+ * Uses RestAssured for HTTP client testing as it provides excellent
+ * support for API testing and validation of REST endpoints.
+ */
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-public class GreekGodsApiSmokeTest extends RestAssuredTestConfig {
+public class GreekGodsApiAcceptanceIT {
 
-    @Autowired
-    private TestDataLoader testDataLoader;
+    @LocalServerPort
+    private int port;
 
     @BeforeEach
-    void setUpTestData() {
-        // This will fail until we create the database schema
-        // testDataLoader.loadGreekGodsTestData();
+    void setUp() {
+        // Configure RestAssured for this test class
+        RestAssured.port = port;
+        RestAssured.config = RestAssured.config()
+                .objectMapperConfig(ObjectMapperConfig.objectMapperConfig()
+                        .defaultObjectMapperType(ObjectMapperType.JACKSON_2));
+        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
     }
 
     @Test
     void shouldSuccessfullyRetrieveCompleteListOfGreekGodNames() {
-        // ATDD Red Phase: This test WILL FAIL - no API endpoint exists yet
+        // ATDD Green Phase: This test should PASS now with our controller implementation
         
         Instant start = Instant.now();
         
@@ -49,22 +64,27 @@ public class GreekGodsApiSmokeTest extends RestAssuredTestConfig {
         Instant end = Instant.now();
         Duration duration = Duration.between(start, end);
         
-        // Verify response time is under 1 second
+        // Verify response time is under 1 second (acceptance criteria)
         assertTrue(duration.toMillis() < 1000, 
                 "Response time should be under 1 second, was: " + duration.toMillis() + "ms");
         
-        // Verify we got exactly 20 god names
+        // Verify we got exactly 20 god names (acceptance criteria)
         assertEquals(20, response.size(), "Should return exactly 20 Greek god names");
         
-        // Verify expected gods are in the response
-        List<String> expectedGods = testDataLoader.getExpectedGreekGodNames();
+        // Verify expected gods are in the response (hardcoded expected list)
+        List<String> expectedGods = List.of(
+                "Zeus", "Hera", "Poseidon", "Demeter", "Athena",
+                "Apollo", "Artemis", "Ares", "Aphrodite", "Hephaestus",
+                "Hermes", "Dionysus", "Hades", "Persephone", "Hestia",
+                "Hecate", "Pan", "Iris", "Nemesis", "Tyche"
+        );
         assertTrue(response.containsAll(expectedGods), 
                 "Response should contain all expected Greek god names");
     }
 
     @Test
     void shouldReturnJsonArrayFormat() {
-        // ATDD Red Phase: This test WILL FAIL - no API endpoint exists yet
+        // ATDD Green Phase: This test should PASS now with our controller implementation
         
         given()
                 .when()
@@ -77,7 +97,7 @@ public class GreekGodsApiSmokeTest extends RestAssuredTestConfig {
 
     @Test 
     void shouldHandleMultipleConcurrentRequests() {
-        // ATDD Red Phase: This test WILL FAIL - no API endpoint exists yet
+        // ATDD Green Phase: This test should PASS now with our controller implementation
         
         // Simple concurrency test - send 3 requests simultaneously
         for (int i = 0; i < 3; i++) {

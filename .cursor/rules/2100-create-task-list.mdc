@@ -1,3 +1,8 @@
+---
+description: Generating a Task List from Agile Artifacts
+globs: 
+alwaysApply: false
+---
 # Rule: Generating a Task List from Agile Artifacts
 
 ## Goal
