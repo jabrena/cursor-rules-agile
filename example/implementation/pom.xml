@@ -27,9 +27,13 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>24</java.version>
 		<testcontainers.version>1.20.3</testcontainers.version>
 		<flyway.version>10.20.1</flyway.version>
+
+		<!-- Coverage -->
+		<coverage.level>0.15</coverage.level>
+		<maven-plugins-jacoco.version>0.8.13</maven-plugins-jacoco.version>
 	</properties>
 	
 	<dependencyManagement>
@@ -168,4 +172,62 @@
 		</plugins>
 	</build>
 
+	<profiles>
+		<profile>
+			<id>jacoco</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>${maven-plugins-jacoco.version}</version>
+						<executions>
+							<execution>
+								<id>prepare-agent</id>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>check</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+								<configuration>
+									<rules>
+										<rule>
+											<element>BUNDLE</element>
+											<limits>
+												<limit>
+													<counter>LINE</counter>
+													<value>COVEREDRATIO</value>
+													<minimum>${coverage.level}%</minimum>
+												</limit>
+												<limit>
+													<counter>BRANCH</counter>
+													<value>COVEREDRATIO</value>
+													<minimum>${coverage.level}%</minimum>
+												</limit>
+											</limits>
+										</rule>
+									</rules>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
