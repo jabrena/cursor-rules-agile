@@ -45,16 +45,16 @@
   - [x] 0.5 Create basic application structure (main class, application.yml)
   - [x] 0.6 Set up package structure following C4 component model (controller, service, repository, entity)
 
-- [ ] 1.0 Basic Test Infrastructure Setup
-  - [ ] 1.1 Set up RestAssured test configuration with Spring Boot Test
-  - [ ] 1.2 Configure TestContainers for PostgreSQL test database
-  - [ ] 1.3 Create test data seed file with 20 Greek god names
-  - [ ] 1.4 Set up test profiles and configuration for different scenarios
+- [x] 1.0 Basic Test Infrastructure Setup
+  - [x] 1.1 Set up RestAssured test configuration with Spring Boot Test
+  - [x] 1.2 Configure TestContainers for PostgreSQL test database
+  - [x] 1.3 Create test data seed file with 20 Greek god names
+  - [x] 1.4 Set up test profiles and configuration for different scenarios
 
-- [ ] 2.0 Test: REST API Endpoint (ATDD - Test First)
-  - [ ] 2.1 Create Gherkin feature file based on US-001 acceptance criteria
-  - [ ] 2.2 Implement smoke test scenario: "Successfully retrieve complete list of Greek god names" ⚠️ **NOTE: Test will FAIL initially - no API implementation exists yet**
-  - [ ] 2.3 **Verify test FAILS** - This confirms we're following ATDD Red-Green-Refactor cycle
+- [x] 2.0 Test: REST API Endpoint (ATDD - Test First)
+  - [x] 2.1 Create Gherkin feature file based on US-001 acceptance criteria
+  - [x] 2.2 Implement smoke test scenario: "Successfully retrieve complete list of Greek god names" ⚠️ **NOTE: Test will FAIL initially - no API implementation exists yet**
+  - [x] 2.3 **Verify test FAILS** - This confirms we're following ATDD Red-Green-Refactor cycle
 
 - [ ] 3.0 Implementation: REST API Endpoint (ATDD - Make Test Pass)
   - [ ] 3.1 Create GreekGodsController with @RestController annotation
