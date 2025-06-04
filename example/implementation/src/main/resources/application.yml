@@ -4,6 +4,34 @@ server:
 spring:
   application:
     name: greek-gods-api
+  
+  # Database Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/greek_gods_db
+    username: greek_gods_user
+    password: greek_gods_password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 300000
+      max-lifetime: 600000
+      connection-timeout: 20000
+      leak-detection-threshold: 60000
+  
+  # Flyway Configuration
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    validate-on-migrate: true
+    clean-disabled: true
+  
+  # Spring Data JDBC Configuration
+  data:
+    jdbc:
+      repositories:
+        enabled: true
 
 # SpringDoc OpenAPI Configuration
 springdoc:
@@ -34,4 +62,33 @@ management:
 
 logging:
   level:
-    info.jab.latency: INFO 
+    info.jab.latency: INFO
+    org.springframework.jdbc: DEBUG
+    org.flywaydb: INFO
+
+---
+# Production Profile
+spring:
+  config:
+    activate:
+      on-profile: production
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/greek_gods_db}
+    username: ${DATABASE_USER:greek_gods_user}
+    password: ${DATABASE_PASSWORD:greek_gods_password}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+---
+# Development Profile  
+spring:
+  config:
+    activate:
+      on-profile: development
+  datasource:
+    url: jdbc:postgresql://localhost:5432/greek_gods_dev_db
+    username: greek_gods_dev_user
+    password: greek_gods_dev_password
+  flyway:
+    clean-disabled: false 

@@ -1,7 +1,9 @@
 package info.jab.latency.service;
 
+import info.jab.latency.repository.GreekGodsRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,6 +37,18 @@ public class GreekGodsService {
     private static final Logger logger = LoggerFactory.getLogger(GreekGodsService.class);
     private static final int EXPECTED_GOD_COUNT = 20;
 
+    private final GreekGodsRepository greekGodsRepository;
+
+    /**
+     * Constructor injection for GreekGodsRepository dependency.
+     * 
+     * @param greekGodsRepository the repository for database access
+     */
+    @Autowired
+    public GreekGodsService(GreekGodsRepository greekGodsRepository) {
+        this.greekGodsRepository = greekGodsRepository;
+    }
+
     /**
      * Retrieves all Greek god names for API consumption.
      * 
@@ -53,44 +67,23 @@ public class GreekGodsService {
      *           Any exceptions from repository layer will propagate through this method.
      */
     public List<String> getAllGreekGodNames() {
-        logger.debug("Retrieving all Greek god names from service layer");
+        logger.debug("Retrieving all Greek god names from database via repository");
         
         try {
-            // TODO: Replace with repository.findAllGodNames() when GreekGodsRepository is implemented
-            // For now, returning hardcoded data to make controller tests pass (GREEN phase of ATDD)
-            
-            List<String> greekGods = List.of(
-                "Zeus",           // King of the gods, god of sky and thunder
-                "Hera",           // Queen of the gods, goddess of marriage
-                "Poseidon",       // God of the sea, earthquakes, and horses
-                "Demeter",        // Goddess of harvest and agriculture
-                "Athena",         // Goddess of wisdom and warfare
-                "Apollo",         // God of music, poetry, prophecy, and the sun
-                "Artemis",        // Goddess of the hunt and moon
-                "Ares",           // God of war and courage
-                "Aphrodite",      // Goddess of love and beauty
-                "Hephaestus",     // God of fire and metalworking
-                "Hermes",         // Messenger god, god of trade and thieves
-                "Dionysus",       // God of wine and festivities
-                "Hades",          // God of the underworld and the dead
-                "Persephone",     // Queen of the underworld, goddess of spring
-                "Hestia",         // Goddess of the hearth and home
-                "Hecate",         // Goddess of magic and crossroads
-                "Pan",            // God of nature, shepherds, and the wild
-                "Iris",           // Goddess of the rainbow and divine messenger
-                "Nemesis",        // Goddess of divine retribution and revenge
-                "Tyche"           // Goddess of fortune and prosperity
-            );
+            // Use repository to fetch data from database
+            List<String> greekGods = greekGodsRepository.findAllGodNames();
             
             // Business validation - ensure data integrity
             validateDataIntegrity(greekGods);
             
-            logger.debug("Successfully retrieved {} Greek god names", greekGods.size());
+            logger.debug("Successfully retrieved {} Greek god names from database", greekGods.size());
+            logger.trace("Greek god names: {}", greekGods);
+            
             return greekGods;
             
         } catch (Exception ex) {
             // Log the exception but DO NOT catch it - let it propagate to GlobalExceptionHandler
-            logger.error("Error occurred while retrieving Greek god names: {}", ex.getMessage());
+            logger.error("Error occurred while retrieving Greek god names from database: {}", ex.getMessage());
             
             // Re-throw the exception to ensure proper propagation to controller layer
             // This is crucial for proper exception propagation strategy

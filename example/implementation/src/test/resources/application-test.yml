@@ -1,10 +1,19 @@
 spring:
   application:
     name: greek-gods-api-test
+  
+  # Flyway configuration for tests - let TestContainers provide datasource
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    clean-disabled: false  # Allow clean for tests
 
 server:
   port: 0  # Random port for testing
 
 logging:
   level:
-    info.jab.latency: DEBUG 
+    info.jab.latency: DEBUG
+    org.testcontainers: DEBUG
+    org.flywaydb: DEBUG 

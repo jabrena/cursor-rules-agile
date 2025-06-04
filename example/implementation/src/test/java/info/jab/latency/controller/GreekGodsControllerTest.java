@@ -1,14 +1,18 @@
 package info.jab.latency.controller;
 
+import info.jab.latency.repository.GreekGodsRepository;
 import info.jab.latency.service.GreekGodsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 /**
  * Unit tests for GreekGodsController.
@@ -26,10 +30,23 @@ class GreekGodsControllerTest {
 
     private GreekGodsController controller;
     private GreekGodsService service;
+    
+    @Mock
+    private GreekGodsRepository mockRepository;
 
     @BeforeEach
     void setUp() {
-        service = new GreekGodsService();
+        MockitoAnnotations.openMocks(this);
+        
+        // Mock the repository to return the expected 20 Greek gods
+        List<String> expectedGods = List.of(
+            "Zeus", "Hera", "Poseidon", "Demeter", "Athena", "Apollo",
+            "Artemis", "Ares", "Aphrodite", "Hephaestus", "Hermes", "Dionysus",
+            "Hades", "Persephone", "Hestia", "Hecate", "Pan", "Iris", "Nemesis", "Tyche"
+        );
+        when(mockRepository.findAllGodNames()).thenReturn(expectedGods);
+        
+        service = new GreekGodsService(mockRepository);
         controller = new GreekGodsController(service);
     }
 
