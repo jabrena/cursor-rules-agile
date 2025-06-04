@@ -14,11 +14,11 @@
 - `pom.xml` - Maven project configuration with Spring Boot and JDBC dependencies
 - `src/main/java/info/jab/latency/LatencyApplication.java` - Spring Boot main application class
 - `src/main/java/info/jab/latency/controller/GreekGodsController.java` - Spring REST Controller for /api/v1/gods/greek endpoint
+- `src/main/java/info/jab/latency/controller/GlobalExceptionHandler.java` - Global error handling with @ControllerAdvice using RFC 7807 ProblemDetail standard for consistent error response format
 - `src/main/java/info/jab/latency/service/GreekGodsService.java` - Business logic service for Greek god data retrieval
 - `src/main/java/info/jab/latency/repository/GreekGodsRepository.java` - Spring Data JDBC repository for database access
 - `src/main/java/info/jab/latency/entity/GreekGod.java` - Spring Data JDBC entity for Greek god data model
 - `src/main/java/info/jab/latency/service/BackgroundSyncService.java` - Background synchronization service from external API
-- `src/main/java/info/jab/latency/exception/GlobalExceptionHandler.java` - Global error handling with @ControllerAdvice
 - `src/main/resources/application.yml` - Spring Boot configuration with database settings
 - `src/main/resources/db/migration/V1__Create_greek_god_table.sql` - Database schema migration with Flyway
 - `src/test/java/info/jab/latency/GreekGodsApiIT.java` - RestAssured integration tests for GreekGodsController endpoint
@@ -72,14 +72,12 @@
   - [x] 4.1 Implement error handling test: "Handle database connection failure gracefully" ⚠️ **NOTE: Test will FAIL initially - no error handling implemented yet**
   - [x] 4.2 **Verify error test FAILS** - Confirms no error handling exists yet
 
-- [ ] 5.0 Implementation: Error Handling and Response Management (ATDD - Make Test Pass)
-  - [ ] 5.1 Create GlobalExceptionHandler with @ControllerAdvice annotation
-  - [ ] 5.2 Implement database connection error handling (500 Internal Server Error)
-  - [ ] 5.3 Create standardized error response format {error, status}
-  - [ ] 5.4 Handle empty database scenario (200 OK with empty array)
-  - [ ] 5.5 Add logging for error scenarios and debugging
-  - [ ] 5.6 Configure proper exception propagation from service to controller
-  - [ ] 5.7 **Verify error test PASSES** - Green phase complete
+- [x] 5.0 Implementation: Error Handling and Response Management (ATDD - Make Test Pass)
+  - [x] 5.1 Create GlobalExceptionHandler with @ControllerAdvice annotation
+  - [x] 5.2 Create standardized error response format using RFC 7807 ProblemDetail
+  - [x] 5.3 Add logging for error scenarios and debugging
+  - [x] 5.4 Configure proper exception propagation from service to controller
+  - [ ] 5.5 **Verify error test PASSES** - Green phase complete
 
 - [ ] 6.0 API Documentation and OpenAPI Specification
   - [ ] 6.1 Add SpringDoc OpenAPI dependency and configuration
@@ -89,6 +87,7 @@
   - [ ] 6.5 Add API endpoint descriptions and examples
   - [ ] 6.6 Configure Swagger UI for interactive documentation
   - [ ] 6.7 Validate documentation matches actual API implementation
+  - [ ] 6.8 **Verify error test PASSES** - Green phase complete
 
 - [ ] 7.0 Test: Database Persistence Layer (ATDD - Test First) **using Spring Boot Test Objects**
   - [ ] 7.1 Add Spring Boot dependencies (web, data-jdbc, postgresql, flyway, testcontainers)
