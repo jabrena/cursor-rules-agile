@@ -43,17 +43,39 @@ Cursor rule designed to implements the requirements:
 
 ## Getting Started
 
+If you are interested to get the benefits from this cursor rules, you can download manually this repository and copy the folder './cursor` or delegate the process to a specific tool based on **Jbang**:
+
+```bash
+sdk install jbang
+jbang cache clear
+jbang catalog list jabrena
+# Add cursor rules for Java in ./cursor/rules
+jbang setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
+```
+
+Once you have installed the cursor rules:
+
 | Phase | Role | Cursor Rule | Description |
 |-------|------|-------------|-------------|
 | Getting Started | All | [Create Agile Development Checklist](.cursor/rules/2000-agile-checklist.mdc) | Cursor rule designed to help the user to use the whole set of cursor rules for agile in an easy way |
+
+Type in the cursor chat the following prompt:
 
 ```bash
 Create an agile development checklist using the cursor rule @2000-agile-checklist
 ```
 
+![](./docs/getting-started-prompt.png)
+
+and the cursor rule will generate a new file `agile-development-guide.md` with all steps that you need to follow to take the maxium benefits from this set of cursor rules for agile.
+
 ## Examples 
 
 Learn about how to use with some examples [here](https://github.com/jabrena/cursor-rules-examples)
+
+## How to contribute
+
+If you have nice ideas, please [create an issue](https://github.com/jabrena/cursor-rules-agile/issues)
 
 ## References
 
