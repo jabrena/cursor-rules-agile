@@ -8,6 +8,7 @@ Using conversational and a non conversational approach, you could decompose your
 
 [![](./docs/agile-hierarchy.png)](
 https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-epics?view=azure-devops&tabs=agile-process)
+
 https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-epics?view=azure-devops&tabs=agile-process
 
 ## Cursor Rules
