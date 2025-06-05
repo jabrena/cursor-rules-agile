@@ -2,9 +2,17 @@
 
 ## Motivation
 
-Using modern IDEs with AI capabilities, the software engineer can accelerate the context but in order to help the LLMs, it is a good idea to provide the right context and this set of cursor rules could help in this sense.
+Using modern IDEs with AI capabilities like **Cursor*, the Software engineer can use those features to implement software using Prompts but in order to help the models, it is a good idea to provide them the software requirements, technical decisions and designs to be added in the context.
 
-Using conversational and a non conversational approach, you could decompose your problems using `Agile` principles in `EPICs`, `Features` & `User Storaes`. With that analysis, you could describe the technical specifications about how to implement using ADR files as the format to describe the functional an non functional requirements and you could finalize the Design phase with some Diagrams in `UML` & `C4 model` related with your documentation. 
+Using conversational and non-conversational approaches, you could decompose your problems in `EPICs`, `Features` & `User Stories` if you follow `Agile` principles. With that analysis you could answer the question about **What** you are going to build and **Why** is necessary to build and **Who** is going to use software but apart from those questions, you should describe the technical specifications about **How** you will implement the software and you could describe those restrictions using *ADR* files as the format to describe the functional and non-functional requirements and you could model the Design using some Diagrams in `UML` & `C4 ` format.
+
+Models using specifications, decision records and diagrams in the context will generate better software with less ambiguity and less waste.
+
+## Goals
+
+The repository provides a set of cursor rules to generate good software specifications based on Agile principles to be added in the Cursor Context to generate better software.
+
+The repository could be used by the following roles: `EA`, `PO`, `BA`, `SA`, `TL`, `SSE`, `SE`
 
 [![](./docs/agile-hierarchy.png)](
 https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-epics?view=azure-devops&tabs=agile-process)
