@@ -67,8 +67,6 @@ Type in the cursor chat the following prompt:
 Create an agile development checklist using the cursor rule @2000-agile-checklist
 ```
 
-and the cursor rule will generate a new file named `agile-development-guide.md` which includes with all steps that you need to follow to take the maxium benefits from this set of cursor rules for agile.
-
 ## Examples 
 
 Learn about how this rules helped to implement some [non-trivial examples](https://github.com/jabrena/cursor-rules-examples)
