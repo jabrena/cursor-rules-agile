@@ -61,11 +61,11 @@ Once you have installed the cursor rules:
 
 Type in the cursor chat the following prompt:
 
+![](./docs/getting-started-prompt.png)
+
 ```bash
 Create an agile development checklist using the cursor rule @2000-agile-checklist
 ```
-
-![](./docs/getting-started-prompt.png)
 
 and the cursor rule will generate a new file named `agile-development-guide.md` which includes with all steps that you need to follow to take the maxium benefits from this set of cursor rules for agile.
 
@@ -89,7 +89,9 @@ If you have nice ideas, please [create an issue](https://github.com/jabrena/curs
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
-- ...
+
+## Related repositories
+
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile
 - https://github.com/jabrena/cursor-rules-java
