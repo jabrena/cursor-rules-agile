@@ -11,7 +11,7 @@ https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-e
 
 ## Cursor Rules
 
-Cursor rules designed to answers the question about **WHAT** the development team is going to build and **WHY** and **HOW** is going to use:
+Cursor rules designed to answers the question about **WHAT** the development team is going to build and **WHY** is necessary to build and **WHO** is going to use:
 
 | Phase | Role | Cursor Rule | Description |
 |-------|------|-------------|-------------|
