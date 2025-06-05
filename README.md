@@ -43,7 +43,7 @@ Cursor rule designed to implements the requirements:
 
 ## Getting Started
 
-If you are interested to get the benefits from this cursor rules, you can download manually this repository and copy the folder './cursor` or delegate the process to a specific tool based on **Jbang**:
+If you are interested to get the benefits from this cursor rules, you can download manually this repository and copy the folder './cursor` and paste in your repository or delegate this task to a specific command-line tool based on **Jbang**:
 
 ```bash
 sdk install jbang
@@ -67,11 +67,11 @@ Create an agile development checklist using the cursor rule @2000-agile-checklis
 
 ![](./docs/getting-started-prompt.png)
 
-and the cursor rule will generate a new file `agile-development-guide.md` with all steps that you need to follow to take the maxium benefits from this set of cursor rules for agile.
+and the cursor rule will generate a new file named `agile-development-guide.md` which includes with all steps that you need to follow to take the maxium benefits from this set of cursor rules for agile.
 
 ## Examples 
 
-Learn about how to use with some examples [here](https://github.com/jabrena/cursor-rules-examples)
+Learn about how this rules helped to implement some [non-trivial examples](https://github.com/jabrena/cursor-rules-examples)
 
 ## How to contribute
 
