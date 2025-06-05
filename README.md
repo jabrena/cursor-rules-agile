@@ -11,20 +11,39 @@ https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-e
 
 ## Cursor Rules
 
-- [Create Agile Development Checklist](.cursor/rules/2000-agile-checklist.mdc)
-- [Create an Agile Epic](.cursor/rules/2001-agile-create-an-epic.mdc)
-- [Create an Agile Feature](.cursor/rules/2002-agile-create-features-from-epics.mdc)
-- [Create an Agile User story](.cursor/rules/2003-agile-create-user-story.mdc)
-- [UML Sequence Diagram](.cursor/rules/2004-uml-sequence-diagram-about-solution.mdc)
-- [C4 Model Diagrams](.cursor/rules/2005-c4-diagrams-about-solution.mdc)
-- [ADRs for CLI Development](.cursor/rules/2006-adr-create-functional-requirements-for-cli-development.mdc)
-- [ADRs for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api-development.mdc)
-- [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc)
-- [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc)
-- [Create Task List](.cursor/rules/2100-create-task-list.mdc)
-- [Implement Task List](.cursor/rules/2101-implement-task-list.mdc)
-- [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram-mdc)
-- [ADR Conversational Assistant](.cursor/rules/2300-adr-conversational-assistant.mdc)
+Cursor rules designed to follow the whole framework:
+
+| Phase | Role | Cursor Rule | Description |
+|-------|------|-------------|-------------|
+| Getting Started | All | [Create Agile Development Checklist](.cursor/rules/2000-agile-checklist.mdc) | Generate a comprehensive checklist for the agile development processes |
+
+Cursor rules designed to answers the question about **WHAT & WHY** the team is going to build:
+
+| Phase | Role | Cursor Rule | Description |
+|-------|------|-------------|-------------|
+| Software requirements gathering | Product Owner | [Create an Agile Epic](.cursor/rules/2001-agile-create-an-epic.mdc) | Define and structure high-level business objectives as epics |
+| Software requirements gathering | Product Owner | [Create an Agile Feature](.cursor/rules/2002-agile-create-features-from-epics.mdc) | Break down epics into manageable features |
+| Software requirements gathering | Product Owner / Business Analyst | [Create an Agile User Story](.cursor/rules/2003-agile-create-user-story.mdc) | Create detailed user stories from features with acceptance criteria based on Gherkin |
+
+Cursor rules designed to answers the question about **HOW** the team is going to build:
+
+| Phase | Role | Cursor Rule | Description |
+|-------|------|-------------|-------------|
+| Design | Solution Architect | [UML Sequence Diagram](.cursor/rules/2004-uml-sequence-diagram-about-solution.mdc) | Generate UML sequence diagrams to visualize system interactions |
+| Design | Solution Architect | [C4 Model Diagrams](.cursor/rules/2005-c4-diagrams-about-solution.mdc) | Create C4 architecture diagrams for system visualization |
+| Requirements | Solution Architect / Technical Lead | [ADRs for CLI Development](.cursor/rules/2006-adr-create-functional-requirements-for-cli-development.mdc) | Create architectural decision records for CLI applications |
+| Requirements | Solution Architect / Technical Lead | [ADRs for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api-development.mdc) | Create architectural decision records for REST API development |
+| Requirements | Solution Architect / Technical Lead | [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc) | Define comprehensive acceptance testing strategies |
+| Requirements | Architect / Technical Lead | [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc) | Define non-functional requirements and constraints |
+| Requirements | General | [ADR Conversational Assistant](.cursor/rules/2300-adr-conversational-assistant.mdc) | Interactive assistant for creating architectural decision records |
+| Implementation | Product Owner / Technical Lead | [Create Task List](.cursor/rules/2100-create-task-list.mdc) | Generate detailed task lists from agile artifacts |
+| Implementation | Technical Lead / Senior Software engineer | [Implement Task List](.cursor/rules/2101-implement-task-list.mdc) | Manage and track implementation of generated tasks |
+
+Cursor rule designed to see whole development and observe opportunities to improve the solution
+
+| Phase | Role | Cursor Rule | Description |
+|-------|------|-------------|-------------|
+| Refactoring | Technical Lead / Senior Software engineer | [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram-mdc) | Generate UML class diagrams for object-oriented design |
 
 ## Getting Started
 
