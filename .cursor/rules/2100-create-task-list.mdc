@@ -17,8 +17,9 @@ The AI will analyze the following agile artifacts to generate the task list:
 2. **Acceptance Criteria** - Specific conditions that must be met
 3. **UML Sequence Diagram** - Technical flow and interactions
 4. **C4 Model Diagrams** - System architecture and component relationships
-5. **ADR for Functional Requirements** - Architectural decisions for feature implementation
+5. **ADR for Functional Requirements** - Architectural decisions for functional requirements
 6. **ADR for Aceptance testing Strategy** - Architectural decisions for acceptance testing strategy
+7. **ADR for Non Functional Requirements** - Architectural decisions for non functional requirements
 
 ## Output
 
@@ -67,8 +68,9 @@ The generated task list _must_ follow this structure:
 - **Acceptance Criteria:** `[path/to/acceptance-criteria.md]`
 - **UML Sequence Diagram:** `[path/to/sequence-diagram.md]`
 - **C4 Model Diagrams:** `[path/to/c4-diagrams.md]`
-- **ADR Functional Requirements:** `[path/to/adr-functional.md]`
+- **ADR Functional Requirements:** `[path/to/adr-functional-requirements.md]`
 - **ADR Acceptance testing Strategy:** `[path/to/adr-accentance-testing-strategy.md]`
+- **ADR Non Functional Requirements:** `[path/to/adr-non-functional-requirements.md]`
 
 ## Relevant Files
 
@@ -85,7 +87,7 @@ The generated task list _must_ follow this structure:
 - Component structure aligns with C4 model architecture
 - Technical flow respects sequence diagram interactions
 - Implementation decisions follow functional requirements ADR
-- Use `npx jest [optional/path/to/test/file]` to run tests
+- Use `./mvnw clean verify` to run tests
 
 ## Tasks
 
@@ -117,6 +119,7 @@ When analyzing the artifacts, the AI should:
 4. **C4 Model Analysis:** Identify components, their relationships, and architectural boundaries
 5. **Functional ADR Analysis:** Understand implementation decisions, technology choices, and constraints
 6. **Testing ADR Analysis:** Understand testing approach, tools, coverage requirements, and quality gates
+7. **Non Functional ADR Analysis:** Understand implementation decisions ISO 25010
 
 ## Interaction Model
 
