@@ -21,17 +21,17 @@ Cursor rules designed to answers the question about **WHAT** the development tea
 | Software requirements gathering | Product Owner | [Create an Agile Feature](.cursor/rules/2002-agile-create-features-from-epics.mdc) | Break down epics into manageable features |
 | Software requirements gathering | Product Owner / Business Analyst | [Create an Agile User Story](.cursor/rules/2003-agile-create-user-story.mdc) | Create detailed user stories from features with acceptance criteria based on Gherkin |
 
-Cursor rules designed to answers the question about **HOW** the team is going to build the requirements:
+Cursor rules designed to answers the question about **HOW** the team is going to build the requirements and **WHAT** restriction will have the software:
 
 | Phase | Role | Cursor Rule | Description |
 |-------|------|-------------|-------------|
 | Design | Solution Architect | [UML Sequence Diagram](.cursor/rules/2004-uml-sequence-diagram-about-solution.mdc) | Generate UML sequence diagrams to visualize system interactions |
 | Design | Solution Architect | [C4 Model Diagrams](.cursor/rules/2005-c4-diagrams-about-solution.mdc) | Create C4 architecture diagrams for system visualization |
-| Requirements | Solution Architect / Technical Lead | [ADRs for CLI Development](.cursor/rules/2006-adr-create-functional-requirements-for-cli-development.mdc) | Create architectural decision records for CLI applications |
-| Requirements | Solution Architect / Technical Lead | [ADRs for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api-development.mdc) | Create architectural decision records for REST API development |
-| Requirements | Solution Architect / Technical Lead | [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc) | Define comprehensive acceptance testing strategies |
-| Requirements | Architect / Technical Lead | [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc) | Define non-functional requirements and constraints following ISO 25010 |
-| Requirements | General | [ADR Conversational Assistant](.cursor/rules/2300-adr-conversational-assistant.mdc) | Interactive assistant for creating architectural decision records |
+| Requirements | Solution Architect / Technical Lead | [ADR about Functional requirements for CLI Development](.cursor/rules/2006-adr-create-functional-requirements-for-cli-development.mdc) | Create architectural decision records about functional requirements for CLI applications |
+| Requirements | Solution Architect / Technical Lead | [ADR about Functional requirements for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api-development.mdc) | Create architectural decision records about functional requirements for REST API development |
+| Requirements | Solution Architect / Technical Lead | [ADR about Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc) | Define comprehensive acceptance testing strategies |
+| Requirements | Architect / Technical Lead | [ADR about Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc) | Define non-functional requirements and constraints following *ISO-25010* |
+| Requirements | General | [ADR creation using a Conversational approach](.cursor/rules/2300-adr-conversational-assistant.mdc) | Interactive assistant for creating architectural decision records |
 
 Cursor rule designed to implements the requirements:
 
