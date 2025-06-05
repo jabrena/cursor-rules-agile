@@ -21,8 +21,10 @@ https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-e
 - [ADRs for REST API](.cursor/rules/2006-adr-create-functional-requirements-for-rest-api-development.mdc)
 - [ADRs for Acceptance Testing Strategy](.cursor/rules/2007-adr-create-acceptance-testing-strategy.mdc)
 - [ADRs for Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc)
-- [UML Class Diagram Generator](.cursor/rules/2100-uml-class-diagram-mdc)
-- [ADR Conversational Assistant](.cursor/rules/2200-adr-conversational-assistant.mdc)
+- [Create Task List](.cursor/rules/2100-create-task-list.mdc)
+- [Implement Task List](.cursor/rules/2101-implement-task-list.mdc)
+- [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram-mdc)
+- [ADR Conversational Assistant](.cursor/rules/2300-adr-conversational-assistant.mdc)
 
 ## Getting Started
 
@@ -39,20 +41,13 @@ Learn about how to use with some examples [here](https://github.com/jabrena/curs
 - https://www.cursor.com/
 - https://docs.cursor.com/context/rules
 - https://docs.cursor.com/context/@-symbols/@-cursor-rules
-- https://agilemanifesto.org/principles.html
 - https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-epics?view=azure-devops&tabs=agile-process
 - https://gojko.net/books/specification-by-example/
-- https://gojko.net/lists/specification-by-example.html
-- https://gasparnagy.com/media/resources/20140611-AgiliaBudapest-GasparNagy-slides.pdf
-- https://rachaelwilterdink.com/user-story-size-9/2021/blogs-about-agile/
 - https://cucumber.io/docs/gherkin/reference
-- https://editor-next.swagger.io/
 - https://plantuml.com/
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
-- https://github.com/adr/madr
-- https://github.com/adr/madr/blob/develop/template/adr-template.md
 - ...
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile

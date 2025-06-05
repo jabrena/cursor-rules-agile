@@ -1,4 +1,3 @@
-
 # Agile Development Guide
 
 Use the following step-by-step process to implement a complete agile development workflow using Cursor Rules.
@@ -37,7 +36,7 @@ Create a user story based on the feature and the acceptance criteria using the i
 
 ### Phase 2: Technical Design & Architecture
 
-  - **1.4 [ ] Create an `UML` Sequence diagram about the functional requirements**
+  - **2.1 [ ] Create an `UML` Sequence diagram about the functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story & Gherkin created previously
 
@@ -59,7 +58,7 @@ jbang puml-to-png@jabrena --watch example
 Can you create the diagram again with less detail
 ```
 
-  - **1.5 [ ] Create the `C4 Model` diagrams based on the requirements**
+  - **2.2 [ ] Create the `C4 Model` diagrams based on the requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin & UML Sequence diagram created previously
 
@@ -71,7 +70,7 @@ Create the C4 Model diagrams from the requirements in plantuml format using the 
 
 ### Phase 3: Architecture Decision Records (ADRs)
 
-  - **1.6 [ ] Create an `ADR` about the functional requirements**
+  - **3.1 [ ] Create an `ADR` about the functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously
 
@@ -87,7 +86,7 @@ Create the ADR about functional requirements using the cursor rule @2006-adr-cre
 Create the ADR about the functional requirements using the information provided with the cursor rule @2006-adr-create-functional-requirements-for-rest-api-development
 ```
 
-  - **1.7 [ ] Create an `ADR` about the acceptance testing Strategy**
+  - **3.2 [ ] Create an `ADR` about the acceptance testing Strategy**
 
 **Note:** Attach User Story & Gherkin created previously
 
@@ -95,7 +94,7 @@ Create the ADR about the functional requirements using the information provided 
 Create the ADR about the acceptance testing strategy using the information provided with the cursor rule @2007-adr-create-acceptance-testing-strategy
 ```
 
-  - **1.8 [ ] Create an `ADR` about the non functional requirements**
+  - **3.3 [ ] Create an `ADR` about the non functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously
 
@@ -103,16 +102,40 @@ Create the ADR about the acceptance testing strategy using the information provi
 Create the ADR about the non functional requirements using the information provided with the cursor rule @2008-adr-create-non-functional-requirements-decisions
 ```
 
-### Phase 4: Solution Review & Design Validation
+### Phase 4: Solution planning
 
-- **2. [ ] Review current solution state.**
+  - **4.1 [ ] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
 
- - **2.1 [ ] Create an UML class diagram**
+```bash
+create task list with @2100-create-task-list.md using documents @agile @design 
+```
+
+**Note:** Review the high level design if you are agree and later continue with the process for the sublist typing "Go"
+**Note:** Review if the planning task is oriented to implement Outside-in-TDD London
+**Note:** Review that all blocks from the first completed ATDD cycle include a task to verify that everything works.
+
+  - **4.2 [ ] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
+
+```bash
+Start with task 0.1 with @2101-implement-task-list.mdc 
+```
+
+### Phase 5: Solution Review & Design Validation
+
+- **5. [ ] Review current solution state.**
+
+ - **5.1 [ ] Create an UML class diagram**
 
 **Note:** Once you have a solution stable, you could review some aspects about the Design, maybe you could see some way to improve:
 
 ```bash
-Create the UML diagram based on @src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+```
+
+ - **5.2 [ ] Refactor the initial stable solution**
+
+```bash
+No recipe, this is the added value of a good SSE. ¯\_(ツ)_/¯
 ```
 
 ---
@@ -121,6 +144,7 @@ Create the UML diagram based on @src/main/java using the cursor rule @2009-uml-c
 
 | Rule ID | Purpose | When to Use |
 |---------|---------|-------------|
+| @2000-agile-checklist | Create a Checklist with all agile steps | Starting any agile development process |
 | @2001-agile-create-an-epic | Create agile epics | Start of project with initial requirements |
 | @2002-agile-create-features-from-epics | Create agile features from an epic | After epic is created and approved |
 | @2003-agile-create-user-stories | Create Agile User stories with Gherkin | After features are defined |
@@ -131,6 +155,10 @@ Create the UML diagram based on @src/main/java using the cursor rule @2009-uml-c
 | @2007-adr-create-acceptance-testing-strategy | Create ADR for Acceptance Testing Strategy | After user stories with Gherkin |
 | @2008-adr-create-non-functional-requirements-decisions | Create ADR for Non-Functional Requirements | After technical design phase |
 | @2009-uml-class-diagram-mdc | Create UML Class Diagrams | For final solution review |
+| @2100-create-task-list | Generate detailed task lists from agile artifacts | After completing Phase 3 (ADRs) |
+| @2101-implement-task-list | Task List Management | When working with task lists to track implementation progress |
+| @2200-uml-class-diagram-mdc | Create UML Class Diagram for Java Projects | For reviewing Java solution architecture |
+| @2300-adr-conversational-assistant | ADR Conversational Assistant | For interactive ADR creation and refinement |
 
 ## Tips for Success
 
