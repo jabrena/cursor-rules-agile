@@ -59,7 +59,7 @@ If you are interested in getting the benefits from these cursor rules, you can m
 sdk install jbang
 jbang cache clear
 jbang catalog list jabrena
-# Add cursor rules for Java in ./cursor/rules
+# Add cursor rules for Agile in ./cursor/rules
 jbang setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
 ```
 
