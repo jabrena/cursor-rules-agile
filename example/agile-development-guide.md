@@ -6,9 +6,9 @@ Use the following step-by-step process to implement a complete agile development
 
 ### Phase 1: Requirements Analysis & Agile Artifacts
 
-- **1. [ ] Review requirements.**
+- **1. [x] Review requirements.**
 
-  - **1.1 [ ] Create an `Epic` about the development**
+  - **1.1 [x] Create an `Epic` about the development**
 
 **Note:** Attach the initial free format text/markdown document describing the problem to solve.
 
@@ -16,7 +16,7 @@ Use the following step-by-step process to implement a complete agile development
 Create an agile epic based the initial documentation received and use the cursor rule @2001-agile-create-an-epic
 ```
 
-  - **1.2 [ ] Create a `Feature` about the development**
+  - **1.2 [x] Create a `Feature` about the development**
 
 **Note:** Attach the EPIC created previously
 
@@ -26,7 +26,7 @@ Create a feature based on the epic and use the cursor rule  @2002-agile-create-f
 
 **Note:** Review if the rule generates several features and maybe it is possible to merge into a single one. If you prefer to have only one feature, ask it.
 
-  - **1.3 [ ] Create an `User story` and the `Acceptance criteria` in `Gherkin` format based on the requirements.**
+  - **1.3 [x] Create an `User story` and the `Acceptance criteria` in `Gherkin` format based on the requirements.**
 
 **Note:** Attach the EPIC and the Feature created previously
 
@@ -36,7 +36,7 @@ Create a user story based on the feature and the acceptance criteria using the i
 
 ### Phase 2: Technical Design & Architecture
 
-  - **2.1 [ ] Create an `UML` Sequence diagram about the functional requirements**
+  - **2.1 [x] Create an `UML` Sequence diagram about the functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story & Gherkin created previously
 
@@ -58,7 +58,7 @@ jbang puml-to-png@jabrena --watch example
 Can you create the diagram again with less detail
 ```
 
-  - **2.2 [ ] Create the `C4 Model` diagrams based on the requirements**
+  - **2.2 [x] Create the `C4 Model` diagrams based on the requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin & UML Sequence diagram created previously
 
@@ -70,7 +70,7 @@ Create the C4 Model diagrams from the requirements in plantuml format using the 
 
 ### Phase 3: Architecture Decision Records (ADRs)
 
-  - **3.1 [ ] Create an `ADR` about the functional requirements**
+  - **3.1 [x] Create an `ADR` about the functional requirements**
 
 **Note:** Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously
 
@@ -86,7 +86,7 @@ Create the ADR about functional requirements using the cursor rule @2006-adr-cre
 Create the ADR about the functional requirements using the information provided with the cursor rule @2006-adr-create-functional-requirements-for-rest-api-development
 ```
 
-  - **3.2 [ ] Create an `ADR` about the acceptance testing Strategy**
+  - **3.2 [x] Create an `ADR` about the acceptance testing Strategy**
 
 **Note:** Attach User Story & Gherkin created previously
 
@@ -104,24 +104,38 @@ Create the ADR about the non functional requirements using the information provi
 
 ### Phase 4: Solution planning
 
-  - **4.1 [ ] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
+  - **4.1 [x] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
 
 ```bash
 create task list with @2100-create-task-list.md using documents @agile @design 
 ```
 
 **Note:** Review the high level design if you are agree and later continue with the process for the sublist typing "Go"
+**Note:** Review if the planning task is oriented to implement Outside-in-TDD London
+**Note:** Review that all blocks from the first completed ATDD cycle include a task to verify that everything works.
+
+  - **4.2 [x] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
+
+```bash
+Start with task 0.1 with @2101-implement-task-list.mdc 
+```
 
 ### Phase 5: Solution Review & Design Validation
 
-- **5. [ ] Review current solution state.**
+- **5. [x] Review current solution state.**
 
- - **5.1 [ ] Create an UML class diagram**
+ - **5.1 [x] Create an UML class diagram**
 
 **Note:** Once you have a solution stable, you could review some aspects about the Design, maybe you could see some way to improve:
 
 ```bash
-Create the UML diagram based on @src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+```
+
+ - **5.2 [ ] Refactor the initial stable solution**
+
+```bash
+No recipe, this is the added value of a good SSE. ¯\_(ツ)_/¯
 ```
 
 ---

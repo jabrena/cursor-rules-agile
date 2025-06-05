@@ -1,0 +1,130 @@
+@startuml GreekGodsAPI_ClassDiagram
+
+!theme plain
+title Greek Gods API - UML Class Diagram
+caption Generated from Java source code structure
+
+package "info.jab.latency" {
+
+  class MainApplication {
+    +main(String[]): void
+  }
+
+  package "controller" {
+    class GreekGodsController {
+      -greekGodsService: GreekGodsService
+      +GreekGodsController(GreekGodsService)
+      +getGreekGods(): ResponseEntity<List<String>>
+    }
+
+    class GlobalExceptionHandler {
+      -logger: Logger
+      +handleRuntimeException(RuntimeException, WebRequest): ResponseEntity<ProblemDetail>
+      +handleGenericException(Exception, WebRequest): ResponseEntity<ProblemDetail>
+    }
+  }
+
+  package "service" {
+    class GreekGodsService {
+      -logger: Logger
+      -EXPECTED_GOD_COUNT: int
+      -greekGodsRepository: GreekGodsRepository
+      +GreekGodsService(GreekGodsRepository)
+      +getAllGreekGodNames(): List<String>
+      +isDatasetComplete(): boolean
+      +getGreekGodsCount(): int
+      -validateDataIntegrity(List<String>): void
+    }
+
+    class BackgroundSyncService {
+      -logger: Logger
+      -restClient: RestClient
+      -apiEndpoint: String
+      -timeoutMs: int
+      -greekGodsRepository: GreekGodsRepository
+      -syncEnabled: boolean
+      +BackgroundSyncService(String, String, int, boolean, GreekGodsRepository)
+      +synchronizeData(): void
+      -fetchDataFromExternalAPI(): List<Map<String, Object>>
+      -transformToGreekGods(List<Map<String, Object>>): List<GreekGod>
+      -mapToGreekGod(Map<String, Object>): GreekGod
+      -extractName(Map<String, Object>): String
+      -saveGreekGodsToDatabase(List<GreekGod>): SyncResult
+      -generateSyncId(): String
+    }
+
+    class "BackgroundSyncService.SyncResult" as SyncResult {
+      +inserted: int
+      +duplicatesSkipped: int
+      +errors: int
+    }
+  }
+
+  package "repository" {
+    interface GreekGodsRepository {
+      +findAllGodNames(): List<String>
+      +findByName(String): GreekGod
+      +existsByName(String): boolean
+      +findAllOrderByName(): List<GreekGod>
+    }
+  }
+
+  package "entity" {
+    class GreekGod {
+      -id: Long
+      -name: String
+      +GreekGod()
+      +GreekGod(String)
+      +GreekGod(Long, String)
+      +getId(): Long
+      +setId(Long): void
+      +getName(): String
+      +setName(String): void
+      +toString(): String
+      +equals(Object): boolean
+      +hashCode(): int
+    }
+  }
+
+  package "config" {
+    class SchedulingConfig {
+    }
+  }
+}
+
+' Spring Framework interfaces
+interface CrudRepository<T,ID> {
+}
+
+' Relationships
+MainApplication --> GreekGodsController : bootstraps
+GreekGodsController --> GreekGodsService : uses
+GreekGodsService --> GreekGodsRepository : uses
+BackgroundSyncService --> GreekGodsRepository : uses
+BackgroundSyncService --> GreekGod : creates
+BackgroundSyncService +-- SyncResult : inner class
+GreekGodsRepository --> GreekGod : manages
+GreekGodsRepository --|> CrudRepository : extends
+
+' Annotations and Stereotypes
+note top of MainApplication : @SpringBootApplication
+note top of GreekGodsController : @RestController\n@RequestMapping("/api/v1/gods")
+note top of GlobalExceptionHandler : @ControllerAdvice
+note top of GreekGodsService : @Service
+note top of BackgroundSyncService : @Service
+note top of GreekGodsRepository : @Repository
+note top of GreekGod : @Table("greek_god")
+note top of SchedulingConfig : @Configuration\n@EnableScheduling
+
+' Key architectural patterns
+note as ArchNote
+  <b>Architectural Patterns:</b>
+  • MVC Pattern (Controller-Service-Repository)
+  • Dependency Injection
+  • Repository Pattern
+  • Global Exception Handling
+  • Scheduled Background Tasks
+  • Spring Data JDBC
+end note
+
+@enduml 

@@ -111,6 +111,14 @@ create task list with @2100-create-task-list.md using documents @agile @design
 ```
 
 **Note:** Review the high level design if you are agree and later continue with the process for the sublist typing "Go"
+**Note:** Review if the planning task is oriented to implement Outside-in-TDD London
+**Note:** Review that all blocks from the first completed ATDD cycle include a task to verify that everything works.
+
+  - **4.2 [ ] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
+
+```bash
+Start with task 0.1 with @2101-implement-task-list.mdc 
+```
 
 ### Phase 5: Solution Review & Design Validation
 
@@ -121,7 +129,13 @@ create task list with @2100-create-task-list.md using documents @agile @design
 **Note:** Once you have a solution stable, you could review some aspects about the Design, maybe you could see some way to improve:
 
 ```bash
-Create the UML diagram based on @src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+```
+
+ - **5.2 [ ] Refactor the initial stable solution**
+
+```bash
+No recipe, this is the added value of a good SSE. ¯\_(ツ)_/¯
 ```
 
 ---
@@ -142,6 +156,7 @@ Create the UML diagram based on @src/main/java using the cursor rule @2009-uml-c
 | @2008-adr-create-non-functional-requirements-decisions | Create ADR for Non-Functional Requirements | After technical design phase |
 | @2009-uml-class-diagram-mdc | Create UML Class Diagrams | For final solution review |
 | @2100-create-task-list | Generate detailed task lists from agile artifacts | After completing Phase 3 (ADRs) |
+| @2101-implement-task-list | Task List Management | When working with task lists to track implementation progress |
 | @2200-uml-class-diagram-mdc | Create UML Class Diagram for Java Projects | For reviewing Java solution architecture |
 | @2300-adr-conversational-assistant | ADR Conversational Assistant | For interactive ADR creation and refinement |
 
