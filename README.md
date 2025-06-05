@@ -11,10 +11,6 @@ https://learn.microsoft.com/en-us/azure/devops/boards/backlogs/define-features-e
 
 ## Cursor Rules
 
-| Phase | Role | Cursor Rule | Description |
-|-------|------|-------------|-------------|
-| Getting Started | All | [Create Agile Development Checklist](.cursor/rules/2000-agile-checklist.mdc) | Cursor rule designed to help the user to use the whole set of cursor rules for agile in an easy way |
-
 Cursor rules designed to answers the question about **WHAT** the development team is going to build and **WHY** and **HOW** is going to use:
 
 | Phase | Role | Cursor Rule | Description |
@@ -44,6 +40,10 @@ Cursor rule designed to implements the requirements:
 | Refactoring | Technical Lead / Senior Software engineer | [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram-mdc) | Generate UML class diagrams for object-oriented design |
 
 ## Getting Started
+
+| Phase | Role | Cursor Rule | Description |
+|-------|------|-------------|-------------|
+| Getting Started | All | [Create Agile Development Checklist](.cursor/rules/2000-agile-checklist.mdc) | Cursor rule designed to help the user to use the whole set of cursor rules for agile in an easy way |
 
 ```bash
 Create an agile development checklist using the cursor rule @2000-agile-checklist
