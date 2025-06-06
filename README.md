@@ -49,7 +49,7 @@ Cursor rules designed to implement the requirements:
 |-------|------|-------------|-------------|
 | Implementation | Product Owner / Technical Lead | [Create Task List](.cursor/rules/2100-create-task-list.mdc) | Generate detailed task lists from agile artifacts |
 | Implementation | Technical Lead / Senior Software engineer | [Implement Task List](.cursor/rules/2101-implement-task-list.mdc) | Manage and track implementation of generated tasks |
-| Refactoring | Technical Lead / Senior Software engineer | [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram-mdc) | Generate UML class diagrams for object-oriented design |
+| Refactoring | Technical Lead / Senior Software engineer | [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram.mdc) | Generate UML class diagrams for object-oriented design |
 
 ## Getting Started
 

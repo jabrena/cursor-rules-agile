@@ -154,10 +154,9 @@ No recipe, this is the added value of a good SSE. ¯\_(ツ)_/¯
 | @2006-adr-create-functional-requirements-for-rest-api-development | Create ADR for REST API Implementation | For REST API development |
 | @2007-adr-create-acceptance-testing-strategy | Create ADR for Acceptance Testing Strategy | After user stories with Gherkin |
 | @2008-adr-create-non-functional-requirements-decisions | Create ADR for Non-Functional Requirements | After technical design phase |
-| @2009-uml-class-diagram-mdc | Create UML Class Diagrams | For final solution review |
 | @2100-create-task-list | Generate detailed task lists from agile artifacts | After completing Phase 3 (ADRs) |
 | @2101-implement-task-list | Task List Management | When working with task lists to track implementation progress |
-| @2200-uml-class-diagram-mdc | Create UML Class Diagram for Java Projects | For reviewing Java solution architecture |
+| @2200-uml-class-diagram | Create UML Class Diagram for Java Projects | For reviewing Java solution architecture |
 | @2300-adr-conversational-assistant | ADR Conversational Assistant | For interactive ADR creation and refinement |
 
 ## Tips for Success
