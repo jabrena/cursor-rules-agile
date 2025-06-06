@@ -129,7 +129,7 @@ Start with task 0.1 with @2101-implement-task-list.mdc
 **Note:** Once you have a solution stable, you could review some aspects about the Design, maybe you could see some way to improve:
 
 ```bash
-Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2009-uml-class-diagram-mdc
+Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2200-uml-class-diagram.mdc
 ```
 
  - **5.2 [ ] Refactor the initial stable solution**
