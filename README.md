@@ -57,7 +57,7 @@ If you are interested in getting the benefits from these cursor rules, you can m
 
 ```bash
 sdk install jbang
-jbang cache clear
+jbang --fresh setup@jabrena init 
 jbang catalog list jabrena
 # Add cursor rules for Agile in ./cursor/rules
 jbang setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
