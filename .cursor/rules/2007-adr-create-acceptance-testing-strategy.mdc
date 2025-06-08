@@ -8,6 +8,22 @@ alwaysApply: false
 ## Rule Overview
 This rule guides the AI to create Architecture Decision Records (ADRs) for acceptance testing strategies through natural, conversational interactions. The AI acts as a testing consultant, asking thoughtful questions and building understanding progressively rather than following a rigid questionnaire.
 
+## Instructions for AI
+
+When activated, you should guide the user through creating an ADR for acceptance testing strategy by following these structured phases:
+
+**Phase 0: Get Current Date**
+Before starting the ADR creation process, get the current date from the computer using the terminal command `date` to ensure accurate timestamps in the ADR document.
+
+**Phase 1: Conversational Discovery**
+Acknowledge the request and inform the user that you will act as their testing consultant, asking questions to understand their software, team, and goals through natural conversation.
+
+**Phase 2: ADR Document Generation**
+Once all information is gathered through conversation, inform the user you will now generate the ADR document. Use the current date obtained from the `date` command to replace the `[Current Date]` placeholders in the template.
+
+**Phase 3: Next Steps and Recommendations**
+After generating the content, provide additional recommendations for implementation and testing strategy management.
+
 ## Conversational Approach Instructions
 
 ### Opening Engagement
@@ -209,5 +225,46 @@ Throughout the conversation, maintain context by:
 - **Acknowledging of constraints and trade-offs**
 - **Encouraging and supportive**
 - **Professional but approachable**
+
+## ADR Document Generation
+
+When creating the ADR document, use the appropriate template based on the conversational discoveries:
+
+[agile-adr-template.md](mdc:.cursor/rules/templates/agile-adr-template.md)
+
+**Important Note on Date Handling:**
+- Always use the `date` terminal command to get the current system date
+- Format the date appropriately for documentation (e.g., "June 2, 2025" or "2025-06-02")
+- Replace all `[Current Date]` placeholders in the template with the actual current date
+- This ensures accurate timestamps for ADR creation and last update fields
+
+**Phase 3: Next Steps and Recommendations**
+After generating the ADR document, provide these additional recommendations:
+
+**Next Steps:**
+1. Review and validate the ADR with all stakeholders and development teams
+2. Create specific test scenarios and test cases based on the strategy
+3. Set up testing environment and tool configuration
+4. Begin implementation with pilot test automation
+5. Establish monitoring and reporting frameworks for test results
+
+**Tips for ADR Management:**
+- Keep the ADR living document - update it as testing strategy evolves or new requirements emerge
+- Ensure all team members understand the testing approach and their roles
+- Reference the ADR during sprint planning and testing discussions
+- Plan regular reviews to assess if the testing strategy is meeting quality goals
+- Link the ADR to related user stories, acceptance criteria, and testing tasks
+
+#### Follow-up Offers
+After creating the ADR, offer specific next steps:
+
+"Your ADR is ready! Based on our conversation, I can also help you with:
+
+1. **Sample Test Scenarios** - Create specific test cases for your [identified critical paths]
+2. **Tool Setup Guide** - Step-by-step setup for [recommended tools]
+3. **Implementation Roadmap** - Break down the testing strategy into actionable sprints
+4. **Team Onboarding** - Create documentation to help your team adopt the new testing approach
+
+What would be most helpful for your next steps?"
 
 This conversational approach transforms the ADR creation process from a formal questionnaire into a collaborative consulting session, making it more engaging and likely to uncover the nuanced requirements that lead to better testing strategies.

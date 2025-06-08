@@ -43,12 +43,13 @@ Cursor rules designed to answer the questions about **HOW** the team is going to
 | Requirements | Architect / Technical Lead | [ADR about Non-Functional Requirements](.cursor/rules/2008-adr-create-non-functional-requirements-decisions.mdc) | Define non-functional requirements and constraints following *ISO-25010* |
 | Requirements | General | [ADR creation using a Conversational approach](.cursor/rules/2300-adr-conversational-assistant.mdc) | Interactive assistant for creating architectural decision records |
 
-Cursor rules designed to implement the requirements:
+Cursor rules designed to implement the requirements and refactor:
 
 | Phase | Role | Cursor Rule | Description |
 |-------|------|-------------|-------------|
 | Implementation | Product Owner / Technical Lead | [Create Task List](.cursor/rules/2100-create-task-list.mdc) | Generate detailed task lists from agile artifacts |
 | Implementation | Technical Lead / Senior Software engineer | [Implement Task List](.cursor/rules/2101-implement-task-list.mdc) | Manage and track implementation of generated tasks |
+| Implementation | Product Owner / Technical Lead | [Definition of Done Creation](.cursor/rules/2102-agile-create-dor.mdc) | Create comprehensive Definition of Done documents with quality gates and completion criteria |
 | Refactoring | Technical Lead / Senior Software engineer | [UML Class Diagram Generator](.cursor/rules/2200-uml-class-diagram.mdc) | Generate UML class diagrams for object-oriented design |
 
 ## Getting Started
@@ -57,10 +58,8 @@ If you are interested in getting the benefits from these cursor rules, you can m
 
 ```bash
 sdk install jbang
-jbang --fresh setup@jabrena init 
-jbang catalog list jabrena
 # Add cursor rules for Agile in ./cursor/rules
-jbang setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
+jbang --fresh setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
 ```
 
 Once you have installed the cursor rules:
@@ -97,8 +96,9 @@ If you have nice ideas, please [create an issue](https://github.com/jabrena/curs
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
+- https://www.iso.org/standard/78176.html
 
-## Related repositories
+## Cursor rules ecosystem
 
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile
@@ -108,4 +108,3 @@ If you have nice ideas, please [create an issue](https://github.com/jabrena/curs
 - https://github.com/jabrena/101-cursor
 - https://github.com/jabrena/setup-cli
 - https://github.com/jabrena/jbang-catalog
-

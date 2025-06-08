@@ -11,7 +11,7 @@ You are an expert in Agile methodologies and technical documentation. Your task 
 You have access to a set of cursor rules that automate agile artifact creation. You need to create a structured guide that helps new users navigate through the entire agile development lifecycle from initial requirements to final solution review.
 
 ## Template Structure (Self-Contained)
-Create a markdown file named `agile-development-guide.md` with the following exact structure: [checklist-template.md](mdc:.cursor/rules/templates/checklist-template.md)
+Create a markdown file named `AGILE-DEVELOPMENT-GUIDE.md` with the following exact structure: [agile-checklist-template.md](mdc:.cursor/rules/templates/agile-checklist-template.md)
 
 ## Instructions for AI
 1. **Follow the exact format** shown in the template above

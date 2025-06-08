@@ -16,7 +16,8 @@
 - https://plantuml.com/
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
-- https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
+- https://www.iso.org/obp/ui/#iso:std:iso-iec:25010:ed-2:v1:en
+- https://quality.arc42.org/articles/iso-25010-update-2023
 - https://github.com/adr/madr
 - https://github.com/adr/madr/blob/develop/template/adr-template.md
 - https://github.com/snarktank/ai-dev-tasks

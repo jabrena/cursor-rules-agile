@@ -8,6 +8,22 @@ alwaysApply: false
 ## Purpose
 This rule provides a conversational approach to create Architectural Decision Records (ADRs). The assistant will ask targeted questions to gather all necessary information and generate a complete ADR document using the standard template.
 
+## Instructions for AI
+
+When activated, you should guide the user through creating an ADR by following these structured phases:
+
+**Phase 0: Get Current Date**
+Before starting the ADR creation process, get the current date from the computer using the terminal command `date` to ensure accurate timestamps in the ADR document.
+
+**Phase 1: Information Gathering**
+Acknowledge the request and inform the user that you need to ask some targeted questions to create a well-structured ADR. Then, systematically gather information through the conversational process outlined below.
+
+**Phase 2: ADR Document Generation**
+Once all information is gathered through conversation, inform the user you will now generate the ADR document. Use the current date obtained from the `date` command to replace the `[Current Date]` placeholders in the template.
+
+**Phase 3: Next Steps and Recommendations**
+After generating the content, provide additional recommendations for implementation and ongoing management.
+
 ## Conversation Flow
 
 ### Phase 1: Initial Context
@@ -75,70 +91,7 @@ Start the conversation by asking:
 
 After gathering all information through the conversation, generate a complete ADR document using this structure:
 
-```markdown
----
-status: "{gathered status}"
-date: {current date YYYY-MM-DD}
-decision-makers: {gathered decision-makers}
-consulted: {gathered consulted parties}
-informed: {gathered informed parties}
----
-
-# {generated title based on problem and solution}
-
-## Context and Problem Statement
-
-{compiled context and problem description}
-
-## Decision Drivers
-
-* {driver 1}
-* {driver 2}
-* {additional drivers...}
-
-## Considered Options
-
-* {option 1 title}
-* {option 2 title}
-* {additional options...}
-
-## Decision Outcome
-
-Chosen option: "{chosen option title}", because {compiled reasoning and justification}.
-
-### Consequences
-
-* Good, because {positive consequence 1}
-* Good, because {positive consequence 2}
-* Bad, because {negative consequence 1}
-* Bad, because {negative consequence 2}
-
-### Confirmation
-
-{compiled confirmation and measurement approach}
-
-## Pros and Cons of the Options
-
-### {Option 1 Title}
-
-{option description}
-
-* Good, because {advantage 1}
-* Good, because {advantage 2}
-* Bad, because {disadvantage 1}
-
-### {Option 2 Title}
-
-{option description}
-
-* Good, because {advantage 1}
-* Neutral, because {neutral point}
-* Bad, because {disadvantage 1}
-
-## More Information
-
-{additional context, links, and related information}
-```
+[agile-adr-template.md](mdc:.cursor/rules/templates/agile-adr-template.md)
 
 ## Conversation Guidelines
 
@@ -168,5 +121,28 @@ Before finalizing the ADR, ensure:
 - [ ] Consequences (both positive and negative) are realistic
 - [ ] Confirmation methods are specific and measurable
 - [ ] All stakeholders are properly categorized
+
+**Important Note on Date Handling:**
+- Always use the `date` terminal command to get the current system date
+- Format the date appropriately for documentation (e.g., "June 2, 2025" or "2025-06-02")
+- Replace all `[Current Date]` placeholders in the template with the actual current date
+- This ensures accurate timestamps for ADR creation and last update fields
+
+**Phase 3: Next Steps and Recommendations**
+After generating the ADR document, provide these additional recommendations:
+
+**Next Steps:**
+1. Review and validate the ADR with all stakeholders and technical teams
+2. Distribute the ADR to all relevant parties for awareness and feedback
+3. Implement the architectural decision according to the documented approach
+4. Set up monitoring and validation mechanisms as defined in the Confirmation section
+5. Schedule regular reviews to assess the decision's effectiveness
+
+**Tips for ADR Management:**
+- Keep the ADR living document - update it as decisions evolve or new information emerges
+- Ensure all team members understand the decisions and their rationale
+- Reference the ADR during architectural discussions and design reviews
+- Plan regular reviews to assess if decisions are still valid as the system evolves
+- Link the ADR to related user stories, technical requirements, and implementation tasks
 
 This conversational approach ensures comprehensive ADRs that capture both the technical and business context of architectural decisions. 
