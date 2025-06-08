@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Updated the ADR about Non functional requirements updating the ISO 25010:2011 to 25010:2023
+- Added a Cursor rule to generate a DoR about the User story
 
 ## [0.2.0] 30/05/2025
 
