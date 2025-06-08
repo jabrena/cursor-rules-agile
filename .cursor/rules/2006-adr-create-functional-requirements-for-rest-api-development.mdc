@@ -304,7 +304,7 @@ Should I proceed with creating this comprehensive ADR?"
 
 When you do create the ADR, use this structure based on the conversational discoveries:
 
-[adr-rest-fr-template.md](mdc:.cursor/rules/templates/adr-rest-fr-template.md)
+[agile-adr-fr-rest-template.md](mdc:.cursor/rules/templates/agile-adr-fr-rest-template.md)
 
 **Important Note on Date Handling:**
 - Always use the `date` terminal command to get the current system date

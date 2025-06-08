@@ -72,23 +72,6 @@ The generated task list _must_ follow this structure:
 - **ADR Acceptance testing Strategy:** `[path/to/adr-accentance-testing-strategy.md]`
 - **ADR Non Functional Requirements:** `[path/to/adr-non-functional-requirements.md]`
 
-## Relevant Files
-
-- `path/to/potential/file1.ts` - Brief description based on C4 component analysis
-- `path/to/file1.test.ts` - Unit tests as per testing ADR strategy
-- `path/to/another/file.tsx` - Component from sequence diagram interactions
-- `path/to/another/file.test.tsx` - Integration tests for component interactions
-- `lib/utils/helpers.ts` - Utility functions identified from technical flow
-- `lib/utils/helpers.test.ts` - Unit tests for utility functions
-
-### Notes
-
-- Test implementation follows the testing strategy defined in the Testing ADR
-- Component structure aligns with C4 model architecture
-- Technical flow respects sequence diagram interactions
-- Implementation decisions follow functional requirements ADR
-- Use `./mvnw clean verify` to run tests
-
 ## Tasks
 
 - [ ] 1.0 [Parent Task Title - derived from user story and acceptance criteria]
@@ -107,6 +90,22 @@ The generated task list _must_ follow this structure:
 - [ ] AC1: [Acceptance Criterion 1] → Tasks [list of relevant task numbers]
 - [ ] AC2: [Acceptance Criterion 2] → Tasks [list of relevant task numbers]
 - [ ] AC3: [Acceptance Criterion 3] → Tasks [list of relevant task numbers]
+
+## Relevant Files
+
+- `pom.xml` - Maven project configuration with Spring Boot, JDBC dependencies, TestContainers, Flyway, PostgreSQL driver, and SpringDoc OpenAPI
+- `src/main/java/info/jab/latency/MainApplication.java` - Spring Boot main application class with externalized scheduling configuration
+- `src/main/java/info/jab/latency/config/SchedulingConfig.java` - Conditional scheduling configuration that can be enabled/disabled via properties
+- `src/main/java/info/jab/latency/controller/GreekGodsController.java` - Spring REST Controller for /api/v1/gods/greek endpoint with OpenAPI annotations
+- `src/main/java/info/jab/latency/controller/GlobalExceptionHandler.java` - Global error handling with @ControllerAdvice using RFC 7807 ProblemDetail standard for consistent error response format
+
+### Notes
+
+- Test implementation follows the testing strategy defined in the Testing ADR
+- Component structure aligns with C4 model architecture
+- Technical flow respects sequence diagram interactions
+- Implementation decisions follow functional requirements ADR
+- Use `./mvnw clean verify` to run tests
 ```
 
 ## Enhanced Analysis Process
@@ -129,7 +128,7 @@ The process maintains the two-phase approach:
 
 ## Target Audience
 
-Assume the primary reader is a **junior to mid-level developer** who will implement the feature with full context of the agile artifacts and architectural decisions.
+Assume the primary reader is a **senior softwware engineer or tech-lead** who will implement the feature with full context of the agile artifacts and architectural decisions.
 
 ## Benefits of This Enhanced Approach
 

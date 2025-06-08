@@ -57,10 +57,8 @@ If you are interested in getting the benefits from these cursor rules, you can m
 
 ```bash
 sdk install jbang
-jbang --fresh setup@jabrena init 
-jbang catalog list jabrena
 # Add cursor rules for Agile in ./cursor/rules
-jbang setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
+jbang --fresh setup@jabrena init --cursor https://github.com/jabrena/cursor-rules-agile
 ```
 
 Once you have installed the cursor rules:
@@ -97,8 +95,9 @@ If you have nice ideas, please [create an issue](https://github.com/jabrena/curs
 - https://www.plantuml.com/plantuml/uml/
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
+- https://www.iso.org/standard/78176.html
 
-## Related repositories
+## Cursor rules ecosystem
 
 - https://github.com/jabrena/cursor-rules-methodology
 - https://github.com/jabrena/cursor-rules-agile

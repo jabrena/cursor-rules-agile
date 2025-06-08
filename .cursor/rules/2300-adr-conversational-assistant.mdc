@@ -75,70 +75,7 @@ Start the conversation by asking:
 
 After gathering all information through the conversation, generate a complete ADR document using this structure:
 
-```markdown
----
-status: "{gathered status}"
-date: {current date YYYY-MM-DD}
-decision-makers: {gathered decision-makers}
-consulted: {gathered consulted parties}
-informed: {gathered informed parties}
----
-
-# {generated title based on problem and solution}
-
-## Context and Problem Statement
-
-{compiled context and problem description}
-
-## Decision Drivers
-
-* {driver 1}
-* {driver 2}
-* {additional drivers...}
-
-## Considered Options
-
-* {option 1 title}
-* {option 2 title}
-* {additional options...}
-
-## Decision Outcome
-
-Chosen option: "{chosen option title}", because {compiled reasoning and justification}.
-
-### Consequences
-
-* Good, because {positive consequence 1}
-* Good, because {positive consequence 2}
-* Bad, because {negative consequence 1}
-* Bad, because {negative consequence 2}
-
-### Confirmation
-
-{compiled confirmation and measurement approach}
-
-## Pros and Cons of the Options
-
-### {Option 1 Title}
-
-{option description}
-
-* Good, because {advantage 1}
-* Good, because {advantage 2}
-* Bad, because {disadvantage 1}
-
-### {Option 2 Title}
-
-{option description}
-
-* Good, because {advantage 1}
-* Neutral, because {neutral point}
-* Bad, because {disadvantage 1}
-
-## More Information
-
-{additional context, links, and related information}
-```
+[agile-adr-template.md](mdc:.cursor/rules/templates/agile-adr-template.md)
 
 ## Conversation Guidelines
 

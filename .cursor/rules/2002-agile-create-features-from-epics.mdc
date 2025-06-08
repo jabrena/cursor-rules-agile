@@ -47,7 +47,7 @@ For each identified feature, I'll ask:
 Once I have all the information, I'll inform you that I'm generating the feature files. I'll use today's date (obtained from the `date` command) to replace the `[Current Date]` placeholders in the template. For each feature, I'll provide content using this format:
 
 **Content for Feature Markdown File: `[Feature Filename From Naming Convention]`**
-[feature-template.md](mdc:.cursor/rules/templates/feature-template.md)
+[agile-feature-template.md](mdc:.cursor/rules/templates/agile-feature-template.md)
 
 **Important Note on Date Handling:**
 - I always use the `date` terminal command to get the current system date
