@@ -6,137 +6,55 @@ Use the following step-by-step process to implement a complete agile development
 
 ### Phase 1: Requirements Analysis & Agile Artifacts
 
-- **1. [x] Review requirements.**
+This phase transforms initial requirements into structured agile artifacts, starting with high-level epics and progressively breaking them down into actionable features and user stories.
+The goal is to establish a clear understanding of what needs to be built through epics, features, and detailed user stories with acceptance criteria in Gherkin format.
 
-  - **1.1 [x] Create an `Epic` about the development**
-
-**Note:** Attach the initial free format text/markdown document describing the problem to solve.
-
-```bash
-Create an agile epic based the initial documentation received and use the cursor rule @2001-agile-create-an-epic
-```
-
-  - **1.2 [x] Create a `Feature` about the development**
-
-**Note:** Attach the EPIC created previously
-
-```bash
-Create a feature based on the epic and use the cursor rule  @2002-agile-create-features-from-epics
-```
-
-**Note:** Review if the rule generates several features and maybe it is possible to merge into a single one. If you prefer to have only one feature, ask it.
-
-  - **1.3 [x] Create an `User story` and the `Acceptance criteria` in `Gherkin` format based on the requirements.**
-
-**Note:** Attach the EPIC and the Feature created previously
-
-```bash
-Create a user story based on the feature and the acceptance criteria using the information provided and use the cursor rule @2003-agile-create-user-stories
-```
+| Activity | Done | Prompt | Notes |
+|----------|------|--------|-------|
+| Create an Epic about the development | [ ] | `Create an agile epic based the initial documentation received and use the cursor rule @2001-agile-create-an-epic` | Attach the initial free format text/markdown document describing the problem to solve |
+| Create a Feature about the development | [ ] | `Create a feature based on the epic and use the cursor rule @2002-agile-create-features-from-epics` | Attach the EPIC created previously. Review if the rule generates several features and maybe it is possible to merge into a single one. If you prefer to have only one feature, ask it. |
+| Create User Story and Acceptance Criteria in Gherkin format | [ ] | `Create a user story based on the feature and the acceptance criteria using the cursor rule @2003-agile-create-user-stories` | Attach the EPIC and the Feature created previously |
 
 ### Phase 2: Technical Design & Architecture
 
-  - **2.1 [x] Create an `UML` Sequence diagram about the functional requirements**
+This phase creates visual representations of the solution architecture using UML sequence diagrams to model interactions and C4 diagrams for system structure.
+The focus is on translating agile requirements into technical designs that clearly communicate system behavior and architectural components.
 
-**Note:** Attach the EPIC, Feature, User Story & Gherkin created previously
-
-```bash
-Create the UML sequence diagram based in plantuml format using the information provided with the cursor rule @2004-uml-sequence-diagram-from-agile-artifacts
-```
-
-**Note:** You can use the following tool to generate a png file from the diagram.
-
-```bash
-jbang puml-to-png@jabrena --watch example
-```
-
-**Note:** If the model generate a diagram which fails, you can visit the website: https://www.plantuml.com/plantuml/uml/ in order to test the code and see the error. With that information, you could provide the model to fix it.
-
-**Note:** Sometimes, you need to ask for simplified version:
-
-```bash
-Can you create the diagram again with less detail
-```
-
-  - **2.2 [x] Create the `C4 Model` diagrams based on the requirements**
-
-**Note:** Attach the EPIC, Feature, User Story, Gherkin & UML Sequence diagram created previously
-
-```bash
-Create the C4 Model diagrams from the requirements in plantuml format using the information provided with the cursor rule @2005-c4-diagrams-about-solution
-```
-
-**Note:** Review the diagrams, sometimes it is necessary to simplify the models. Sometimes, the diagram some some incoherence or some criteria that you are not agree. Review the diagram and review the previous documents (Epic, Feature or User story) maybe exist the issue there.
+| Activity | Done | Prompt | Notes |
+|----------|------|--------|-------|
+| Create UML Sequence diagram about functional requirements | [ ] | `Create the UML sequence diagram based in plantuml format using the information provided with the cursor rule @2004-uml-sequence-diagram-from-agile-artifacts` | Attach the EPIC, Feature, User Story & Gherkin created previously. You can use `jbang --fresh puml-to-png@jabrena --watch YOUR_REQS_DIRECTORY` to generate PNG. Ask for simplified version if needed: `Can you create the diagram again with less detail` |
+| Create C4 Model diagrams based on requirements | [ ] | `Create the C4 Model diagrams from the requirements in plantuml format using the cursor rule @2005-c4-diagrams-about-solution` | Attach the EPIC, Feature, User Story, Gherkin & UML Sequence diagram created previously. Review the diagrams, sometimes it is necessary to simplify the models. Review for incoherences and check previous documents (Epic, Feature or User story) if issues exist |
 
 ### Phase 3: Architecture Decision Records (ADRs)
 
-  - **3.1 [x] Create an `ADR` about the functional requirements**
+This phase documents critical architectural decisions including functional requirements approach (CLI or REST API), acceptance testing strategies, and non-functional requirements.
+ADRs provide structured documentation that captures the rationale behind key technical choices to guide implementation and future maintenance.
 
-**Note:** Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously
-
-**Terminal/CLI development:**
-
-```bash
-Create the ADR about functional requirements using the cursor rule @2006-adr-create-functional-requirements-for-cli-development
-```
-
-**REST API development:**
-
-```bash
-Create the ADR about the functional requirements using the information provided with the cursor rule @2006-adr-create-functional-requirements-for-rest-api-development
-```
-
-  - **3.2 [x] Create an `ADR` about the acceptance testing Strategy**
-
-**Note:** Attach User Story & Gherkin created previously
-
-```bash
-Create the ADR about the acceptance testing strategy using the information provided with the cursor rule @2007-adr-create-acceptance-testing-strategy
-```
-
-  - **3.3 [ ] Create an `ADR` about the non functional requirements**
-
-**Note:** Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously
-
-```bash
-Create the ADR about the non functional requirements using the information provided with the cursor rule @2008-adr-create-non-functional-requirements-decisions
-```
+| Activity | Done | Prompt | Notes |
+|----------|------|--------|-------|
+| Create ADR about functional requirements | [ ] | **CLI Development:** `Create the ADR about functional requirements using the cursor rule @2006-adr-create-functional-requirements-for-cli-development` <br> **REST API Development:** `Create the ADR about the functional requirements using the cursor rule @2006-adr-create-functional-requirements-for-rest-api-development` | Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously. Choose between CLI or REST API development approach |
+| Create ADR about acceptance testing strategy | [ ] | `Create the ADR about the acceptance testing strategy using the cursor rule @2007-adr-create-acceptance-testing-strategy` | Attach User Story & Gherkin created previously |
+| Create ADR about non-functional requirements based on ISO/IEC 25010:2023 quality model | [ ] | `Create the ADR about the non functional requirements using the information provided using the cursor rule @2008-adr-create-non-functional-requirements-decisions` | Attach the EPIC, Feature, User Story, Gherkin, UML Sequence diagram & C4 Model diagrams created previously |
 
 ### Phase 4: Solution planning
 
-  - **4.1 [x] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
+This phase converts all previous analysis and design work into actionable implementation plans through detailed task lists and Definition of Done criteria.
+The goal is to establish clear execution roadmaps with quality gates that ensure systematic development following Outside-in TDD practices.
 
-```bash
-create task list with @2100-create-task-list.md using documents @agile @design 
-```
+| Activity | Done | Prompt | Notes |
+|----------|------|--------|-------|
+| Create task list based on Agile analysis & Technical design | [ ] | `create task list with @2100-create-task-list.md using documents @agile @design` | Review the high level design if you agree and later continue with the process for the sublist typing "Go". Review if the planning task is oriented to implement Outside-in-TDD London. Review that all blocks from the first completed ATDD cycle include a task to verify that everything works. |
+| Create Definition of Done (DoD) | [ ] | `Create the Definition of Done using the cursor rule @2102-agile-create-dor.mdc` | Attach User Story, Gherkin scenarios, and related ADRs. Ensures all acceptance criteria, technical requirements, and quality standards are met before story completion |
+| Start implementation with task list management | [ ] | `Start with task 0.1 using the cursor rule @2101-implement-task-list.mdc` | Begin executing the task list created in the previous step |
 
-**Note:** Review the high level design if you are agree and later continue with the process for the sublist typing "Go"
-**Note:** Review if the planning task is oriented to implement Outside-in-TDD London
-**Note:** Review that all blocks from the first completed ATDD cycle include a task to verify that everything works.
+### Phase 5: Solution Review & Refactoring
 
-  - **4.2 [x] Create a tasks a list with a potential task list based on the Agile analysis & Technical design
+Perform a comprehensive review of the implemented solution to assess stability and completeness
 
-```bash
-Start with task 0.1 with @2101-implement-task-list.mdc 
-```
-
-### Phase 5: Solution Review & Design Validation
-
-- **5. [x] Review current solution state.**
-
- - **5.1 [x] Create an UML class diagram**
-
-**Note:** Once you have a solution stable, you could review some aspects about the Design, maybe you could see some way to improve:
-
-```bash
-Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2009-uml-class-diagram-mdc
-```
-
- - **5.2 [ ] Refactor the initial stable solution**
-
-```bash
-No recipe, this is the added value of a good SSE. ¯\_(ツ)_/¯
-```
+| Activity | Done | Prompt | Notes |
+|----------|------|--------|-------|
+| Create UML class diagram | [ ] | `Create the UML diagram based on @example/implementation/src/main/java using the cursor rule @2200-uml-class-diagram.mdc` | Once you have a stable solution, review design aspects and identify potential improvements |
+| Refactor the initial stable solution | [ ] | No recipe, this is the added value of a good SSE. `¯\_(ツ)_/¯` | Apply engineering expertise to improve code quality, design patterns, and architecture based on the UML analysis |
 
 ---
 
@@ -154,9 +72,10 @@ No recipe, this is the added value of a good SSE. ¯\_(ツ)_/¯
 | @2006-adr-create-functional-requirements-for-rest-api-development | Create ADR for REST API Implementation | For REST API development |
 | @2007-adr-create-acceptance-testing-strategy | Create ADR for Acceptance Testing Strategy | After user stories with Gherkin |
 | @2008-adr-create-non-functional-requirements-decisions | Create ADR for Non-Functional Requirements | After technical design phase |
-| @2009-uml-class-diagram-mdc | Create UML Class Diagrams | For final solution review |
 | @2100-create-task-list | Generate detailed task lists from agile artifacts | After completing Phase 3 (ADRs) |
-| @2200-uml-class-diagram-mdc | Create UML Class Diagram for Java Projects | For reviewing Java solution architecture |
+| @2101-implement-task-list | Task List Management | When working with task lists to track implementation progress |
+| @2102-agile-create-dor | Agile Definition of Done (DoD) Creation | When creating completion criteria and quality gates for user stories |
+| @2200-uml-class-diagram | Create UML Class Diagram for Java Projects | For reviewing Java solution architecture |
 | @2300-adr-conversational-assistant | ADR Conversational Assistant | For interactive ADR creation and refinement |
 
 ## Tips for Success
