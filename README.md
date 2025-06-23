@@ -97,6 +97,7 @@ If you have nice ideas, please [create an issue](https://github.com/jabrena/curs
 - https://c4model.com/abstractions
 - https://www.iso25000.com/index.php/en/iso-25000-standards/iso-25010
 - https://www.iso.org/standard/78176.html
+- https://github.com/snarktank/ai-dev-tasks
 
 ## Cursor rules ecosystem
 
